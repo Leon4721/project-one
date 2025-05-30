@@ -31,8 +31,8 @@
 
 /* Circular video styling */
 #video {
-  width: 560px;           /* Must match height for a perfect circle */
-  height: 560px;          /* Must match width for a perfect circle */
+  width: 360px;           /* Must match height for a perfect circle */
+  height: 360px;          /* Must match width for a perfect circle */
   border-radius: 50%;     /* Makes it circular */
   object-fit: cover;      /* Ensures video fills the circle without distortion */
   border: 3px solid #000; /* Optional: Adds a border (adjust color as needed) */
@@ -45,24 +45,18 @@
 
 
         body {
-            background-image: url('/assets/image/website\ image\ \ \(17\).jpg');
+    background-image: url('/assets/image/website\ image\ \ \(17\).jpg');
+    background-size: cover;            /* Ensures the image covers the screen */
+    background-position: center center;/* Centers the image both vertically and horizontally */
+    background-repeat: no-repeat;      /* Prevents tiling */
+    background-attachment: fixed;
 
-            background-size: cover;
-        
-            background-attachment: fixed;
-            
-            height: 100vh; 
-    
-            background-position: center;
-     
+    height: 50vh;
 
-            color: var(--light-color);
-
-
-            font-size: 16px;
-
-            font-weight: 400;
-        }
+    color: var(--light-color);
+    font-size: 16px;
+    font-weight: 400;
+}
         
 nav {
   background-color: #444;
@@ -82,7 +76,7 @@ nav a {
   margin-right: 15px;
   font-weight: bold;
 }
-h1,h2{color:rgb(37, 233, 30);}
+h1,h2{color:rgb(239, 248, 239);}
  p,h1, h2, ul, li {font-family: var(--primary-font);
 font-size: 16px;
 font-weight: bold;
