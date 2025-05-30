@@ -21,6 +21,51 @@
     font-size: 1.5rem;
   
 }
+nav {
+  background-color: #444;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+/* Hide the nav bar initially 
+.navbar {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Prevents clicking when invisible */
+}
+
+/* Show the nav when hovering over the wrapper */
+.nav-wrapper:hover .navbar {
+  opacity: 1;
+  pointer-events: auto;
+}
+nav .logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.header-logo {
+  width: 100%;
+  max-width: 300px; /* Controls the maximum size */
+  height: auto;     /* Maintains aspect ratio */
+  display: block;
+}
+
+.logo{
+  /* Controls the maximum size */
+  height: auto;     /* Maintains aspect ratio */
+  display: block;
+  position: fixed;
+  center: 0;
+}
+
  /* Container to center the video */
 .video-container {
   display: flex;
@@ -45,7 +90,7 @@
 
 
         body {
-    background-image: url('/assets/image/website\ image\ \ \(17\).jpg');
+    background-image: url('../image/website\ image\ \ \(17\).jpg');
     background-size: cover;            /* Ensures the image covers the screen */
     background-position: center center;/* Centers the image both vertically and horizontally */
     background-repeat: no-repeat;      /* Prevents tiling */
@@ -58,24 +103,7 @@
     font-weight: 400;
 }
         
-nav {
-  background-color: #444;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-}
 
-nav .logo {
-  height: 40px;
-  margin-right: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-right: 15px;
-  font-weight: bold;
-}
 h1,h2{color:rgb(239, 248, 239);}
  p,h1, h2, ul, li {font-family: var(--primary-font);
 font-size: 16px;
