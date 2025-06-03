@@ -1,4 +1,3 @@
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -47,7 +46,7 @@
   <body>
     <div class="video-container">
         <video autoplay loop muted playsinline class="back-video">
-            <source src="assets/video/musicsong.mp4" type="video/mp4">
+            <source src="assets/video/vid2.mp4" type="video/mp4">
             background-video 
         </video>
     <nav class="navbar-wrapper">
@@ -93,44 +92,44 @@ alt="Bghomie" class="header-logo"></a><button
     </nav>
     <!-- header -->
     <header id="hero" class="container">
-      <!-- section with hero image -->
-      <section class="row">
-        <!-- text-center class used to centre all text inside column -->
+      <section class="carosel">
+         <style>
         
-        <div class="col-12 text-center">
-          <h1 class="display-4 my-4"></h1>
-          <!-- mb-5 gives extra margin spacing under subheading -->
-          <h1 class="display-6 mb-5">#1 Local Artist Hub & Community Platform</h2>
-          <p>
-            <em>Unmask your potential!</em> </p>
-
-            <hr>
-            <p>
-              We’re Da Big Homie—a movement, a platform, and a
-              Supporting Artists. Uplifting Communities. Spreading Big Homie
-              Energy. Da Big Homie isn’t just a name—it’s an ideology. It's
-              about looking out for the next one, paving the way for future
-              legends, and holding the door open after walking through it.
-          </p>
-            
-           Whether you're
-            looking to showcase your work, find community support, or just tap
-            into real vibes, you're in the right place. It ain't just a
-            site—it's a mindset.
-          </p>
-          <!-- mb-5 gives extra margin spacing under lead text -->
-          <p class="lead mb-5">Let's create together!</p>
-          <!-- Bootstrap modal button -->
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Subscribe out events!
-          </button>
-        </div>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #D2D2D2;
+            background-image:
+            repeating-linear-gradient(
+                to right, transparent 0 100px,
+                #25283b22 100px 101px
+            ),
+            repeating-linear-gradient(
+                to bottom, transparent 0 100px,
+                #25283b22 100px 101px
+            );
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            background-image: url(images/bg.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            pointer-events: none;
+        }
+    </style>
       </section>
+      
     </header>
 
     <!-- main content -->
@@ -158,6 +157,7 @@ alt="Bghomie" class="header-logo"></a><button
         </video>
       </div>
     </div>
+    
     <!-- List Column (Right Side) -->
     <div class="col-12 col-md-6 mb-4 ps-md-5">  <!-- Added left padding on medium+ screens -->
       <p>Our platform exists to:</p>
@@ -169,14 +169,9 @@ alt="Bghomie" class="header-logo"></a><button
     </div>
   </div>
 </section>
+<footer>
 
-<body>
-
-    
-
-   
-
-
+</footer>
 
     <!-- Bootstrap JS Script-->
     <script
