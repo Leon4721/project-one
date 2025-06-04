@@ -23,11 +23,12 @@
     <meta name="description" content="Da Big Homie, Your #1 social media platform for local urban artists.">
 
     <!-- Custom CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
   </head>
 
   <body>
-    <!-- ✅ Background Video Container (behind content) -->
+    <!-- Background Video Container (behind content) -->
     <div class="video-container">
       <video autoplay loop muted playsinline id="bg-video" class="back-video">
         <source src="assets/video/vid2.mp4" type="video/mp4" />
@@ -35,15 +36,11 @@
       </video>
     </div>
 
-    <!-- ✅ Main Navigation -->
+    <!-- Main Navigation -->
     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
-
-          <img src="assets/image/spinner .gif" class="logo me-2" alt="spinner" />
-
           <img src="assets/image/website image  (1).png" class="header-logo" alt="Da Big Homie logo" />
-
         </a>
         <button
           class="navbar-toggler"
@@ -67,57 +64,61 @@
         </div>
       </div>
     </nav>
- <div class="categories1">
-    <!-- Images category -->
-    <a href="image.html" class="category1">
-      <div class="spin-container">
-        <div class="icon-circle">
-          <span class="material-icons">photo_camera</span>
+    <!-- ==============================
+         FOUR CATEGORIES: 2×2 GRID
+         ============================== -->
+    <div class="container py-5">
+      <div class="row justify-content-center g-4">
+        <!-- Top-Left Category -->
+        <div class="col-6 d-flex justify-content-center">
+          <a href="music.html" class="category1 text-decoration-none text-center">
+            <div class="spin-container mb-2">
+              <div class="icon-circle">
+                <img src="assets/image/vinyal.png" alt="Music" class="circle-image" />
+              </div>
+            </div>
+            <div class="label text-white">Music</div>
+          </a>
+        </div>
+
+        <!-- Top-Right Category -->
+        <div class="col-6 d-flex justify-content-center">
+          <a href="image.html" class="category1 text-decoration-none text-center">
+            <div class="spin-container mb-2">
+              <div class="icon-circle">
+                <span class="material-icons">photo_camera</span>
+              </div>
+            </div>
+            <div class="label text-white">Images</div>
+          </a>
+        </div>
+
+        <!-- Bottom-Left Category -->
+        <div class="col-6 d-flex justify-content-center">
+          <a href="video.html" class="category1 text-decoration-none text-center">
+            <div class="spin-container mb-2">
+              <div class="icon-circle">
+                <img src="assets/image/cd.png" alt="Videos" class="circle-image" />
+              </div>
+            </div>
+            <div class="label text-white">Videos</div>
+          </a>
+        </div>
+
+        <!-- Bottom-Right Category -->
+        <div class="col-6 d-flex justify-content-center">
+          <a href="Blogz.html" class="category1 text-decoration-none text-center">
+            <div class="spin-container mb-2">
+              <div class="icon-circle">
+                <img src="assets/image/580b57fbd9996e24bc43bfad.png" alt="Blogz" class="circle-image" />
+              </div>
+            </div>
+            <div class="label text-white">Blogz</div>
+          </a>
         </div>
       </div>
-      <div class="label">Images</div>
-    </a>
-
-    <!-- Videos category -->
-    <a href="video.html" class="category1">
-      <div class="spin-container">
-        <div class="icon-circle">
-          <img
-        src="assets/image/cd.png"
-        alt="Podcasts"
-        class="circle-image"
-      />
-        </div>
-      </div>
-      <div class="label">Videos</div>
-    </a>
-
-    <!-- Podcasts category -->
-    <a href="podcast.html" class="category1">
-  <div class="spin-container">
-    <div class="icon-circle">
-      <img
-        src="assets/image/cd.png"
-        alt="Podcasts"
-        class="circle-image"
-      />
     </div>
-  </div>
-  <div class="label">Podcasts</div>
-</a>
 
-    <!-- Music category -->
-    <a href="music.html" class="category1">
-      <div class="spin-container">
-        <div class="icon-circle"> <img
-        src="assets/image/cd.png"
-        alt="Podcasts"
-        class="circle-image"
-      /></div>
-      </div>
-      <div class="label">Music</div>
-    </a>
-  </div>
     <!-- ✅ Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

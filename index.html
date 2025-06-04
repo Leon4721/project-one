@@ -25,50 +25,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- POPUP CSS -->
-    <style>
-      /* -------------------------
-         POPUP CONTAINER STYLES
-         ------------------------- */
-      #popup {
-        display: none;                 /* hidden by default */
-        position: fixed;
-        top: 50%;                      /* top edge is halfway down */
-        left: 50%;                     /* center horizontally */
-        transform: translateX(-50%);   /* shift left by half its own width */
-        width: 80%;
-        max-width: 600px;
-        background-color: #fb621c;      /* orange background */
-        color: white;                  /* white text */
-        padding: 1.5rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        z-index: 1000;                 /* sit on top of everything */
-        border-radius: 8px;
-      }
-
-      /* Close button (×) in the top-right corner */
-      #popup .close-btn {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.75rem;
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        color: white;
-      }
-
-      /* Dimmed overlay behind the popup */
-      #popup-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 900;
-      }
-    </style>
   </head>
 
   <body>
