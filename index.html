@@ -24,25 +24,67 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
-    
+
+    <!-- POPUP CSS -->
+    <style>
+      /* -------------------------
+         POPUP CONTAINER STYLES
+         ------------------------- */
+      #popup {
+        display: none;                 /* hidden by default */
+        position: fixed;
+        top: 50%;                      /* top edge is halfway down */
+        left: 50%;                     /* center horizontally */
+        transform: translateX(-50%);   /* shift left by half its own width */
+        width: 80%;
+        max-width: 600px;
+        background-color: #fb621c;      /* orange background */
+        color: white;                  /* white text */
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        z-index: 1000;                 /* sit on top of everything */
+        border-radius: 8px;
+      }
+
+      /* Close button (×) in the top-right corner */
+      #popup .close-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.75rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+      }
+
+      /* Dimmed overlay behind the popup */
+      #popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 900;
+      }
+    </style>
   </head>
 
   <body>
-    <!-- ✅ Background Video Container (behind content) -->
+    <!-- Background Video Container (behind content) -->
     <div class="video-container">
       <video autoplay loop muted playsinline id="bg-video" class="back-video">
         <source src="assets/video/vid2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
-      
-    <!-- ✅ Main Navigation -->
+
+    <!-- Main Navigation -->
     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
- <img src="assets/image/website image  (1).png" class="header-logo" alt="Da Big Homie logo" />
- 
-    
+          <img src="assets/image/website image  (1).png" class="header-logo" alt="Da Big Homie logo" />
         </a>
         <button
           class="navbar-toggler"
@@ -66,39 +108,89 @@
         </div>
       </div>
     </nav>
- <header id="hero" class="container text-center text-white my-5">
-   <h1 class="display-6 mb-4">#1 Local Artist Hub & Community Platform</h1>
+
+    <!-- Header with Slider -->
+    <header id="hero" class="container text-center text-white my-5">
+      <h1 class="display-6 mb-4">#1 Local Artist Hub & Community Platform</h1>
       <p><em>Unmask your potential!</em></p>
       <hr />
-        <div class="banner">
+      <div class="banner">
         <div class="slider" style="--quantity: 10">
-            <div class="item" style="--position: 1"><img src="assets/image/website image  (1).jpg" alt=""></div>
-            <div class="item" style="--position: 2"><img src="assets/image/website image  (10).jpg" alt=""></div>
-            <div class="item" style="--position: 3"><img src="assets/image/website image  (11).jpg" alt=""></div>
-            <div class="item" style="--position: 4"><img src="assets/image/website image  (13).jpg" alt=""></div>
-            <div class="item" style="--position: 5"><img src="assets/image/website image  (12).jpg" alt=""></div>
-            <div class="item" style="--position: 6"><img src="assets/image/website image  (15).jpg" alt=""></div>
-            <div class="item" style="--position: 7"><img src="assets/image/website image  (7).jpg" alt=""></div>
-            <div class="item" style="--position: 8"><img src="assets/image/website image  (17).jpg" alt=""></div>
-            <div class="item" style="--position: 9"><img src="assets/image/website image  (6).jpg" alt=""></div>
-            <div class="item" style="--position: 10"><img src="assets/image/website image  (9).jpg" alt=""></div>
-        </div>
+          <div class="item" style="--position: 1"><img src="assets/image/website image  (1).jpg" alt=""></div>
+          <div class="item" style="--position: 2"><img src="assets/image/website image  (10).jpg" alt=""></div>
+          <div class="item" style="--position: 3"><img src="assets/image/website image  (11).jpg" alt=""></div>
+          <div class="item" style="--position: 4"><img src="assets/image/website image  (13).jpg" alt=""></div>
+          <div class="item" style="--position: 5"><img src="assets/image/website image  (12).jpg" alt=""></div>
+          <div class="item" style="--position: 6"><img src="assets/image/website image  (15).jpg" alt=""></div>
+          <div class="item" style="--position: 7"><img src="assets/image/website image  (7).jpg" alt=""></div>
+          <div class="item" style="--position: 8"><img src="assets/image/website image  (17).jpg" alt=""></div>
+          <div class="item" style="--position: 9"><img src="assets/image/website image  (6).jpg" alt=""></div>
+          <div class="item" style="--position: 10"><img src="assets/image/website image  (9).jpg" alt=""></div>
         </div>
       </div>
     </header>
-     <section class="content-section">
-        <div class="sticky-image">
-            <img src="your-image.png" alt="Break Mission Graffiti">
-        </div>
 
-        
+    <!-- POPUP OVERLAY -->
+    <div id="popup-overlay"></div>
 
- 
-    <!-- ✅ Bootstrap JS -->
+    <!-- POPUP WINDOW -->
+    <div id="popup">
+      <span class="close-btn">&times;</span>
+      <div id="popup-inner">
+        <!-- Inserted <main> content -->
+        <main>
+          <section id="about" class="container text-white my-5">
+            <h2 class="text-center mb-4">About Us</h2>
+            <p>
+              Da Big Homie is your go-to platform for discovering and connecting with local urban artists. From music to visual arts, we celebrate creativity and community.
+            </p>
+            <p>
+              Join us to explore events, media, and opportunities to collaborate with like-minded individuals.
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <!-- POPUP SCRIPT -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // References
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('popup-overlay');
+        const closeBtn = popup.querySelector('.close-btn');
+
+        // Open popup
+        function openPopup() {
+          overlay.style.display = 'block';
+          popup.style.display = 'block';
+          document.body.style.overflow = 'hidden'; // prevent background scrolling
+        }
+
+        // Close popup
+        function closePopup() {
+          popup.style.display = 'none';
+          overlay.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+
+        // Close when clicking the × or the overlay
+        closeBtn.addEventListener('click', closePopup);
+        overlay.addEventListener('click', closePopup);
+
+        // Attach click–listeners to each slider image
+        const sliderImages = document.querySelectorAll('.slider .item img');
+        sliderImages.forEach(img => {
+          img.addEventListener('click', openPopup);
+        });
+      });
+    </script>
   </body>
 </html>
