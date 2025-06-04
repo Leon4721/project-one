@@ -29,7 +29,7 @@
   <body>
     <!-- ✅ Background Video Container (behind content) -->
     <div class="video-container">
-      <video autoplay loop muted playsinline class="back-video">
+      <video autoplay loop muted playsinline id="bg-video" class="back-video">
         <source src="assets/video/vid2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -92,11 +92,17 @@
         <div class="row align-items-center">
           <!-- Left Column: Embedded Video -->
           <div class="col-md-6 mb-4 text-center">
-            <div class="video-circle-container">
-              <video id="video" controls>
-                <source src="assets/video/musicsong.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <div class="circle-container">
+              
+              <picture>
+  <source srcset="assets/image/heyley1.webp" type="image/webp" />
+  <source srcset="assets/image/heyley1.png" type="image/png" />
+
+  <img src="assets/image/spinner .gif" alt="Heyley" />
+</picture>
+
+                
+                
             </div>
           </div>
 

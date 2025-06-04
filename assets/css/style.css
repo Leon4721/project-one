@@ -49,21 +49,20 @@ body {
   height: 100vh;
   overflow: hidden;
   z-index: -1;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .back-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
 }
+
 
 /* Titles */
 .title, .subtitle {
@@ -174,6 +173,14 @@ body {
 }
 
 /* ==== Image Slider ==== */
+.slider {
+  animation: autoRun 20s linear infinite;
+}
+
+.slider:hover {
+  animation-play-state: paused; /* ✅ stops animation when hovered */
+}
+
 .banner {
     width: 100%;
     height: 100vh;
@@ -315,6 +322,10 @@ body {
     .banner .content h1 {
         font-size: 5em;
     }
+}
+@keyframes autoRun {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
 }
 
 /* ==== iFrame Footer Section ==== */

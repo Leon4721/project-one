@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Da Big Homie | Community Sounds & Events</title>
+    <title>Da Big Homie | Media</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -20,59 +20,143 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Meta -->
-    <meta name="description" content="Da Big Homie, your #1 social media platform for local urban artists." />
+    <meta name="description" content="Da Big Homie, explore videos, freestyles, podcasts and collabs by local urban artists." />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
 
   <body>
-    <!-- ✅ Video background container -->
+   <!-- ✅ Background Video Container (behind content) -->
     <div class="video-container">
-      <video autoplay loop muted playsinline class="back-video">
+      <video autoplay loop muted playsinline id="bg-video" class="back-video">
         <source src="assets/video/vid2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
 
-    <!-- ✅ Navbar outside of video container -->
-    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+    <!-- ✅ Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="assets/image/spinner .gif" class="logo" alt="spinner" />
           <img src="assets/image/website image  (1).png" class="header-logo" alt="Da Big Homie Logo" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
             <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link active" href="media.html">Media</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Add your header or main content here if needed -->
+    <!-- ✅ Media Gallery Section -->
+    <main class="container py-5">
+   <body>
+  <div class="container">
+    <header>
+      <h1>MEDIA GALLERY</h1>
+    </header>
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+    <!-- Tab Buttons -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="images">Images</button>
+      <button class="tab-button" data-tab="videos">Videos</button>
+      <button class="tab-button" data-tab="music">Music</button>
+    </div>
+
+    <!-- Tab Content: IMAGES -->
+    <section id="images" class="tab-content active">
+      <h2 style="text-align:center; margin-bottom:20px;">Image Gallery</h2>
+      <div class="image-grid">
+        <!-- Replace src with your own image URLs -->
+        <img src="https://picsum.photos/id/1015/600/400" alt="Sample Image 1" />
+        <img src="https://picsum.photos/id/1016/600/400" alt="Sample Image 2" />
+        <img src="https://picsum.photos/id/1018/600/400" alt="Sample Image 3" />
+        <img src="https://picsum.photos/id/1020/600/400" alt="Sample Image 4" />
+        <img src="https://picsum.photos/id/1024/600/400" alt="Sample Image 5" />
+        <img src="https://picsum.photos/id/1027/600/400" alt="Sample Image 6" />
+      </div>
+    </section>
+
+    <!-- Tab Content: VIDEOS -->
+    <section id="videos" class="tab-content">
+      <h2 style="text-align:center; margin-bottom:20px;">Video Showcase</h2>
+      <div class="video-list">
+        <!-- Example YouTube embeds, swap in your own video links -->
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-title">Sample Video 1</div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-title">Sample Video 2</div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-title">Sample Video 3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab Content: MUSIC -->
+    <section id="music" class="tab-content">
+      <h2 style="text-align:center; margin-bottom:20px;">Music Player</h2>
+      <div class="audio-list">
+        <!-- Replace src with your own audio file URLs -->
+        <div class="audio-item">
+          <div class="track-title">Track 1: Ambient Soundscape</div>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+        </div>
+        <div class="audio-item">
+          <div class="track-title">Track 2: Piano Melody</div>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg" />
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+        </div>
+        <div class="audio-item">
+          <div class="track-title">Track 3: Upbeat Rhythm</div>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg" />
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Your Organization. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // JavaScript for Tab Switching
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove "active" from all buttons and contents
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        // Add "active" to clicked button & corresponding section
+        btn.classList.add('active');
+        const tabId = btn.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+    </main>
