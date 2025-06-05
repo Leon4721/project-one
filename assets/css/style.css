@@ -70,6 +70,17 @@ nav, main, header, .container, .content-section {
   transform: translate(-50%, -50%);
   object-fit: cover;
 }
+.category-image {
+        width: 170px;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 8px; /* optional: slightly round corners */
+      }
+      .category-label {
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+        color: white;
+      }
 
 /* ===== Header ===== */
 header {
