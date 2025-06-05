@@ -1,8 +1,60 @@
+/* ---------------------------------------------- */
+/* 1) Font Imports (keep yours at the top)       */
+/* ---------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Macondo&family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
 @import url('https://fonts.cdnfonts.com/css/poppins');
 
+/* ---------------------------------------------- */
+/* 2) Reset & Core Flex Layout                    */
+/* ---------------------------------------------- */
+/* → Make html/body fill the viewport exactly    */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* → Turn the body into a vertical flex container */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: #fff;
+  font-family: var(--primary-font);
+  padding-bottom: 0; /* remove any extra bottom padding */
+  min-height: 100%;
+}
+
+/* → .wrapper encloses nav + content + footer */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto; /* fill the full viewport height */
+}
+
+/* → .content holds all page‐specific sections (hero, main, popups, etc.) */
+.content {
+  flex: 1 0 auto; /* grow to push footer down if needed */
+  position: relative;
+  z-index: 1;
+}
+
+/* → #popup & #popup-overlay should not force extra height */
+#popup,
+#popup-overlay {
+  flex: 0 0 auto; /* do not flex-grow or flex-shrink */
+}
+
+/* → Footer must not shrink; it will sit at the bottom */
+footer {
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------- */
+/* 3) Font & Color Variables                      */
+/* ---------------------------------------------- */
 :root {
   --primary-color: #fb621c;
   --secondary-color: #28a745;
@@ -17,50 +69,40 @@
   --other-font: '', cursive;
 }
 
-/* ===== Reset ===== */
-html, body {
-    height: auto !important;
-  min-height: 100vh;      /* ensures background still covers full viewport */
-  margin: 0;
-  padding: 0;
-}
-
+/* ---------------------------------------------- */
+/* 4) Reset & Basic Styles                        */
+/* ---------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
-}
-
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: var(--primary-font);
-  padding-bottom: 200px; /* space for fixed iframe */
 }
 
 nav, main, header, .container, .content-section {
   position: relative;
   z-index: 1;
 }
-.navbar {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-      }
-      .navbar-container {
-        padding-left: 0;
-        padding-right: 1rem;
-      }
-      .navbar-brand {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      .header-logo {
-        max-width: 150px;
-      }
-      .nav-link {
-        font-size: 0.9rem;
-        letter-spacing: 0.05rem;
-      }
 
-/* ===== Video Background ===== */
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.header-logo {
+  max-width: 150px;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+}
+
+/* ---------------------------------------------- */
+/* 5) Video Background                            */
+/* ---------------------------------------------- */
 .video-container {
   position: fixed;
   top: 0;
@@ -75,7 +117,8 @@ nav, main, header, .container, .content-section {
 .video-container::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
@@ -89,127 +132,109 @@ nav, main, header, .container, .content-section {
   min-height: 100%;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  z-index: -1;
+
+  /* Add this line: */
+  opacity: 0.5;
 }
+
+
+/* ---------------------------------------------- */
+/* 6) Category Tiles (Media Page)                 */
+/* ---------------------------------------------- */
 .category-image {
-        width: 255px;   /* 170px * 1.5 */
-        height: 255px;  /* 170px * 1.5 */
-        object-fit: cover;
-        border-radius: 8px;
-      }
-      .category-label {
-        margin-top: 0.5rem;
-        font-size: 1.1rem;
-        color: white;
-      }
-      .categories-wrapper {
-        display: flex;
-        flex-wrap: wrap;               /* allow two items per row */
-        align-items: center;           /* vertical centering */
-        justify-content: center;       /* horizontal centering */
-        height: 100vh;                 /* full viewport height */
-        gap: 2.5rem 4rem;   
-        transform: translateY(-15vh);           /* vertical gap of 2.5rem, horizontal of 4rem */
-      }
-      .bottom-row{
-        transform: translateY(-15vh);
-      }
+  width: 255px;   /* 170px * 1.5 */
+  height: 255px;  /* 170px * 1.5 */
+  object-fit: cover;
+  border-radius: 8px;
+}
 
-      /* ---------- Category Box Styling ---------- */
-      .category-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        color: #fff;
-      }
+.category-label {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: white;
+}
 
-      .category-box img {
-        width: 200px;   /* adjust as needed */
-        height: 200px;  /* adjust as needed */
-        object-fit: cover;
-        border-radius: 8px;
-        transition: transform 0.3s ease;
-      }
-      .category-box:hover img {
-        transform: scale(1.05);
-      }
+.category-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
 
-      .category-box .label {
-        margin-top: 0.75rem;
-        font-size: 1rem;
-        /* you can adjust font weight/size as you like */
-      }
+.category-box img {
+  width: 200px;   /* adjust as needed */
+  height: 200px;  /* adjust as needed */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.category-box:hover img {
+  transform: scale(1.05);
+}
+.category-box .label {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+}
 
-/* Increase margin-top so Music & Images sit lower */
+/* Positioning Top and Bottom Rows of Categories */
 .top-row {
-  margin-top: 30vh;  /* was 20vh—now push down to 30% of viewport height */
+  margin-top: 10vh;  /* push down to 30% of viewport height */
 }
-
-
 .bottom-row {
-  margin-top: 350px;  /* earlier was 285px—now 350px to add ~65px more gap */
+  margin-top: 150px;  /* add extra vertical spacing under bottom row */
 }
 
-.categories-grid .row {
-  --bs-gutter-x: 2rem; /* horizontal gap between columns */
+/* Full‐height container and grid adjustments */
+.categories-wrapper {
+  position: relative;
+  height: 100vh; /* full viewport height */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  gap: 2.5rem 4rem;
+}
+.categories-grid {
+  position: absolute;
+  bottom: 20%;          /* push rows up from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 960px;
+}
+.categories-grid .row {
+  --bs-gutter-x: 2rem;  /* horizontal gap */
+  --bs-gutter-y: 2rem;  /* vertical gap */
 }
 
 @media (max-width: 576px) {
-  /* Push the top row down less (15vh → 20vh) on tiny screens */
   .top-row {
     margin-top: 15vh;
   }
-
-  /* Shrink images to fit small screens */
   .category-image {
     width: 200px;
     height: 200px;
   }
-
-  /* Bottom row gap = ~235px + extra (increase from 235px to 285px) */
   .bottom-row {
-    margin-top: 200px;  /* up from 235px previously to maintain extra spacing */
+    margin-top: 200px;  /* maintain spacing */
+  }
+  .categories-grid {
+    bottom: 15%;
   }
 }
-      /* Full-height container, so we can position the grid from bottom */
-      .categories-wrapper {
-        position: relative;
-        height: 100vh; /* full viewport height */
-      }
 
-      /* Position the row 20% up from bottom, and space items equally */
-      .categories-grid {
-        position: absolute;
-        bottom: 20%;          /* push the top row so its bottom is at 20% from viewport bottom */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 960px;     /* limit maximum width so it doesn’t stretch too far */
-      }
-      /* Adjust spacing between rows and columns */
-      .categories-grid .row {
-        --bs-gutter-x: 2rem;  /* horizontal gap */
-        --bs-gutter-y: 2rem;  /* vertical gap */
-      }
-
-      /* Ensure on very small screens, grid shifts up a bit */
-      @media (max-width: 576px) {
-        .categories-grid {
-          bottom: 15%;
-        }
-        .category-image {
-          width: 200px;
-          height: 200px;
-        }
-      }
-
-/* ===== Header ===== */
+/* ---------------------------------------------- */
+/* 7) Header (Hero)                               */
+/* ---------------------------------------------- */
 header {
   height: 35vh;
 }
 
-/* ===== Titles ===== */
+/* ---------------------------------------------- */
+/* 8) Titles                                      */
+/* ---------------------------------------------- */
 .title,
 .subtitle {
   position: absolute;
@@ -217,24 +242,22 @@ header {
   text-align: center;
   transform: translateX(-50%);
 }
-
 .title {
   top: 40%;
   font-size: 3em;
   font-weight: bold;
 }
-
 .subtitle {
   top: 50%;
   font-size: 1.5em;
 }
 
-/* ===== Content Layout ===== */
-
-
+/* ---------------------------------------------- */
+/* 9) Buttons                                     */
+/* ---------------------------------------------- */
 .btn {
   padding: 0.8rem 1.5rem;
-  background:var(--primary-color);
+  background: var(--primary-color);
   color: black;
   border: none;
   cursor: pointer;
@@ -246,12 +269,13 @@ header {
   color: white;
 }
 
-/* ===== Location Cards ===== */
+/* ---------------------------------------------- */
+/*10) Location Cards                              */
+/* ---------------------------------------------- */
 .location-cards {
   display: flex;
   justify-content: space-between;
 }
-
 .card {
   background: #fff;
   color: #000;
@@ -260,7 +284,6 @@ header {
   border-radius: 10px;
   width: 22%;
 }
-
 .btn-check {
   background-color: #000;
   color: #fff;
@@ -270,75 +293,147 @@ header {
   cursor: pointer;
   margin-top: 0.5rem;
 }
-  #popup {
-        display: none;                 /* hidden by default */
-        position: fixed;
-        top: 50%;                      /* top edge is halfway down */
-        left: 50%;                     /* center horizontally */
-        transform: translate(-50%, -50%);   /* shift left by half its own width */
-        width: 90vw;
-        max-width: 600px;
-        max-height:90vh;
-        background-color: #fb621c;      /* orange background */
-        color: white;                  /* white text */
-        padding: 1.5rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        z-index: 1000;                 /* sit on top of everything */
-        border-radius: 8px;
-         overflow: hidden;
-      }
 
-#popup-inner {
-  max-height: calc(90vh - 2rem);   /* account for popup padding */
-  overflow-y: auto;
-  padding-right: 0.5rem;           /* ensure scrollbar doesn’t overlap text */
+/* ---------------------------------------------- */
+/*11) Popup                                       */
+/* ---------------------------------------------- */
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 600px;
+  max-height: 90vh;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
 }
-
-      /* Close button (×) in the top-right corner */
-      #popup .close-btn {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.75rem;
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        color: white;
-        z-index:1001;
-      }
-
-      /* Dimmed overlay behind the popup */
-      #popup-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 900;
-      }
-      @media (max-width: 400px) {
+#popup-inner {
+  max-height: calc(90vh - 2rem);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+#popup .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  z-index: 1001;
+}
+#popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+}
+@media (max-width: 400px) {
   #popup {
-    width: 95vw;          /* almost full width on very small screens */
-    padding: 0.75rem;     /* slightly less padding */
-    max-height: 95vh;     /* allow a bit more vertical room */
+    width: 95vw;
+    padding: 0.75rem;
+    max-height: 95vh;
   }
   #popup .close-btn {
-    font-size: 1.25rem;   /* slightly smaller close icon */
+    font-size: 1.25rem;
   }
 }
-/* ===== Responsive Design ===== */
 
+/* ---------------------------------------------- */
+/*12) Responsive Adjustments                      */
+/* ---------------------------------------------- */
+@media (max-width: 767px) {
+  html, body {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+  }
+  main, .container, #popup, #popup-inner {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+  /* Remove tall padding/margins on sections */
+  .my-5, .py-5, .pt-5, .pb-5 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
 
-/* ===== Image Slider ===== */
+/* ---------------------------------------------- */
+/*13) About Hero                                  */
+/* ---------------------------------------------- */
+.about-hero {
+  position: relative;
+  height: 60vh;
+  color: #fff;
+}
+.about-hero .hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero-subtitle {
+  font-size: 1.25rem;
+}
+
+/* ---------------------------------------------- */
+/*14) Site Footer Widgets (extra styling if used) */
+/* ---------------------------------------------- */
+.site-footer .footer-widgets {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.site-footer .footer-widgets .widget {
+  flex: 1 1 200px;
+  margin: 1rem;
+}
+.site-footer .social-icons {
+  list-style: none;
+  padding: 0;
+}
+.site-footer .social-icons li {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------- */
+/*15) Image Slider                                */
+/* ---------------------------------------------- */
 .slider {
   animation: autoRun 20s linear infinite;
 }
-
 .slider:hover {
   animation-play-state: paused;
 }
-
 .banner {
   width: 100%;
   height: 100vh;
@@ -346,7 +441,6 @@ header {
   overflow: hidden;
   text-align: center;
 }
-
 .banner .slider {
   position: absolute;
   width: 250px;
@@ -358,7 +452,6 @@ header {
   animation: autoRun 20s linear infinite;
   z-index: 2;
 }
-
 @keyframes autoRun {
   from {
     transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
@@ -367,19 +460,16 @@ header {
     transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
   }
 }
-
 .banner .slider .item {
   position: absolute;
   inset: 0;
   transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
 }
-
 .banner .slider .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .banner .content {
   position: absolute;
   bottom: 0;
@@ -393,7 +483,6 @@ header {
   align-items: center;
   z-index: 1;
 }
-
 .banner .content h1 {
   font-family: 'ICA Rubrik';
   font-size: 16em;
@@ -401,7 +490,6 @@ header {
   color: #25283B;
   position: relative;
 }
-
 .banner .content h1::after {
   content: attr(data-content);
   position: absolute;
@@ -410,17 +498,14 @@ header {
   -webkit-text-stroke: 2px #d2d2d2;
   color: transparent;
 }
-
 .banner .content .author {
   font-family: Poppins;
   text-align: right;
   max-width: 200px;
 }
-
 .banner .content h2 {
   font-size: 3em;
 }
-
 .banner .content .model {
   background-image: url(images/model.png);
   width: 100%;
@@ -433,26 +518,21 @@ header {
   background-position: top center;
   z-index: 1;
 }
-
-/* ===== Responsive Banner ===== */
 @media (max-width: 1023px) {
   .banner .slider {
     width: 160px;
     height: 200px;
     left: calc(50% - 80px);
   }
-
   .banner .slider .item {
     transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px);
   }
-
   .banner .content h1 {
     text-align: center;
     width: 100%;
     text-shadow: 0 10px 20px #000;
     font-size: 7em;
   }
-
   .banner .content .author {
     color: #fff;
     padding: 0 30px;
@@ -461,24 +541,23 @@ header {
     text-shadow: 0 10px 20px #000;
   }
 }
-
 @media (max-width: 767px) {
   .banner .slider {
     width: 100px;
     height: 150px;
     left: calc(50% - 50px);
   }
-
   .banner .slider .item {
     transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(180px);
   }
-
   .banner .content h1 {
     font-size: 5em;
   }
 }
 
-/* ===== iFrame Footer Section ===== */
+/* ---------------------------------------------- */
+/*16) iFrame Footer Section                       */
+/* ---------------------------------------------- */
 .iframe-container {
   position: fixed;
   bottom: 0;
@@ -489,7 +568,6 @@ header {
   border-top: 2px solid #333;
   z-index: 1000;
 }
-
 .iframe-bottom,
 .map-iframe {
   width: 100%;
@@ -497,27 +575,26 @@ header {
   border: none;
 }
 
-/* ===== Logo and Navbar ===== */
+/* ---------------------------------------------- */
+/*17) Logo and Navbar                              */
+/* ---------------------------------------------- */
 .logo,
 .header-logo {
   max-width: 75%;
   height: auto;
   object-fit: contain;
 }
-
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 @media (max-width: 768px) {
   .logo,
   .header-logo {
     max-width: 40%;
   }
 }
-
 @media (max-width: 480px) {
   .logo,
   .header-logo {
@@ -525,7 +602,9 @@ header {
   }
 }
 
-/* ===== Gallery Section ===== */
+/* ---------------------------------------------- */
+/*18) Gallery Section                              */
+/* ---------------------------------------------- */
 .gallery {
   display: flex;
   justify-content: center;
@@ -537,7 +616,6 @@ header {
   min-height: 100vh;
   margin: 0;
 }
-
 .categories1 {
   display: flex;
   flex-wrap: wrap;
@@ -545,7 +623,6 @@ header {
   align-items: center;
   gap: 2rem;
 }
-
 .category1 {
   display: flex;
   flex-direction: column;
@@ -553,7 +630,6 @@ header {
   text-decoration: none;
   color: #fff;
 }
-
 .icon-circle {
   width: 100px;
   height: 100px;
@@ -566,7 +642,6 @@ header {
   transition: transform 0.3s ease;
   overflow: hidden;
 }
-
 .icon-circle .circle-image {
   width: 100%;
   height: 100%;
@@ -574,24 +649,19 @@ header {
   object-position: center;
   display: block;
 }
-
 .spin-container {
   animation: spin 8s linear infinite;
 }
-
 .category1:hover .spin-container {
   animation-play-state: paused;
 }
-
 .category1:hover .icon-circle {
   transform: scale(1.1);
 }
-
 .label {
   margin-top: 0.5rem;
   font-size: 1.1rem;
 }
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -601,36 +671,82 @@ header {
   }
 }
 
-/* ===== Miscellaneous ===== */
+/* ---------------------------------------------- */
+/*19) Miscellaneous                                */
+/* ---------------------------------------------- */
 .features-list {
   list-style: none;
   padding-left: 0;
 }
-
 .features-list li::before {
   content: "✔️ ";
   margin-right: 0.5rem;
   color: #0d6efd;
 }
+
+/* ---------------------------------------------- */
+/*20) Sticky Header Logo (if needed)               */
+/* ---------------------------------------------- */
 .header-logo {
-position: sticky;
-bottom: 0%;
-left: 80%%
+  position: sticky;
+  bottom: 0%;
+  left: 80%;
 }
-.hero .container {
+#photo-section {
   position: relative;
-  z-index: 1;
+  height: 100vh; /* full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#carouselExampleCaptions {
+        max-width: 100%;
+        height: 60vh; /* Carousel is 60% of viewport height */
+        margin: 0 auto; /* center horizontally if inside a larger container */
+      }
+
+      /* 2) Make sure the inner .carousel-inner also spans that 60vh */
+      #carouselExampleCaptions .carousel-inner {
+        height: 100%;
+      }
+
+      /* 3) Force each slide’s <img> to fill 100% width & height of its parent, cropping as needed */
+      #carouselExampleCaptions .carousel-item img {
+        width: 50%;
+        height: 50%;
+        object-fit: cover; /* scale & crop so the image always covers the 60vh area */
+      }
+
+      /* 4) Optional: If you’d rather see the entire image without cropping,
+            use object-fit: contain; and add a black background behind it: */
+      /*
+      #carouselExampleCaptions .carousel-item img {
+        background-color: #000;
+        object-fit: contain;
+      }
+      */
+
+      /* 5) Adjust captions’ font size so they’re legible within a shorter carousel */
+      #carouselExampleCaptions .carousel-caption h5 {
+        font-size: 1.25rem;
+      }
+      #carouselExampleCaptions .carousel-caption p {
+        font-size: 1rem;
+      }
+
+      /* 6) On very small screens, shrink the caption text further */
+      @media (max-width: 576px) {
+        #carouselExampleCaptions {
+          height: 50vh; /* reduce to 50vh on small phones if desired */
+        }
+        #carouselExampleCaptions .carousel-caption h5 {
+          font-size: 1rem;
+        }
+        #carouselExampleCaptions .carousel-caption p {
+          font-size: 0.875rem;
+        }
+      }
+    </style>
+  </head>
+
   
-
-}
-#map-wrapper {
-
-    height: 300px;
-    margin-bottom: 55px;
-}
-
-#map {
-    height: 100%;
-    width: 100%;
-    border: none;
-}

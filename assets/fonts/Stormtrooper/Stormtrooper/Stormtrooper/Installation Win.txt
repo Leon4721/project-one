@@ -1,0 +1,53 @@
+HOW TO INSTALL FONTS IN WINDOWS
+
+If you downloaded the fonts, they are compressed in a Zip
+archive. Open the file with WinZip, which may already be on
+your computer. If it isn't, you can download Stuffit
+Expander for  free at http://www.stuffit.com 
+-- once that is installed and you've restarted, double-click 
+the downloaded file, and it should extract a folder containing 
+the font files.
+
+For most applications, we recommend Opentype fonts, which are compatible with both Windows and Mac. Certain Microsoft applications have been known to have trouble recognizing Opentype, so if you have any trouble, remove the Opentype and install the Truetype instead.
+
+Be sure to install EITHER the Opentype OR the Truetype files, not both.
+
+
+WINDOWS 7:
+
+1. Right-click the font you want to install and click Install.
+
+You can also install a font by dragging it into Fonts in Control Panel.
+
+
+WINDOWS VISTA or XP:
+
+1. Open Fonts in Start > Control Panel.
+
+2. On the File menu, click Install New Font.
+
+3. In Drives, click the drive you want.
+
+4. In Folders, double-click the folder that contains the fonts you want to add.
+
+5. In List of fonts, click the font you want to add, and then click OK.
+To add all of the listed fonts, click Select All, and then click OK.
+
+NOTES:
+
+To open Fonts, click Start, click Control Panel, and then click Appearance and Themes. Under See Also, click Fonts. 
+
+To select more than one font to add, hold down the CTRL key, and then click each of the fonts you want to add.
+
+You can also drag OpenType, TrueType, Type 1, and raster fonts from another location to add them to the Fonts folder. This works only if the font is not already in the Fonts folder.
+
+To add fonts from a network drive without using disk space on your computer, make sure that the Copy fonts to Fonts folder check box, in the Add Fonts dialog box, is clear This is available only when you install OpenType, TrueType, or raster fonts using the Install New Font option on the File menu. 
+
+
+You will probably need to quit and relaunch any open
+applications for the fonts to become available.
+
+If you have any trouble installing fonts, email us at orders@comicbookfonts.com
+
+If you have questions about fonts or comic lettering, check out our Balloon Tales website
+at http://www.balloontales.com/

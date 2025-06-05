@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Da Big Homie | Images Gallery</title>
+    <title>Da Big Homie |   gallery</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -16,164 +16,155 @@
       crossorigin="anonymous"
     />
 
-    <style>
-      /* ===== Reset & Fullscreen Behavior ===== */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        background-color: #000;
-        color: #fff;
-        font-family: 'Press Start 2P', cursive;
-        overflow: hidden; /* only scroll if carousel slides overflow vertically */
-      }
+    <!-- Optional: Your existing style.css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-      /* ===== Back Button Styling ===== */
+    <style>
+      /* ───────────────────────────────────────────────────────────────── */
+      /* Overlay & Back Button (unchanged) */
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
       .back-button {
         position: absolute;
         top: 1rem;
         left: 1rem;
-        color: #fff;
+        color: white;
         font-size: 1.25rem;
         text-decoration: none;
-        z-index: 1050; /* above carousel */
+        z-index: 3;
       }
       .back-button:hover {
         text-decoration: underline;
       }
 
-      /* ===== Container/Wrappers ===== */
-      .carousel-wrapper {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
+      /* ───────────────────────────────────────────────────────────────── */
+      /* Carousel sizing & centering */
+      #carouselExampleCaptions {
+        width: 50vw;       /* 50% of viewport width on large screens */
+        max-width: 800px;  /* Optional: never exceed 800px wide */
+        height: 60vh;      /* 60% of viewport height */
+        margin: 0 auto;    /* Center horizontally */
       }
-      /* Ensure carousel fills the viewport */
-      .carousel,
-      .carousel-inner,
-      .carousel-item,
-      .carousel-item img {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
+      @media (max-width: 768px) {
+        /* Between 768px–576px, let carousel go full width but keep height */
+        #carouselExampleCaptions {
+          width: 100%;
+          height: 60vh;
+        }
+      }
+      @media (max-width: 576px) {
+        /* On very small screens, shrink height to 50vh */
+        #carouselExampleCaptions {
+          width: 100%;
+          height: 50vh;
+        }
       }
 
-      /* Caption background darkening */
-      .carousel-caption {
-        background: rgba(0, 0, 0, 0.4);
-        padding: 1rem;
-        border-radius: 0.5rem;
+      /* 1) Make .carousel-inner fill that 60vh (or 50vh) */
+      #carouselExampleCaptions .carousel-inner {
+        height: 100%;
       }
+
+      /* 2) Each slide is a flex container so <img> stays centered */
+      #carouselExampleCaptions .carousel-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      /* 3) Force <img> to scale responsively, showing entire image (no cropping) */
+      #carouselExampleCaptions .carousel-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        overflow: hidden;
+        background-color: #000; /* letterbox bars appear black */
+      }
+
+      /* 4) Adjust caption fonts */
+      #carouselExampleCaptions .carousel-caption h5 {
+        font-size: 1.25rem;
+      }
+      #carouselExampleCaptions .carousel-caption p {
+        font-size: 1rem;
+      }
+      @media (max-width: 576px) {
+        #carouselExampleCaptions .carousel-caption h5 {
+          font-size: 1rem;
+        }
+        #carouselExampleCaptions .carousel-caption p {
+          font-size: 0.875rem;
+        }
+      }
+
     </style>
   </head>
 
   <body>
-    <!-- Back Button -->
-    <a href="javascript:history.back()" class="back-button">← Back</a>
+    <section id="photo-section" class="container text-white">
+  <div class="text-center mb-4">
+     <p>
+   Explore a collection of memories.
+      .
+    </p>
+  </div>
+    <!-- BACKGROUND VIDEO & OVERLAY -->
+  
 
-    <!-- Carousel Wrapper -->
-    <div class="carousel-wrapper">
-      <div
-        id="carouselExampleCaptions"
-        class="carousel slide carousel-fade"
-        data-bs-ride="carousel"
-      >
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
+    <!-- BACK BUTTON (always returns to media.html) -->
+    <a href="media.html" class="back-button">← Back</a>
 
-        <!-- Carousel Inner -->
-        <div class="carousel-inner">
-          <!-- Slide 1 -->
-          <div class="carousel-item active">
-            <img
-              src="assets/image/party 1.png"
-              class="d-block w-100"
-              alt="Gallery Image 1"
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Urban Mural</h5>
-              <p>A vibrant cityscape mural in downtown.</p>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item">
-            <img
-              src=""
-              class="d-block w-100"
-              alt="Gallery Image 2"
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Live Painting</h5>
-              <p>Artist at work during a street festival.</p>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item">
-            <img
-              src="assets/image/20250605_0402_Block Party Excitement_simple_compose_01jwz0j3tge4480zvjp4d9a146.png"
-              class="d-block w-100"
-              alt="Gallery Image 3"
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Graffiti Alley</h5>
-              <p>A colorful alleyway full of street art.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Controls -->
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        >
-          <span
-            class="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        >
-          <span
-            class="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+    <!-- CAROUSEL SECTION -->
+    <section id="gallery-section">
+      <!-- Carousel -->
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="./assets/image/latisha .png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="./assets/image/rapper 1.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./assets/image/party 5.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+      
+    </section>
 
     <!-- Bootstrap JS -->
     <script
@@ -181,5 +172,27 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      // ─────────────────────────────────────────────────────────────────────────
+      // Keep thumbnails highlighted when slide changes:
+      const carouselEl = document.getElementById('carouselExampleCaptions');
+      const thumbnails = document.querySelectorAll('.thumbnail-strip .thumbnail');
+
+      carouselEl.addEventListener('slide.bs.carousel', (event) => {
+        const nextIndex = event.to; // index of the incoming slide
+        thumbnails.forEach((thumb, idx) => {
+          thumb.classList.toggle('active', idx === nextIndex);
+        });
+      });
+
+      // Highlight thumbnail immediately on click (Bootstrap will then slide automatically)
+      thumbnails.forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+          thumbnails.forEach((t) => t.classList.remove('active'));
+          thumb.classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>

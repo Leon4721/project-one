@@ -1,0 +1,43 @@
+HOW TO INSTALL FONTS
+
+Before beginning the installation process, we recommend you consult the manual that came with your system software. If you have a font management utility installed, such as Suitcase or ATM Deluxe, please follow the instructions that came with that program.
+
+For most applications, we recommend Opentype fonts, which are compatible with both Windows and Mac. Certain Microsoft applications have been known to have trouble recognizing Opentype, so if you have any trouble, remove the Opentype and install the Truetype instead.
+
+Be sure to install EITHER the Opentype OR the Truetype files, not both.
+
+
+MACINTOSH OSX:
+
+1. Select the contents of either the Opentype or Truetype folder, and choose File > Open (command-0).
+
+2. Click "install".
+
+
+NOTES:
+
+Alternately, you can drag either the Opentype or Truetype files to Macintosh HD/Library/Fonts. You may create folders within the "Fonts" folder to keep them organized.
+
+If you want the fonts available in OS9 (classic mode), also drag the OpenType files to the "Fonts" folder in the System Folder of OS9 (Macintosh HD/System Folder/Fonts).
+
+3. If you want the fonts available only to specific user(s) within OSX,  place them inside  Macintosh HD/Users/(your user name)/Library/Fonts
+
+4. If you want the fonts to only show up in Adobe products (Illustrator, Photoshop, InDesign, etc.),  place them inside Macintosh HD/Library/Application Support/Adobe/Fonts.
+
+
+MACINTOSH OS 9 AND EARLIER:
+
+Drag the OpenType files ("CCFontName.otf") to your System Folder and click "Ok".
+
+To use OpenType fonts, you will need to have a version of ATM 
+installed. You can download ATM Light for free at 
+http://www.adobe.com/products/atmlight/main.html
+
+
+You will probably need to quit and relaunch any open
+applications for the fonts to become available.
+
+If you have any trouble installing fonts, email us at orders@comicbookfonts.com
+
+If you have questions about fonts or comic lettering, check out our Balloon Tales website at http://www.balloontales.com/
+
