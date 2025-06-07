@@ -1233,3 +1233,148 @@ a.text-white.position-absolute {
   .articles-hero h2 { font-size: 1rem; }
   .articles-hero p  { font-size: 0.875rem; }
 }
+
+/* super-small phones */
+@media (max-width: 350px) {
+  /* collapse container padding to edge-to-edge */
+  main.container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* tighten up the hero */
+  .articles-hero {
+    height: auto;            /* let it grow */
+    padding: 1rem 0.5rem;    /* less side padding */
+    text-align: left;
+  }
+  .articles-hero h2 {
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+    margin-top: 0;
+  }
+  .articles-hero p {
+    font-size: clamp(0.75rem, 4vw, 1rem);
+  }
+
+  /* collapse grid gutters */
+  .row.gx-3 {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0.5rem;
+  }
+
+  /* shrink cards */
+  .card.track-card {
+    flex-direction: column;
+  }
+  .card-body {
+    padding: 0.75rem;
+  }
+  .card-title {
+    font}
+  }
+
+  @media (max-width: 320px) {
+  .catergories-wrapper{ height: fit-content;   }
+}
+/* -------------------------------------------------- */
+/* Very small screens – ensure full media page fits   */
+/* -------------------------------------------------- */
+@media (max-width: 400px) {
+  /* prevent any horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Back-link: keep it accessible */
+  a.text-white.position-absolute {
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 1rem;
+    z-index: 20;
+  }
+
+  /* Sidebar → bottom bar */
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  }
+  .sidebar-btn {
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin-right: 0.5rem;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+  .sidebar-table, .contact-table {
+    width: 90vw;
+    margin: 0.5rem auto;
+    font-size: 0.8rem;
+  }
+
+  /* Collapse hero to auto height, shrink text */
+  .articles-hero {
+    height: auto !important;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+  .articles-hero h2 {
+    font-size: clamp(1rem, 8vw, 1.75rem) !important;
+    margin: 0;
+  }
+  .articles-hero p {
+    font-size: clamp(0.75rem, 5vw, 1rem) !important;
+  }
+
+  /* Main container: remove side padding */
+  main.container {
+    padding: 1rem 0.5rem;
+  }
+
+  /* 2×2 grid for categories */
+  .categories-wrapper {
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.5rem;
+    padding: 1rem 0;
+    align-items: start;
+    justify-items: center;
+    position: static !important;
+    transform: none !important;
+  }
+  .categories-grid {
+    width: 100% !important;
+    bottom: auto !important;
+    left: auto !important;
+  }
+  .top-row, .bottom-row {
+    margin-top: 1rem !important;
+  }
+  .category-box {
+    width: 100%;
+    max-width: 120px;
+    text-align: center;
+  }
+  .category-image {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+  }
+  .category-label {
+    font-size: 0.8rem;
+  }
+
+  /* Tighten up card layouts if you have any on this page */
+  .card {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 0.85rem;
+  }
+}
