@@ -482,6 +482,7 @@ header {
 .slider:hover {
   animation-play-state: paused;
 }
+
 .banner {
   width: 100%;
   height: 100vh;
@@ -664,14 +665,14 @@ header {
   min-height: 100vh;
   margin: 0;
 }
-.categories1 {
+.categories {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
-.category1 {
+.category {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -748,6 +749,17 @@ header {
   align-items: center;
   justify-content: center;
 }
+  #carouselExampleIndicators {
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; /* so it stays above the video background */
+  }
+
+  /* 2) Prevent “dead” overscroll around it */
+  body {
+    overscroll-behavior-y: contain;
+  }
 #carouselExampleCaptions {
         max-width: 100%;
         height: 60vh; /* Carousel is 60% of viewport height */
@@ -826,7 +838,7 @@ main {
       background: #333;
       color: #fff;
       text-align: center;
-      padding: 1rem;
+      padding: 0.5rem;
       z-index: 1000; /* make sure it sits on top of other content */
       height: 2.5rem;
   line-height: 2.5rem; /* vertically center text if it’s a single line */
@@ -861,165 +873,32 @@ main {
         font-size: 1.1rem;
       }
     }
-    footer.fixed-bottom {
-        font-size: 0.75rem;
-        line-height: 1;
-      }
-      footer.fixed-bottom .container {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-      }
-      footer.fixed-bottom h6,
-      footer.fixed-bottom small {
-        margin: 0;
-        padding: 0;
-      }
-      footer.fixed-bottom .fa-lg {
-        font-size: 1rem;
-      }
+    /*  — Merit: subtle hover/transition effects — */
 
-      /* 2) Prevent page content from hiding behind the fixed footer */
-      body {
-        margin: 0;
-        padding-bottom: 3rem; /* Enough space for the footer */
-        background-color: #000; /* Optional: match your site’s dark theme */
-      }
+/* Buttons */
+.btn {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.btn:hover,
+.btn:focus {
+  transform: translateY(-2px);
+}
 
-      /* 3) “Back” button styling (so it’s visible on dark backgrounds) */
-      .back-button {
-        color: #fff;
-        text-decoration: none;
-        margin: 1rem;
-        display: inline-block;
-      }
+/* Cards (track-cards, article-cards, event-cards) */
+.card {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.card:hover,
+.card:focus-within {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+}
 
-      /* 4) Make each card’s image use a fixed aspect ratio (16:9) */
-      .card-img-top-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /* 9 ÷ 16 = 0.5625 → 56.25% → 16:9 */
-        overflow: hidden;
-      }
-      .card-img-top-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Crop/scale without distortion */
-      }
-      /* Remove extra padding on the overlay so titles sit flush */
-      .card-img-overlay {
-        padding: 0;
-      }
-      .card-img-overlay .card-title {
-        margin: 0;
-        padding: 0.5rem;
-        background: rgba(0, 0, 0, 0.75);
-        font-size: 0.9rem;
-      }
-
-      /* 5) Keep the card body tight under the image */
-      .article-card .card-body {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.75rem;
-      }
-      .article-card .card-text,
-      .article-card .btn {
-        font-size: 0.85rem;
-      }
-
-      /* 6) At very narrow widths (≤320px), shrink text/spacing further */
-      @media (max-width: 320px) {
-        .card-img-overlay .card-title {
-          font-size: 0.8rem;
-          padding: 0.3rem;
-        }
-        .article-card .card-body {
-          padding: 0.5rem;
-        }
-        .article-card .card-text,
-        .article-card .btn {
-          font-size: 0.75rem;
-        }
-      }
-      .card-img-top-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /* 9 ÷ 16 = 0.5625 → 56.25% → 16:9 aspect ratio */
-        overflow: hidden;
-      }
-      .card-img-top-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Crop/scale so it covers the box */
-      }
-
-      /* 2) Remove any extra padding on the overlay so titles sit flush */
-      .card-img-overlay {
-        padding: 0;
-      }
-      .card-img-overlay .card-title {
-        margin: 0;
-        padding: 0.5rem;
-        background: rgba(0, 0, 0, 0.75);
-        font-size: 0.9rem;
-      }
-
-      /* 3) Keep the card body tight under the image */
-      .article-card .card-body {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.75rem;
-      }
-      .article-card .card-text,
-      .article-card .btn {
-        font-size: 0.85rem;
-      }
-
-      /* 4) Shrink text/spacing further on very small screens (≤320px) */
-      @media (max-width: 320px) {
-        .card-img-overlay .card-title {
-          font-size: 0.8rem;
-          padding: 0.3rem;
-        }
-        .article-card .card-body {
-          padding: 0.5rem;
-        }
-        .article-card .card-text,
-        .article-card .btn {
-          font-size: 0.75rem;
-        }
-      }
-
-      /* 5) Keep footer slim and fixed to bottom */
-      body {
-        margin: 0;
-        padding-bottom: 3rem; /* Buffer so main content never hides behind footer */
-        background-color: #000; /* Match dark theme background */
-      }
-      footer.fixed-bottom {
-        font-size: 0.75rem;
-        line-height: 1;
-      }
-      footer.fixed-bottom .container {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-      }
-      footer.fixed-bottom h6,
-      footer.fixed-bottom small {
-        margin: 0;
-        padding: 0;
-      }
-      footer.fixed-bottom .fa-lg {
-        font-size: 1rem;
-      }
-
-      /* 6) “Back” button styling */
-      .back-button {
-        color: #fff;
-        text-decoration: none;
-        margin: 1rem;
-        display: inline-block;
+/* Nav links */
+.nav__link {
+  transition: color 0.2s ease;
+}
+.nav__link:hover,
+.nav__link:focus {
+  color: var(--color-accent);
+}

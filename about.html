@@ -109,102 +109,14 @@
       <div class="container">
         <h2 class="section-title">Our Mission</h2>
         <p>
-          At Da Big Homie, we believe in three pillars:<ul><li><strong>Elevate,</li>
-          <li>Empower</li>,<li> Unite</li></strong>.</ul>
+          At Da Big Homie, we believe in three pillars:<ul><li>
+            <strong>Elevate</li>
+          <li>Empower</li><li> Unite</li></strong>.</ul>
            <br>
           Our goal is to uplift underrepresented
           voices and leverage technology to foster real-world connections
           rooted in African diasporic traditions.</p>
-        <br>
-        <div class="pillars-grid">
-          <div class="pillar-card">
-            <h3>Elevate Local Voices</h3>
-            <ul>
-              <li>
-                <strong>Artist Spotlights</strong>: Weekly features with
-                video interviews, photo essays, and short documentaries
-                that dive into each artist’s journey.
-              </li>
-              <li>
-                <strong>Music Releases & Playlists</strong>: Biweekly
-                “Big Homie Beats” mixtapes bundled with a cultural zine
-                PDF.
-              </li>
-            </ul>
-          </div>
-          <div class="pillar-card">
-            <h3>Empower Through Resources</h3>
-            <ul>
-              <li>
-                <strong>Resource Hub</strong>: Grants, equipment-sharing,
-                and workshop listings tailored for hip-hop artists.
-              </li>
-              <li>
-                <strong>Workshops & Masterclasses</strong>: Free or
-                donation-based livestreams on sampling, beat-making,
-                breakin’, and more—led by diaspora veterans.
-              </li>
-            </ul>
-          </div>
-          <div class="pillar-card">
-            <h3>Unite Community Through Events</h3>
-            <ul>
-              <li>
-                <strong>Virtual Cyphers & Battles</strong>: Weekly
-                freestyle contests with community voting and mentorship
-                prizes.
-              </li>
-              <li>
-                <strong>Dance-Off Showcases</strong>: Quarterly online
-                competitions covering popping, locking, Afro-house,
-                Kizomba, and other diaspora-influenced styles.
-              </li>
-              <li>
-                <strong>Local Block Parties</strong>: In-person park
-                gatherings featuring live DJs, mural art, dance crews,
-                and local vendors.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Celebrating African Diaspora Culture -->
-    <section class="content-section diaspora">
-      <div class="container">
-        <h2 class="section-title">Celebrating African Diaspora Culture</h2>
-        <img src=""
-          alt="African Diaspora Culture"
-          class="section-image"
-        <p>
-          Hip-hop is a living extension of African diasporic traditions:
-          from West African drumming that laid the foundation for
-          breakbeats to Jamaican toasting that pioneered MC culture. At
-          Da Big Homie, every program and event is crafted to honor this
-          lineage while celebrating modern innovation.
-        </p>
-        <p>
-          Our “Origins” blog series traces how B-boy culture in New York
-          emerged from dancers imitating Congolese drummers’ footwork.
-          We also interview local elders who migrated from Ghana,
-          Nigeria, and Ivory Coast—letting them share how hip-hop
-          intersects with their home traditions.
-        </p>
-        <div class="mural-highlight">
-          <img
-            src="assets/"
-            alt=""
-            class="responsive-img"
-          />
-          <figcaption>
-            A commissioned mural depicting Adinkra symbols intertwined
-            with breakdancers—standing as a neighborhood landmark of
-            unity and creativity.
-          </figcaption>
-        </div>
-      </div>
-    </section>
+        
 
     <!-- Call to Action -->
     <section class="content-section cta">
@@ -258,5 +170,27 @@
       </div>
     </div>
   </footer>
+  <script>
+  (function() {
+    const carousel = document.querySelector('#carouselExampleIndicators');
+    if (!carousel) return;
+
+    const maxOffset = window.innerHeight * 0.2;
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const rect = carousel.getBoundingClientRect();
+      // how far the carousel’s center is from the viewport center
+      const offset = (rect.top + rect.height / 2) - (window.innerHeight / 2);
+
+      // if it drifts beyond ±20% of viewport height, snap back
+      if (Math.abs(offset) > maxOffset) {
+        window.scrollTo({ top: lastScrollY, behavior: 'auto' });
+      } else {
+        lastScrollY = window.scrollY;
+      }
+    });
+  })();
+</script>
 </body>
 </html>
