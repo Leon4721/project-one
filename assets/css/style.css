@@ -176,6 +176,8 @@ nav, main, header, .container, .content-section {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  height: 100%;
   min-width: 100%;
   min-height: 100%;
   transform: translate(-50%, -50%);
@@ -185,7 +187,9 @@ nav, main, header, .container, .content-section {
   /* Add this line: */
   opacity: 0.5;
 }
-
+#hero .banner {
+  margin-bottom: 0;
+}
 
 /* ---------------------------------------------- */
 /* 6) Category Tiles (Media Page)                 */
@@ -273,6 +277,7 @@ height: auto;
     bottom: 15%;
   }
 }
+
 
 /* ---------------------------------------------- */
 /* 7) Header (Hero)                               */
@@ -902,5 +907,83 @@ main {
 .nav__link:hover,
 .nav__link:focus {
   color: var(--color-accent);
+}
+
+/*---------------------------------------------------------------------------*/
+/* 2×2 GRID AT <=400px                                                      */
+/*---------------------------------------------------------------------------*/
+@media (max-width: 600px) {
+  .categories-wrapper .row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .categories-wrapper .col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    padding: 0.25rem;
+  }
+  .categories-wrapper .category-image {
+    width: 90%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem;
+  }
+  .categories-wrapper .category-label {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  /* …your existing 2×2 grid overrides… */
+
+  /* Raise both rows closer to the top of their parent */
+  .categories-wrapper .top-row,
+  .categories-wrapper .bottom-row {
+    margin-top: -0.5rem !important;
+  }
+}
+@media (max-width: 700px) {
+  html, body {
+    height: 100%;
+  }
+
+  .video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .back-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ────────────────────────────────────────────────────────────────────────── */
+/* MAINTAIN 1269×945 (47∶35) RATIO FOR BANNER                               */
+/* ────────────────────────────────────────────────────────────────────────── */
+#hero .banner {
+  width: 100%;               /* always fill its parent’s width */
+  aspect-ratio: 47 / 35;     /* locks the 1269×945 ratio */
+  overflow: hidden;          /* hide any overflow from slides */
+  position: relative;        /* so children can position absolutely */
+}
+/* ────────────────────────────────────────────────────────────────────────── */
+/* At widths ≤600px, make #hero .banner height = 1.5 × its width (2:3 ratio) */
+/* ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  #hero .banner {
+    width: 100%;            /* fill its parent */
+    aspect-ratio: 3 / 3;    /* width:height = 2:3 ⇒ height = width × 1.5 */
+    height: fit-content;           /* ensure height is governed by aspect-ratio */
+  }
 }
 
