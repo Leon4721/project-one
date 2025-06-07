@@ -774,24 +774,32 @@ header {
 
       /* 2) Make sure the inner .carousel-inner also spans that 60vh */
       #carouselExampleCaptions .carousel-inner {
-        height: 100%;
+        height: 100%;position: relative;
+    width: 100%;
+    /* 9/16 = 56.25% */
+    padding-top: 56.25%;
+    overflow: hidden;
       }
 
       /* 3) Force each slide’s <img> to fill 100% width & height of its parent, cropping as needed */
       #carouselExampleCaptions .carousel-item img {
-        width: 50%;
-        height: 50%;
+        width: 100%;
+        height: 100%;
         object-fit: cover; /* scale & crop so the image always covers the 60vh area */
       }
-
-      /* 4) Optional: If you’d rather see the entire image without cropping,
-            use object-fit: contain; and add a black background behind it: */
-      /*
-      #carouselExampleCaptions .carousel-item img {
-        background-color: #000;
-        object-fit: contain;
-      }
-      */
+       #carouselExampleIndicators .carousel-item {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #carouselExampleIndicators .carousel-control-prev-icon,
+  #carouselExampleIndicators .carousel-control-next-icon {
+    filter: invert(1);
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 50%;
+  }
 
       /* 5) Adjust captions’ font size so they’re legible within a shorter carousel */
       #carouselExampleCaptions .carousel-caption h5 {
@@ -829,6 +837,11 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+.gallery .container {
+  min-height: 568px;
+  max-height: 900px;
+  overflow-y: auto;
 }
 
 main {
