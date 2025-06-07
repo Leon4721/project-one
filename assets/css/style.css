@@ -999,42 +999,39 @@ main {
     height: fit-content;           /* ensure height is governed by aspect-ratio */
   }
 }
-/* 1) Ensure the inner wrapper can slide */
-.carousel-inner {
-  display: block !important;        /* override flex/grid hacks */
-  overflow: hidden !important;      /* keep slides clipped but let JS transform work */
+
+/* Ensure back-link sits above everything */
+a.text-white.position-absolute {
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
-/* 2) Make sure each slide is positioned correctly */
-.carousel-item {
-  position: relative !important;    /* bootstrap uses relative for slide positioning */
-  display: block !important;        /* slides must be block-level for translateX() to work */
-  transition: transform 0.6s ease-in-out !important; /* restore default transition */
-  transform: translateX(0) !important;              /* reset any stray transforms */
+/* At very small widths, center the gallery and add top padding */
+@media (max-width: 400px) {
+  main {
+    justify-content: center !important; /* vertical centering */
+    align-items: center !important;     /* horizontal centering */
+    padding-top: 3rem;                  /* push below the back link */
+    padding-bottom: 10rem;               /* small bottom buffer */
+  }
 }
 
-/* 3) Ensure the active slide is visible */
-.carousel-item.active {
-  display: block !important;
-  transform: translateX(0) !important;
-  visibility: visible !important;
+
+      @media (max-width:420px) {
+  /* make the gallery section a positioning context */
+  #gallery {
+    position: relative;
+  }
+
+  /* pull the heading down toward the bottom */
+  #gallerytext {
+    position:sticky;
+    bottom: -1.6 rem;       /* tweak this value to taste */
+    right: 509%;
+    transform: translateX(-50%);
+    margin: 0;            /* reset any default margins */
+  }
 }
 
-/* 4) Controls & indicators layering */
-.carousel-control-prev,
-.carousel-control-next {
-  z-index: 2 !important;           /* bring arrows above slides */
-}
 
-.back-button {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        color: white;
-        font-size: 1.25rem;
-        text-decoration: none;
-        z-index: 3;
-      }
-      .back-button:hover {
-        text-decoration: underline;
-      }
