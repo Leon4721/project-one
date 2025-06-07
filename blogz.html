@@ -1,322 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Da Big Homie | Articles</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Da Big Homie | Articles</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <!-- Font Awesome for footer icons -->
+  <script src="https://kit.fontawesome.com/aa9af45995.js" crossorigin="anonymous"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- Inline CSS Adjustments for Equal‐Sized Images -->
-    <style>
-      /* 1) Ensure each card image fills its container without distortion (16:9) */
-      .card-img-top-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /* 9 ÷ 16 = 0.5625 → 56.25% → 16:9 aspect ratio */
-        overflow: hidden;
-      }
-      .card-img-top-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Crop/scale so it covers the box */
-      }
+  <!-- Inline CSS for layout and modal -->
+  <style>
+    html, body {
+      height: 100%; margin: 0; background: #000; color: #fff; overflow-x: hidden;
+    }
+    .articles-hero { height: 20vh; }
+    main.container { height: calc(100vh - 20vh - 3rem); padding: 1rem 0; }
+    /* Article cards: let images size naturally but cover width */
+    .track-card img.card-img-top {
+      width: 100%;
+      object-fit: cover;
+      height: auto;
+    }
+    footer.fixed-bottom { height:3rem; background:#111; }
 
-      /* 2) Remove any extra padding on the overlay so titles sit flush */
-      .card-img-overlay {
-        padding: 0;
-      }
-      .card-img-overlay .card-title {
-        margin: 0;
-        padding: 0.5rem;
-        background: rgba(0, 0, 0, 0.75);
-        font-size: 0.9rem;
-      }
+    /* Modal panes setup */
+    .modal-body {
+      height: 60vh;
+      padding: 0;
+      overflow: hidden;
+    }
+    .modal-body .modal-content-inner {
+      display: flex;
+      height: 100%;
+    }
+    .modal-body .image-pane {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 1rem;
+      flex-direction: column;
+    }
+    .modal-body .image-pane img {
+      max-width: 100%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+    .modal-body .image-pane .photo-info {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #ccc;
+    }
+    .modal-body .text-pane {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <a href="media.html" class="text-white position-absolute m-3">← Back</a>
 
-      /* 3) Keep the card body tight under the image */
-      .article-card .card-body {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.75rem;
-      }
-      .article-card .card-text,
-      .article-card .btn {
-        font-size: 0.85rem;
-      }
+  <!-- Articles Hero -->
+  <section class="articles-hero d-flex align-items-center justify-content-center text-center"
+           style="background:url('assets/image/cove.png') center/cover no-repeat;">
+    <div>
+      <h1 class="display-4">Urban Stories &amp; Features</h1>
+      <p>Dive into the heartbeat of hip-hop culture and community vibes.</p>
+    </div>
+  </section>
 
-      /* 4) Shrink text/spacing further on very small screens (≤320px) */
-      @media (max-width: 320px) {
-        .card-img-overlay .card-title {
-          font-size: 0.8rem;
-          padding: 0.3rem;
-        }
-        .article-card .card-body {
-          padding: 0.5rem;
-        }
-        .article-card .card-text,
-        .article-card .btn {
-          font-size: 0.75rem;
-        }
-      }
-
-      /* 5) Keep footer slim and fixed to bottom */
-      body {
-        margin: 0;
-        padding-bottom: 3rem; /* Buffer so main content never hides behind footer */
-        background-color: #000; /* Match dark theme background */
-      }
-      footer.fixed-bottom {
-        font-size: 0.75rem;
-        line-height: 1;
-      }
-      footer.fixed-bottom .container {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-      }
-      footer.fixed-bottom h6,
-      footer.fixed-bottom small {
-        margin: 0;
-        padding: 0;
-      }
-      footer.fixed-bottom .fa-lg {
-        font-size: 1rem;
-      }
-
-      /* 6) “Back” button styling */
-      .back-button {
-        color: #fff;
-        text-decoration: none;
-        margin: 1rem;
-        display: inline-block;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Back Button -->
-    <a href="media.html" class="back-button">← Back</a>
-
-    <!-- Articles Hero Banner -->
-    <section
-      class="articles-hero d-flex align-items-center justify-content-center text-center"
-      style="background: url('assets/image/cove.png') center/cover no-repeat; height: 50vh;"
-    >
-      <div class="hero-overlay p-4">
-        <h1 class="hero-title display-4 text-white">Urban Stories &amp; Features</h1>
-        <p class="hero-subtitle text-white">
-          Dive into the heartbeat of hip-hop culture and community vibes.
-        </p>
+  <!-- Main Content -->
+  <main class="container my-5 text-white">
+    <div class="row mb-4">
+      <div class="col text-center">
+        <h2 class="section-heading">Latest Articles</h2>
+        <p class="text-muted">Explore our latest urban features, artist spotlights, and cultural insights.</p>
       </div>
-    </section>
+    </div>
 
-    <!-- Main Content: Articles Grid -->
-    <main class="container my-5">
-      <div class="row mb-4">
-        <div class="col-12 text-center">
-          <h2 class="section-heading text-white">Latest Articles</h2>
-          <p class="text-muted">
-            Explore our latest urban features, artist spotlights, and cultural
-            insights.
-          </p>
+    <div class="row gx-3 gy-4">
+     <!-- Article 1 -->
+      <div class="col-12 col-sm-6 col-md-4 d-flex">
+        <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
+          <img src="assets/image/cover 1.png" class="card-img-top" alt="Graffiti mural" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">The Rise of Street Art</h5>
+            <p class="card-text">R&amp;B artist Donatello speaks on his journey through the industry.</p>
+            <button type="button" class="btn btn-outline-light mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal1">
+              Read More
+            </button>
+          </div>
         </div>
       </div>
 
-      <div class="row g-4">
-        <!-- Article Card 1 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card article-card h-100 border-0 shadow-sm">
-            <div class="card-img-top-wrapper">
-              <img
-                src="assets/image/cover 1.png"
-                class="card-img-top img-fluid"
-                alt="Graffiti mural in the city"
-              />
-              <div class="card-img-overlay d-flex align-items-end">
-                <h5 class="card-title text-white">The Rise of Street Art</h5>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text text-white">
-                How local graffiti artists are transforming urban walls into
-                canvases of cultural identity.
-              </p>
-              <a href="#" class="btn btn-outline-light btn-sm">Read More</a>
-            </div>
+      <!-- Article 2 -->
+      <div class="col-12 col-sm-6 col-md-4 d-flex">
+        <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
+          <img src="assets/image/afri 1.png" class="card-img-top" alt="MC performing" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Roots Rekindled: How Tradition Fuels Innovation</h5>
+            <p class="card-text">Meet Jade “Lyricist” Johnson: crafting conscious rhymes for our generation.</p>
+            <button type="button" class="btn btn-outline-light mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal2">
+              Read More
+            </button>
           </div>
         </div>
+      </div>
 
-        <!-- Article Card 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card article-card h-100 border-0 shadow-sm">
-            <div class="card-img-top-wrapper">
-              <img
-                src="assets/image/afri 1.png"
-                class="card-img-top img-fluid"
-                alt="MC performing live on stage"
-              />
-              <div class="card-img-overlay d-flex align-items-end">
-                <h5 class="card-title text-white">Local MC Spotlight</h5>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text text-white">
-                Meet Jade “Lyricist” Johnson: crafting conscious rhymes that
-                speak to our generation’s struggles and triumphs.
-              </p>
-              <a href="#" class="btn btn-outline-light btn-sm">Read More</a>
-            </div>
+      <!-- Article 3 -->
+      <div class="col-12 col-sm-6 col-md-4 d-flex">
+        <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
+          <img src="assets/image/cover 2.png" class="card-img-top" alt="DJ mixing tracks" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Sisterhood in Harmony: Shaping the Sound of Day One All-Stars</h5>
+            <p class="card-text">Four voices, one vision—meet Éclipse, the girl group that’s been in our family since demo-tapes and basement shows.</p>
+            <button type="button" class="btn btn-outline-light mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal3">
+              Read More
+            </button>
           </div>
         </div>
+      </div>
+    </div>
+  </main>
 
-        <!-- Article Card 3 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card article-card h-100 border-0 shadow-sm">
-            <div class="card-img-top-wrapper">
-              <img
-                src="assets/image/cover 2.png"
-                class="card-img-top img-fluid"
-                alt="DJ mixing tracks at a block party"
-              />
-              <div class="card-img-overlay d-flex align-items-end">
-                <h5 class="card-title text-white">Beats &amp; Blocks</h5>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text text-white">
-                From mixing decks to vinyl crates: the resurgence of analog
-                scratch culture in our community.
-              </p>
-              <a href="#" class="btn btn-outline-light btn-sm">Read More</a>
-            </div>
-          </div>
+  <!-- Modals -->
+  <!-- Modal 1 -->
+  <div class="modal fade" id="articleModal1" tabindex="-1" aria-labelledby="articleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="articleModalLabel1">Rising Flames: The Next-Gen Artist on the Block</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
-
-        <!-- Article Card 4 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card article-card h-100 border-0 shadow-sm">
-            <div class="card-img-top-wrapper">
-              <img
-                src="assets/images/article4.jpg"
-                class="card-img-top img-fluid"
-                alt="Breakdancer performing on pavement"
-              />
-              <div class="card-img-overlay d-flex align-items-end">
-                <h5 class="card-title text-white">Breaking Boundaries</h5>
-              </div>
+        <div class="modal-body">
+          <div class="modal-content-inner">
+            <div class="image-pane">
+              <img src="assets/image/cover 1.png" alt="artist Donatello">
+              <div class="photo-info">Author: Jane Doe | Photo: John Smith</div>
             </div>
-            <div class="card-body">
-              <p class="card-text text-white">
-                A look at how b-boy crews are creating safe spaces and
-                positive energy through dance.
-              </p>
-              <a href="#" class="btn btn-outline-light btn-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article Card 5 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card article-card h-100 border-0 shadow-sm">
-            <div class="card-img-top-wrapper">
-              <img
-                src="assets/images/article5.jpg"
-                class="card-img-top img-fluid"
-                alt="Graffiti workshop with youth"
-              />
-              <div class="card-img-overlay d-flex align-items-end">
-                <h5 class="card-title text-white">Youth Arts Collective</h5>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text text-white">
-                How our weekend mural workshops are empowering local youth to
-                tell their stories through art.
-              </p>
-              <a href="#" class="btn btn-outline-light btn-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article Card 6 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card article-card h-100 border-0 shadow-sm">
-            <div class="card-img-top-wrapper">
-              <img
-                src="assets/images/article6.jpg"
-                class="card-img-top img-fluid"
-                alt="Urban poetry slam in a warehouse"
-              />
-              <div class="card-img-overlay d-flex align-items-end">
-                <h5 class="card-title text-white">Spoken Word Sessions</h5>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text text-white">
-                Our monthly poetry slams are the heartbeat of raw
-                expression—hear voices that break the silence.
-              </p>
-              <a href="#" class="btn btn-outline-light btn-sm">Read More</a>
+            <div class="text-pane">
+              <p>R&amp;B artist Donatello speaks on his journey through the industry, sharing insights into the challenges and triumphs of breaking into the music scene.</p>
+              <hr>
+              <p>I still remember the first time I heard K-Soul spin a 90-second freestyle over my old MPC—promises sputtering in between the breakbeats. Now, you can’t scroll three posts deep without seeing her name lighting up the underground blogs. What sets her apart isn’t just the razor-sharp wordplay, it’s the honesty: she raps about late-night hustle, ancestral dreams, and the weight of expectations—all at once. ...</p>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </div>
 
-    <!-- Site Footer -->
-    <footer class="fixed-bottom bg-dark text-white">
-      <div class="container d-flex justify-content-between align-items-center py-1">
-        <!-- Left: Follow Us -->
-        <div class="d-flex align-items-center">
-          <h6 class="mb-0 me-3">Follow Us</h6>
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item">
-              <a href="#" aria-label="Facebook" class="text-white">
-                <i class="fa-brands fa-facebook fa-lg"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" aria-label="Instagram" class="text-white">
-                <i class="fa-brands fa-instagram fa-lg"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" aria-label="Twitter" class="text-white">
-                <i class="fa-brands fa-twitter fa-lg"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" aria-label="YouTube" class="text-white">
-                <i class="fa-brands fa-youtube fa-lg"></i>
-              </a>
-            </li>
-          </ul>
+  <!-- Modal 2 -->
+  <div class="modal fade" id="articleModal2" tabindex="-1" aria-labelledby="articleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="articleModalLabel2">Roots Rekindled: How Tradition Fuels Innovation</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
-
-        <!-- Right: Copyright -->
-        <div>
-          <small class="mb-0">&copy; 2025 Da Big Homie. All Rights Reserved.</small>
+        <div class="modal-body">
+          <div class="modal-content-inner">
+            <div class="image-pane">
+              <img src="assets/image/afri 1.png" alt="MC performing">
+              <div class="photo-info">Author: John Roe | Photo: Lisa Ray</div>
+            </div>
+            <div class="text-pane">
+              <p>Hip-hop’s heartbeat always traced back to those West African drum patterns, the rhythmic call-and-response of Jamaican sound systems...</p>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
 
-    <!-- Bootstrap JS (placed at end for faster loading) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Font Awesome (for icons) -->
-    <script src="https://kit.fontawesome.com/aa9af45995.js" crossorigin="anonymous"></script>
-  </body>
+  <!-- Modal 3 -->
+  <div class="modal fade" id="articleModal3" tabindex="-1" aria-labelledby="articleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="articleModalLabel3">Sisterhood in Harmony: Shaping the Sound of Day One All-Stars</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-content-inner">
+            <div class="image-pane">
+              <img src="assets/image/cover 2.png" alt="DJ mixing tracks">
+              <div class="photo-info">Author: Alex Smith | Photo: Maria Lee</div>
+            </div>
+            <div class="text-pane">
+              <p>Four voices, one vision—meet Éclipse, the girl group that’s been in our family since demo-tapes and basement shows...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer fixed at bottom -->
+  <footer class="fixed-bottom text-white">
+    <div class="container d-flex justify-content-between align-items-center h-100">
+      <div class="d-flex align-items-center">
+        <h6 class="mb-0 me-3">Follow Us</h6>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fa-brands fa-facebook fa-lg"></i></a></li>
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fa-brands fa-twitter fa-lg"></i></a></li>
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
+        </ul>
+      </div>
+      <small>&copy; 2025 Da Big Homie. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
