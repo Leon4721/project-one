@@ -191,10 +191,11 @@ nav, main, header, .container, .content-section {
 /* 6) Category Tiles (Media Page)                 */
 /* ---------------------------------------------- */
 .category-image {
-  width: 255px;   /* 170px * 1.5 */
-  height: 255px;  /* 170px * 1.5 */
+height: auto;
   object-fit: cover;
   border-radius: 8px;
+  max-width: 200px;
+  width: 100%;
 }
 
 .category-label {
