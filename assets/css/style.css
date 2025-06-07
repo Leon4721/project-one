@@ -575,7 +575,7 @@ header {
 }
 @media (max-width: 1023px) {
   .banner .slider {
-    width: 160px;
+    width: 100px;
     height: 200px;
     left: calc(50% - 80px);
   }
