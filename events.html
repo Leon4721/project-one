@@ -12,19 +12,62 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-
     <!-- Meta -->
     <meta name="description" content="Da Big Homie, Your #1 social media platform for local urban artists.">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
-
+    <style>
+      /* Modal Styling (you can adjust to fit your brand) */
+      .modal-custom {
+        display: none;
+        position: fixed;
+        z-index: 1200;
+        left: 0; top: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.65);
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.25s;
+      }
+      .modal-custom.show { display: flex; }
+      .modal-content-custom {
+        background: #fff;
+        color: #222;
+        border-radius: 12px;
+        max-width: 95vw;
+        width: 100%;
+        max-width: 410px;
+        box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+        padding: 2rem 1.5rem 1.25rem 1.5rem;
+        position: relative;
+        animation: fadeInUp .4s cubic-bezier(.39,.575,.565,1.000);
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(60px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      .close-modal {
+        position: absolute;
+        top: .7rem; right: 1rem;
+        font-size: 1.8rem;
+        color: #888;
+        cursor: pointer;
+        z-index: 2;
+      }
+      .success-icon {
+        font-size: 3.2rem;
+        color: #28a745;
+        margin-bottom: 0.6rem;
+      }
+      @media (max-width: 480px) {
+        .modal-content-custom { padding: 1.1rem 0.3rem 0.7rem 0.3rem; }
+      }
+    </style>
   </head>
 
   <body>
@@ -71,114 +114,202 @@
         <!-- Event Card 1 -->
         <div class="col-12 col-sm-6 col-md-4 d-flex">
           <div class="card track-card text-dark h-100 w-100">
-            <img
-              src="assets/image/20250604_0120_Dynamic Rap Performance_simple_compose_01jww4yggkfvtsendn791kspmv.gif"
-              class="card-img-top"
-              alt="Event 1"
-            />
+            <img src="assets/image/20250604_0120_Dynamic Rap Performance_simple_compose_01jww4yggkfvtsendn791kspmv.gif" class="card-img-top" alt="Event 1" />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Open Mic Night</h5>
-              <p class="card-text">
-                Showcase your talents on our local stage. Free entry. Drinks available.
-              </p>
-              <button class="btn btn-dark mt-auto">Register Now</button>
+              <p class="card-text">Showcase your talents on our local stage. Free entry. Drinks available.</p>
+              <button class="btn btn-dark mt-auto event-btn" data-form-type="artist">Register Now</button>
             </div>
           </div>
         </div>
-
         <!-- Event Card 2 -->
         <div class="col-12 col-sm-6 col-md-4 d-flex">
           <div class="card track-card text-dark h-100 w-100">
-            <img
-              src="assets/image/20250603_2000_Vibrant Hip-Hop Energy_simple_compose_01jwvjnwhsfr2928myza571a5x.gif"
-              class="card-img-top"
-              alt="Event 2"
-            />
+            <img src="assets/image/20250603_2000_Vibrant Hip-Hop Energy_simple_compose_01jwvjnwhsfr2928myza571a5x.gif" class="card-img-top" alt="Event 2" />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Beat Battle</h5>
-              <p class="card-text">
-                Compete in a high-energy music production battle. Cash prizes for winners.
-              </p>
-              <button class="btn btn-dark mt-auto">Join the Lineup</button>
+              <p class="card-text">Compete in a high-energy music production battle. Cash prizes for winners.</p>
+              <button class="btn btn-dark mt-auto event-btn" data-form-type="artist">Join the Lineup</button>
             </div>
           </div>
         </div>
-
         <!-- Event Card 3 -->
         <div class="col-12 col-sm-6 col-md-4 d-flex">
           <div class="card track-card text-dark h-100 w-100">
-            <img
-              src="assets/image/graff.png"
-              class="card-img-top"
-              alt="Event 3"
-            />
+            <img src="assets/image/graff.png" class="card-img-top" alt="Event 3" />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Graffiti Jam</h5>
-              <p class="card-text">
-                Urban art meets music in this outdoor expression space. Free materials provided.
-              </p>
-              <button class="btn btn-dark mt-auto">Reserve a Spot</button>
+              <p class="card-text">Urban art meets music in this outdoor expression space. Free materials provided.</p>
+              <button class="btn btn-dark mt-auto event-btn" data-form-type="artist">Reserve a Spot</button>
             </div>
           </div>
         </div>
-
         <!-- Event Card 4 -->
         <div class="col-12 col-sm-6 col-md-4 d-flex">
           <div class="card track-card text-dark h-100 w-100">
-            <img
-              src="assets/image/dj fe.png"
-              class="card-img-top"
-              alt="Event 4"
-            />
+            <img src="assets/image/dj fe.png" class="card-img-top" alt="Event 4" />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Live DJ Session</h5>
-              <p class="card-text">
-                Groove to the beats spun by top local DJs. Free entry. Doors open at 6 PM.
-              </p>
-              <button class="btn btn-dark mt-auto">Get Tickets</button>
+              <p class="card-text">Groove to the beats spun by top local DJs. Free entry. Doors open at 6 PM.</p>
+              <button class="btn btn-dark mt-auto event-btn" data-form-type="tickets">Get Tickets</button>
             </div>
           </div>
         </div>
-
         <!-- Event Card 5 -->
         <div class="col-12 col-sm-6 col-md-4 d-flex">
           <div class="card track-card text-dark h-100 w-100">
-            <img
-              src="assets/image/20250605_0044_Block Party Extravaganza_remix_01jwyn7md8ewkvz15n4yf8bdcn.png"
-              class="card-img-top"
-              alt="Event 5"
-            />
+            <img src="assets/image/20250605_0044_Block Party Extravaganza_remix_01jwyn7md8ewkvz15n4yf8bdcn.png" class="card-img-top" alt="Event 5" />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Soulful Jazz Night</h5>
-              <p class="card-text">
-                Experience smooth jazz performances by local ensembles. Seating is limited.
-              </p>
-              <button class="btn btn-dark mt-auto">Book Now</button>
+              <p class="card-text">Experience smooth jazz performances by local ensembles. Seating is limited.</p>
+              <button class="btn btn-dark mt-auto event-btn" data-form-type="tickets">Book Now</button>
             </div>
           </div>
         </div>
-
         <!-- Event Card 6 -->
         <div class="col-12 col-sm-6 col-md-4 d-flex">
           <div class="card track-card text-dark h-100 w-100">
-            <img
-              src="assets/image/20250605_0027_Live Music Festival Poster_remix_01jwym8vbfeyzsassgzjy1gfx1.png"
-              class="card-img-top"
-              alt="Event 6"
-            />
+            <img src="assets/image/20250605_0027_Live Music Festival Poster_remix_01jwym8vbfeyzsassgzjy1gfx1.png" class="card-img-top" alt="Event 6" />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Urban Dance Workshop</h5>
-              <p class="card-text">
-                Learn new moves from top choreographers. All skill levels welcome.
-              </p>
-              <button class="btn btn-dark mt-auto">Sign Up</button>
+              <p class="card-text">Learn new moves from top choreographers. All skill levels welcome.</p>
+              <button class="btn btn-dark mt-auto event-btn" data-form-type="artist">Sign Up</button>
             </div>
           </div>
         </div>
       </div>
     </main>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- Modal Container (Hidden by Default) -->
+    <div id="form-modal" class="modal-custom" tabindex="-1">
+      <div class="modal-content-custom">
+        <span class="close-modal" id="close-form-modal">&times;</span>
+        <div id="dynamic-form-container"></div>
+      </div>
+    </div>
+    <!-- Success Modal (Hidden) -->
+    <div id="success-modal" class="modal-custom" tabindex="-1">
+      <div class="modal-content-custom text-center">
+        <div class="success-icon">✓</div>
+        <h3>Success!</h3>
+        <p>Your <span id="success-type"></span> has been confirmed.</p>
+        <button id="return-to-events" class="btn btn-primary mt-3">Return to Events</button>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Generate Ticketing and Artist Forms
+      function generateTicketForm() {
+        return `
+        <form id="ticket-form" autocomplete="off">
+          <h4 class="mb-3">Get Tickets</h4>
+          <div class="mb-3"><label class="form-label">Name</label>
+            <input class="form-control" required>
+          </div>
+          <div class="mb-3"><label class="form-label">Email</label>
+            <input type="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Number of Tickets</label>
+            <div class="input-group">
+              <button type="button" class="btn btn-secondary" id="decrement">-</button>
+              <input type="number" min="1" value="1" class="form-control text-center" id="ticket-count" required>
+              <button type="button" class="btn btn-secondary" id="increment">+</button>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Payment Method</label>
+            <select class="form-select" required>
+              <option>Credit Card</option>
+              <option>PayPal</option>
+              <option>Crypto</option>
+            </select>
+          </div>
+          <button class="btn btn-primary w-100" type="submit">Submit</button>
+        </form>`;
+      }
+      function generateArtistForm() {
+        return `
+        <form id="artist-form" autocomplete="off">
+          <h4 class="mb-3">Register as Artist</h4>
+          <div class="mb-3"><label class="form-label">Name</label>
+            <input class="form-control" required>
+          </div>
+          <div class="mb-3"><label class="form-label">Email</label>
+            <input type="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Role</label>
+            <select class="form-select" required>
+              <option>Solo Artist</option>
+              <option>Group</option>
+              <option>Rapper</option>
+              <option>Singer</option>
+              <option>Dancer</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Performance Requirements</label>
+            <textarea class="form-control" placeholder="Tech riders, equipment needs, etc."></textarea>
+          </div>
+          <button class="btn btn-primary w-100" type="submit">Submit</button>
+        </form>`;
+      }
+      // Modal logic
+      function openModal(id) {
+        document.getElementById(id).style.display = 'flex';
+        setTimeout(() => document.getElementById(id).classList.add('show'), 10);
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.remove('show');
+        setTimeout(() => document.getElementById(id).style.display = 'none', 200);
+      }
+      // Main event form/modal logic
+      document.querySelectorAll('.event-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const formType = btn.getAttribute('data-form-type');
+          document.getElementById('dynamic-form-container').innerHTML =
+            formType === 'tickets' ? generateTicketForm() : generateArtistForm();
+          openModal('form-modal');
+          // Tickets +/- logic
+          if (formType === 'tickets') {
+            let count = 1;
+            const countInput = document.getElementById('ticket-count');
+            document.getElementById('increment').onclick = () => countInput.value = ++count;
+            document.getElementById('decrement').onclick = () => {
+              if (count > 1) countInput.value = --count;
+            };
+          }
+          // Form submit for both forms
+          document.querySelector('#dynamic-form-container form').onsubmit = function(e) {
+            e.preventDefault();
+            closeModal('form-modal');
+            document.getElementById('success-type').textContent =
+              formType === 'tickets' ? 'tickets' : 'registration';
+            openModal('success-modal');
+          };
+        });
+      });
+      // Modal close handlers
+      document.getElementById('close-form-modal').onclick = () => closeModal('form-modal');
+      document.querySelectorAll('.modal-custom').forEach(modal => {
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) closeModal(modal.id);
+        });
+      });
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') {
+          closeModal('form-modal');
+          closeModal('success-modal');
+        }
+      });
+      // Success modal return button
+      document.getElementById('return-to-events').onclick = function() {
+        closeModal('success-modal');
+        window.location.hash = '#events';
+      };
+    </script>
+  </body>
 </html>

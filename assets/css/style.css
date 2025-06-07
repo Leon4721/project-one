@@ -40,6 +40,180 @@ body {
   position: relative;
   z-index: 1;
 }
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.contact-table {
+  width: 33%;
+  min-width: 240px; /* ensures it's readable on mobile */
+  max-width: 350px;
+  font-size: 0.95rem;
+  border-collapse: collapse;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+}
+
+.contact-table th, .contact-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.contact-table th {
+  background: #fb621c;
+  color: #fff;
+}
+
+.contact-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .contact-table {
+    width: 90%;
+    min-width: unset;
+    font-size: 0.88rem;
+  }
+}
+.table-expand-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Hide table by default, collapse smoothly */
+#expandableTable {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(.4,2,.6,1), opacity 0.3s;
+}
+
+/* Show table when active */
+#expandableTable.active {
+  max-height: 500px; /* Should be enough for the table height */
+  opacity: 1;
+  transition: max-height 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+}
+
+/* Sidebar layout */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; /* Change to right: 0; for right sidebar */
+  width: 80px;
+  height: 100vh;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.10);
+  padding-top: 2rem;
+}
+
+/* Button in the sidebar */
+.sidebar-btn {
+  background: #fb621c;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 700;
+  width: 50px;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  margin-bottom: 12px;
+  transition: background 0.2s;
+}
+
+.sidebar-btn:hover {
+  background: #ff8337;
+}
+
+/* Hidden table by default */
+.sidebar-table {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+  width: 220px;
+}
+
+/* Show table */
+.sidebar-table.active {
+  max-height: 600px;
+  opacity: 1;
+}
+
+/* Table styling (reuse your style, just reduce width) */
+.contact-table {
+  width: 210px;
+  font-size: 0.88rem;
+  border-collapse: collapse;
+  background: #181818;
+  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0.5rem auto;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+}
+
+.contact-table th, .contact-table td {
+  padding: 7px 10px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.contact-table th {
+  background: #fb621c;
+  color: #fff;
+  font-size: 0.97em;
+}
+
+.contact-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive: make sidebar horizontal on mobile if needed */
+@media (max-width: 650px) {
+  .sidebar {
+    flex-direction: row;
+    height: 80px;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    padding-top: 0;
+    align-items: flex-start;
+  }
+  .sidebar-btn {
+    writing-mode: horizontal-tb;
+    transform: none;
+    width: auto;
+    margin: 12px;
+  }
+  .sidebar-table, .contact-table {
+    width: 95vw;
+    min-width: unset;
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .contact-table {
+    width: 90vw;
+    min-width: unset;
+    font-size: 0.88rem;
+  }
+}
 
 /* → #popup & #popup-overlay should not force extra height */
 #popup,
@@ -575,7 +749,7 @@ header {
 }
 @media (max-width: 1023px) {
   .banner .slider {
-    width: 100px;
+    width: 160px;
     height: 200px;
     left: calc(50% - 80px);
   }
