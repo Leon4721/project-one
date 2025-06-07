@@ -1230,6 +1230,6 @@ a.text-white.position-absolute {
 
 /* phones */
 @media (max-width: 576px) {
-  .articles-hero h2 { font-size: 1.5rem; }
+  .articles-hero h2 { font-size: 1rem; }
   .articles-hero p  { font-size: 0.875rem; }
 }
