@@ -162,7 +162,16 @@
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Soulful Jazz Night</h5>
               <p class="card-text">Experience smooth jazz performances by local ensembles. Seating is limited.</p>
-              <button class="btn btn-dark mt-auto event-btn" data-form-type="tickets">Book Now</button>
+              <button
+  class="btn btn-dark mt-auto event-btn"
+  data-form-type="tickets"
+  aria-label="Book tickets for Summer Music Festival"
+  aria-haspopup="dialog"
+  aria-controls="ticketModal"
+>
+  Book Now
+</button>
+
             </div>
           </div>
         </div>
@@ -222,8 +231,8 @@
           <div class="mb-3">
             <label class="form-label">Payment Method</label>
             <select class="form-select" required>
+              <option>Cash</option>
               <option>Credit Card</option>
-              <option>PayPal</option>
               <option>Crypto</option>
             </select>
           </div>
