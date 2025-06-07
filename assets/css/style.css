@@ -1208,4 +1208,28 @@ a.text-white.position-absolute {
   }
 }
 
+.articles-hero h2 {
+  /* never smaller than 1.5rem, never bigger than 3rem, but otherwise 6vw */
+  font-size: clamp(1.5rem, 6vw, 3rem);
+}
 
+.articles-hero p {
+  /* never smaller than 0.875rem, never bigger than 1.25rem, but otherwise 3vw */
+  font-size: clamp(0.875rem, 3vw, 1.25rem);
+}
+
+/* default (desktop) */
+.articles-hero h2 { font-size: 3rem; }
+.articles-hero p  { font-size: 1.25rem; }
+
+/* tablets and below */
+@media (max-width: 768px) {
+  .articles-hero h2 { font-size: 2.25rem; }
+  .articles-hero p  { font-size: 1.125rem; }
+}
+
+/* phones */
+@media (max-width: 576px) {
+  .articles-hero h2 { font-size: 1.5rem; }
+  .articles-hero p  { font-size: 0.875rem; }
+}
