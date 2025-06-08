@@ -23,50 +23,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <style>
       /* Modal Styling (you can adjust to fit your brand) */
-      .modal-custom {
-        display: none;
-        position: fixed;
-        z-index: 1200;
-        left: 0; top: 0;
-        width: 100vw; height: 100vh;
-        background: rgba(0,0,0,0.65);
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.25s;
-      }
-      .modal-custom.show { display: flex; }
-      .modal-content-custom {
-        background: #fff;
-        color: #222;
-        border-radius: 12px;
-        max-width: 95vw;
-        width: 100%;
-        max-width: 410px;
-        box-shadow: 0 12px 48px rgba(0,0,0,0.25);
-        padding: 2rem 1.5rem 1.25rem 1.5rem;
-        position: relative;
-        animation: fadeInUp .4s cubic-bezier(.39,.575,.565,1.000);
-      }
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(60px);}
-        to { opacity: 1; transform: translateY(0);}
-      }
-      .close-modal {
-        position: absolute;
-        top: .7rem; right: 1rem;
-        font-size: 1.8rem;
-        color: #888;
-        cursor: pointer;
-        z-index: 2;
-      }
-      .success-icon {
-        font-size: 3.2rem;
-        color: #28a745;
-        margin-bottom: 0.6rem;
-      }
-      @media (max-width: 480px) {
-        .modal-content-custom { padding: 1.1rem 0.3rem 0.7rem 0.3rem; }
-      }
+     
     </style>
   </head>
 
@@ -101,7 +58,6 @@
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
-            <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
         </div>
