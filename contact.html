@@ -58,7 +58,7 @@
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
           <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -69,106 +69,79 @@
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-4">
         <h2 class="display-5">Contact</h2>
-        <p>
-          Got questions or ideas? Whether you're interested in collaboration,
-          have inquiries about projects, or want to request a CV — drop a message below.
+        <p class="lead mx-auto" style="max-width:600px;">
+           Use the form below— and upload your track, get in touch to collab, or simply keep us in th know.
+           <hr>
+          Let’s make moves.
         </p>
       </div>
       <div class="col-12 col-md-10 col-lg-8">
-        <form id="contact-form" class="row g-3">
+        <form id="contact-form" class="row g-3" enctype="multipart/form-data">
           <div class="col-lg-4">
             <label for="full-name" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="full-name" required />
+            <input type="text" class="form-control" id="full-name" name="fullName" required />
           </div>
           <div class="col-lg-4">
             <label for="phonenumber" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" id="phonenumber" required />
+            <input type="tel" class="form-control" id="phonenumber" name="phoneNumber" required />
           </div>
           <div class="col-lg-4">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required />
+            <input type="email" class="form-control" id="email" name="email" required />
+          </div>
+          <div class="col-12">
+            <label for="inquiry-type" class="form-label">Inquiry Type</label>
+            <select id="inquiry-type" name="inquiryType" class="form-select" required>
+              <option value="general">General Inquiry</option>
+              <option value="collab">Collaboration</option>
+              <option value="song">Song Submission</option>
+            </select>
+          </div>
+          <div class="col-12" id="file-upload" style="display:none;">
+            <label for="song-file" class="form-label">Upload Your Track</label>
+            <input type="file" class="form-control" id="song-file" name="songFile" accept="audio/*" />
           </div>
           <div class="col-12">
             <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="4" required></textarea>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
           </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Send Message</button>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary px-5">Send Message</button>
           </div>
         </form>
-        <!-- Your Contact Form -->
-<!-- Expand/Collapse Button and Table Wrapper -->
-<div style="text-align:center; margin-top:2rem;">
-  <button id="toggleTableBtn" class="btn btn-warning" style="font-weight:600;">
-    Show Contact Details
-  </button>
-</div>
-
-<div class="table-expand-wrapper">
-  <div class="table-wrapper" id="expandableTable">
-    <table class="contact-table">
-      <thead>
-        <tr>
-          <th>Location</th>
-          <th>Phone</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Birmingham, UK</td>
-          <td>+44 1234 567890</td>
-          <td>info@dabighomie.com</td>
-        </tr>
-        <tr>
-          <td>New York City, USA</td>
-          <td>+1 212 555 7890</td>
-          <td>nyc@dabighomie.com</td>
-        </tr>
-        <tr>
-          <td>Nairobi, Kenya</td>
-          <td>+254 712 345678</td>
-          <td>kenya@dabighomie.com</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
-
-      </div>
     </div>
   </section>
 
-<!-- Footer fixed at bottom -->
-  <footer class="fixed-bottom text-white">
+  <!-- Footer fixed at bottom -->
+  <footer class="fixed-bottom text-center text-white bg-dark py-2">
     <small>&copy; 2025 Da Big Homie. All Rights Reserved.</small>
-    </div>
   </footer>
-  <script>
-  const btn = document.getElementById('toggleTableBtn');
-  const tableDiv = document.getElementById('expandableTable');
-
-  btn.addEventListener('click', function() {
-    tableDiv.classList.toggle('active');
-    if(tableDiv.classList.contains('active')) {
-      btn.textContent = "Hide Contact Details";
-    } else {
-      btn.textContent = "Show Contact Details";
-    }
-  });
-</script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Submission Popup Script -->
+  <!-- Form & Table Scripts -->
   <script>
+    // Toggle file upload field
+    document.getElementById('inquiry-type').addEventListener('change', function () {
+      const fileUpload = document.getElementById('file-upload');
+      fileUpload.style.display = this.value === 'song' ? 'block' : 'none';
+    });
+
+    // Toggle contact details table
+    const toggleBtn = document.getElementById('toggleTableBtn');
+    const tableCollapse = new bootstrap.Collapse(document.getElementById('expandableTable'), { toggle: false });
+    toggleBtn.addEventListener('click', () => {
+      tableCollapse.toggle();
+      toggleBtn.textContent = tableCollapse._isShown ? 'Hide Contact Details' : 'Show Contact Details';
+    });
+
+    // Submission popup
     document.getElementById('contact-form').addEventListener('submit', function (e) {
       e.preventDefault();
       alert('Thanks! We’ve received your message. We’ll get back to you within 48 hours.');
       this.reset();
+      document.getElementById('file-upload').style.display = 'none';
     });
   </script>
 </body>

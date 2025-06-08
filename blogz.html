@@ -9,14 +9,13 @@
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
   <!-- Font Awesome for footer icons -->
   <script src="https://kit.fontawesome.com/aa9af45995.js" crossorigin="anonymous"></script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css"/>
 
   <!-- Inline CSS for layout and modal -->
   <style>
@@ -25,6 +24,7 @@
     }
     .articles-hero { height: 20vh; }
     main.container { height: calc(100vh - 20vh - 3rem); padding: 1rem 0; }
+
     /* Article cards: let images size naturally but cover width */
     .track-card img.card-img-top {
       width: 100%;
@@ -37,34 +37,68 @@
     .modal-body {
       height: 60vh;
       padding: 0;
-      overflow: hidden;
+      overflow: visible;
     }
-    .modal-body .modal-content-inner {
+    .modal-content-inner {
       display: flex;
       height: 100%;
+      gap: 0.5rem;
     }
-    .modal-body .image-pane {
+    .image-pane {
       flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
       padding: 1rem;
-      flex-direction: column;
+      min-width: 0;
     }
-    .modal-body .image-pane img {
+    .image-pane img {
       max-width: 100%;
-      max-height: 80%;
+      max-height: 60vh;
       object-fit: contain;
+      margin-bottom: 0.5rem;
     }
-    .modal-body .image-pane .photo-info {
-      margin-top: 0.5rem;
+    .image-pane .photo-info {
+      margin-top: 0.25rem;
       font-size: 0.875rem;
       color: #ccc;
     }
-    .modal-body .text-pane {
-      flex: 1;
+    .text-pane {
+      flex: 2;
       overflow-y: auto;
       padding: 1rem;
+      min-width: 0;
+      max-height: 60vh;
+    }
+    @media (max-width: 900px) {
+      .modal-content-inner {
+        flex-direction: column;
+      }
+      .image-pane, .text-pane {
+        padding: 0.75rem;
+        max-height: unset;
+      }
+      .text-pane {
+        max-height: 30vh;
+      }
+    }
+    @media (max-width: 600px) {
+      .modal-body {
+        height: 80vh;
+        max-height: 90vh;
+      }
+      .modal-content-inner {
+        flex-direction: column;
+      }
+      .text-pane {
+        max-height: 40vh;
+      }
+    }
+    /* Remove outline on close button for aesthetics */
+    .btn-close:focus {
+      outline: none;
+      box-shadow: none;
     }
   </style>
 </head>
@@ -73,90 +107,84 @@
   <a href="media.html" class="text-white position-absolute m-3">← Back</a>
 
   <!-- Articles Hero -->
-<br>
+  <br>
+  <main>
+    <section id="gallery" class="container">
+      <h1 class="text-center text-white mt-3">Urban Stories</h1>
+      <p class="text-center">Dive into the heartbeat of hip-hop culture, community, and vibes.</p>
+    </section>
 
-    <main>
-      <section id="gallery" class="container">
-        <h1 class="text-center text-white mt-3">Urban Stories</h1>
-        <p>Dive into the heartbeat of hip-hop culture community and vibes.</p>
-    </div>
-</section>
-
-  <!-- Main Content -->
-  <main class="container my-5 text-white">
-    <div class="row mb-4">
-      <div class="col text-center">
-        <h5 class="section-heading">Latest Articles</h5>   
+    <!-- Main Content -->
+    <main class="container my-5 text-white">
+      <div class="row mb-4">
+        <div class="col text-center">
+          <h5 class="section-heading">Latest Articles</h5>
+        </div>
       </div>
-    </div>
-
-    <div class="row gx-3 gy-4">
-     <!-- Article 1 -->
-      <div class="col-12 col-sm-6 col-md-4 d-flex">
-        <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
-          <img src="assets/image/cover 1.png" class="card-img-top" alt="The Rise of Street Art" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">The Rise of Street Art</h5>
-            <p class="card-text">R&amp;B artist Donatello speaks on his journey through the industry.</p>
-            <button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal1">
-              Read More
-            </button>
+      <div class="row gx-3 gy-4">
+        <!-- Article 1 -->
+        <div class="col-12 col-sm-6 col-md-4 d-flex">
+          <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
+            <img src="assets/image/cover 1.png" class="card-img-top" alt="The Rise of Street Art" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">The Rise of Street Art</h5>
+              <p class="card-text">R&amp;B artist Donatello speaks on his journey through the industry.</p>
+              <button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal1">
+                Read More
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Article 2 -->
+        <div class="col-12 col-sm-6 col-md-4 d-flex">
+          <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
+            <img src="assets/image/afri 1.png" class="card-img-top" alt="MC performing" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Roots Rekindled:</h5>
+              <p class="card-text">How Tradition Fuels Innovation</p>
+              <button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal2">
+                Read More
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Article 3 -->
+        <div class="col-12 col-sm-6 col-md-4 d-flex">
+          <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
+            <img src="assets/image/cover 2.png" class="card-img-top" alt="DJ mixing tracks" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Sisterhood in Harmony</h5>
+              <p class="card-text">Shaping the Sound of Day One All-Stars</p>
+              <button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal3">
+                Read More
+              </button>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Article 2 -->
-      <div class="col-12 col-sm-6 col-md-4 d-flex">
-        <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
-          <img src="assets/image/afri 1.png" class="card-img-top" alt="MC performing" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Roots Rekindled: </h5>
-            <br>
-            <p class="card-text">How Tradition Fuels Innovation</p>
-            <button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal2">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Article 3 -->
-      <div class="col-12 col-sm-6 col-md-4 d-flex">
-        <div class="card track-card article-card text-dark h-100 w-100 d-flex flex-column">
-          <img src="assets/image/cover 2.png" class="card-img-top" alt="DJ mixing tracks" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Sisterhood in Harmony</h5>
-            <p class="card-text"> Shaping the Sound of Day One All-Stars</p>
-            <button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#articleModal3">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    </main>
   </main>
 
   <!-- Modals -->
   <!-- Modal 1 -->
-<div class="modal fade"
-     id="articleModal1"
-     role="dialog"
-     aria-modal="true"
-     aria-labelledby="articleModalLabel1"
-     aria-describedby="articleModalDesc1"
-     tabindex="-1">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="articleModalLabel1">Rising Flames: The Next-Gen Artist on the Block</h5>
+  <div class="modal fade"
+       id="articleModal1"
+       tabindex="-1"
+       aria-labelledby="articleModalLabel1"
+       aria-describedby="articleModalDesc1"
+       aria-modal="true"
+       role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="articleModalLabel1">Rising Flames: The Next-Gen Artist on the Block</h5>
           <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close dialog">
-        </button>
-      </div>
-      <div class="modal-body" id="articleModalDesc1">
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close dialog"></button>
+        </div>
+        <div class="modal-body" id="articleModalDesc1">
           <div class="modal-content-inner">
             <div class="image-pane">
               <img src="assets/image/cover 1.png" alt="artist Donatello">
@@ -174,7 +202,12 @@
   </div>
 
   <!-- Modal 2 -->
-  <div class="modal fade" id="articleModal2" tabindex="-1" aria-labelledby="articleModalLabel2" aria-hidden="true">
+  <div class="modal fade"
+       id="articleModal2"
+       tabindex="-1"
+       aria-labelledby="articleModalLabel2"
+       aria-modal="true"
+       role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-dark text-white">
         <div class="modal-header border-0">
@@ -188,11 +221,10 @@
               <div class="photo-info">Author: John Roe | Photo: Lisa Ray</div>
             </div>
             <div class="text-pane">
-              <p>Hip-hop’s heartbeat always traced back to those West African drum patterns, the rhythmic call-and-response of Jamaican sound systems, and the spirit of griots passing stories down the line.
-                <hr>
-                 <p>Today, I’m seeing that same current thread woven into the freshest beats and performances. It’s more than nostalgia—it’s an ideology catching wind.
-At Da Big Homie Productions, every sample clearance and beat-making session starts with a conversation: “Where did this come from? Who carried it before?” That mindset isn’t a gimmick
-—it’s an act of empowerment. By honoring the past, we give artists a launching pad to innovate without forgetting the lineage that led them here.</p>
+              <p>Hip-hop’s heartbeat always traced back to those West African drum patterns, the rhythmic call-and-response of Jamaican sound systems, and the spirit of griots passing stories down the line.</p>
+              <hr>
+              <p>Today, I’m seeing that same current thread woven into the freshest beats and performances. It’s more than nostalgia—it’s an ideology catching wind.
+At Da Big Homie Productions, every sample clearance and beat-making session starts with a conversation: “Where did this come from? Who carried it before?” That mindset isn’t a gimmick—it’s an act of empowerment. By honoring the past, we give artists a launching pad to innovate without forgetting the lineage that led them here.</p>
             </div>
           </div>
         </div>
@@ -201,7 +233,12 @@ At Da Big Homie Productions, every sample clearance and beat-making session star
   </div>
 
   <!-- Modal 3 -->
-  <div class="modal fade" id="articleModal3" tabindex="-1" aria-labelledby="articleModalLabel3" aria-hidden="true">
+  <div class="modal fade"
+       id="articleModal3"
+       tabindex="-1"
+       aria-labelledby="articleModalLabel3"
+       aria-modal="true"
+       role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-dark text-white">
         <div class="modal-header border-0">
@@ -215,18 +252,51 @@ At Da Big Homie Productions, every sample clearance and beat-making session star
               <div class="photo-info">Author: Alex Smith | Photo: Maria Lee</div>
             </div>
             <div class="text-pane">
-              <p>Four voices, one vision—meet Éclipse, the girl group that’s been in our family since demo-tapes and basement shows.<hr> From their first shaky live take to their polished EP today, we’ve been there, tweaking harmonies, sourcing vintage synths, and coaching them on storytelling. Their evolution? Proof that mentorship and mutual respect can sculpt talent into timeless artistry.
-When they asked for a harder edge on the new single, we dug through dusty R&B vaults, resurrected a ’70s wah-wah guitar loop, and layered it beneath crystalline vocals. The result: a modern classic that nods back to soul’s heyday while speaking to Gen Z’s restless hearts. That’s the Da Big Homie promise—grow with us, and we’ll help you find your authentic groove.
-
-</p>
+              <p>Four voices, one vision—meet Éclipse, the girl group that’s been in our family since demo-tapes and basement shows.</p>
+              <hr>
+              <p>From their first shaky live take to their polished EP today, we’ve been there, tweaking harmonies, sourcing vintage synths, and coaching them on storytelling. Their evolution? Proof that mentorship and mutual respect can sculpt talent into timeless artistry.
+When they asked for a harder edge on the new single, we dug through dusty R&B vaults, resurrected a ’70s wah-wah guitar loop, and layered it beneath crystalline vocals. The result: a modern classic that nods back to soul’s heyday while speaking to Gen Z’s restless hearts. That’s the Da Big Homie promise—grow with us, and we’ll help you find your authentic groove.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+<script>
+  // Click any .track-card/.image-pane img to open fullscreen overlay
+  document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.getElementById('fullscreenOverlay');
+    const overlayImg = document.getElementById('fullscreenImg');
+    const overlayClose = document.getElementById('fullscreenClose');
 
-  
+    function showFullscreen(src, alt) {
+      overlayImg.src = src;
+      overlayImg.alt = alt || '';
+      overlay.classList.add('active');
+      document.body.style.overflow = "hidden";
+    }
+    function hideFullscreen() {
+      overlay.classList.remove('active');
+      overlayImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    // Attach click to all relevant images
+    document.querySelectorAll('.track-card img.card-img-top, .image-pane img').forEach(img => {
+      img.addEventListener('click', function () {
+        showFullscreen(this.src, this.alt);
+      });
+    });
+    overlayClose.addEventListener('click', hideFullscreen);
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay) hideFullscreen();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === "Escape") hideFullscreen();
+    });
+  });
+</script>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
