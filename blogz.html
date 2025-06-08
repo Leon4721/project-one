@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Da Big Homie | Articles</title>
 
   <!-- Bootstrap CSS -->
@@ -16,98 +16,11 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css"/>
-
-  <!-- Inline CSS for layout and modal -->
-  <style>
-    html, body {
-      height: 100%; margin: 0; background: #000; color: #fff; overflow-x: hidden;
-    }
-    .articles-hero { height: 20vh; }
-    main.container { height: calc(100vh - 20vh - 3rem); padding: 1rem 0; }
-
-    /* Article cards: let images size naturally but cover width */
-    .track-card img.card-img-top {
-      width: 100%;
-      object-fit: cover;
-      height: auto;
-    }
-    footer.fixed-bottom { height:3rem; background:#111; }
-
-    /* Modal panes setup */
-    .modal-body {
-      height: 60vh;
-      padding: 0;
-      overflow: visible;
-    }
-    .modal-content-inner {
-      display: flex;
-      height: 100%;
-      gap: 0.5rem;
-    }
-    .image-pane {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 1rem;
-      min-width: 0;
-    }
-    .image-pane img {
-      max-width: 100%;
-      max-height: 60vh;
-      object-fit: contain;
-      margin-bottom: 0.5rem;
-    }
-    .image-pane .photo-info {
-      margin-top: 0.25rem;
-      font-size: 0.875rem;
-      color: #ccc;
-    }
-    .text-pane {
-      flex: 2;
-      overflow-y: auto;
-      padding: 1rem;
-      min-width: 0;
-      max-height: 60vh;
-    }
-    @media (max-width: 900px) {
-      .modal-content-inner {
-        flex-direction: column;
-      }
-      .image-pane, .text-pane {
-        padding: 0.75rem;
-        max-height: unset;
-      }
-      .text-pane {
-        max-height: 30vh;
-      }
-    }
-    @media (max-width: 600px) {
-      .modal-body {
-        height: 80vh;
-        max-height: 90vh;
-      }
-      .modal-content-inner {
-        flex-direction: column;
-      }
-      .text-pane {
-        max-height: 40vh;
-      }
-    }
-    /* Remove outline on close button for aesthetics */
-    .btn-close:focus {
-      outline: none;
-      box-shadow: none;
-    }
-  </style>
 </head>
 <body>
   <!-- Back Button -->
   <a href="media.html" class="text-white position-absolute m-3">← Back</a>
 
-  <!-- Articles Hero -->
-  <br>
   <main>
     <section id="gallery" class="container">
       <h1 class="text-center text-white mt-3">Urban Stories</h1>
@@ -115,7 +28,7 @@
     </section>
 
     <!-- Main Content -->
-    <main class="container my-5 text-white">
+    <section class="container my-5 text-white">
       <div class="row mb-4">
         <div class="col text-center">
           <h5 class="section-heading">Latest Articles</h5>
@@ -162,7 +75,7 @@
           </div>
         </div>
       </div>
-    </main>
+    </section>
   </main>
 
   <!-- Modals -->
@@ -178,11 +91,7 @@
       <div class="modal-content bg-dark text-white">
         <div class="modal-header">
           <h5 class="modal-title" id="articleModalLabel1">Rising Flames: The Next-Gen Artist on the Block</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close dialog"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
         </div>
         <div class="modal-body" id="articleModalDesc1">
           <div class="modal-content-inner">
@@ -200,7 +109,6 @@
       </div>
     </div>
   </div>
-
   <!-- Modal 2 -->
   <div class="modal fade"
        id="articleModal2"
@@ -231,7 +139,6 @@ At Da Big Homie Productions, every sample clearance and beat-making session star
       </div>
     </div>
   </div>
-
   <!-- Modal 3 -->
   <div class="modal fade"
        id="articleModal3"
@@ -262,42 +169,10 @@ When they asked for a harder edge on the new single, we dug through dusty R&B va
       </div>
     </div>
   </div>
-<script>
-  // Click any .track-card/.image-pane img to open fullscreen overlay
-  document.addEventListener('DOMContentLoaded', function () {
-    const overlay = document.getElementById('fullscreenOverlay');
-    const overlayImg = document.getElementById('fullscreenImg');
-    const overlayClose = document.getElementById('fullscreenClose');
-
-    function showFullscreen(src, alt) {
-      overlayImg.src = src;
-      overlayImg.alt = alt || '';
-      overlay.classList.add('active');
-      document.body.style.overflow = "hidden";
-    }
-    function hideFullscreen() {
-      overlay.classList.remove('active');
-      overlayImg.src = "";
-      document.body.style.overflow = "";
-    }
-
-    // Attach click to all relevant images
-    document.querySelectorAll('.track-card img.card-img-top, .image-pane img').forEach(img => {
-      img.addEventListener('click', function () {
-        showFullscreen(this.src, this.alt);
-      });
-    });
-    overlayClose.addEventListener('click', hideFullscreen);
-    overlay.addEventListener('click', function(e){
-      if(e.target === overlay) hideFullscreen();
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === "Escape") hideFullscreen();
-    });
-  });
-</script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

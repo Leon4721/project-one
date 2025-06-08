@@ -9,105 +9,10 @@
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
-
-  <style>
-    .back-button {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      color: white;
-      font-size: 1.25rem;
-      text-decoration: none;
-      z-index: 3;
-    }
-    .back-button:hover {
-      text-decoration: underline;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
-
-    #videos-section {
-      position: relative;
-      z-index: 2;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
-
-    /* Card styling (reuse track-card from music/events) */
-    .track-card {
-      background-color: rgba(255,255,255,0.95);
-      border: none;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .video-wrapper {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      position: relative;
-      margin-bottom: 1rem;
-    }
-    .video-wrapper iframe, .video-wrapper video {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      border-radius: 0.4rem 0.4rem 0 0;
-      background: #111;
-    }
-    .video-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-    .video-meta {
-      font-size: 0.96rem;
-      color: #333;
-      margin-bottom: 0.25rem;
-    }
-    .video-description {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Responsive breakpoints (as requested) */
-    @media (max-width: 375px) {
-      .video-title { font-size: 1rem; }
-      .video-meta, .video-description { font-size: 0.85rem; }
-      #videos-section { padding-top: 1rem; padding-bottom: 1rem; }
-      .track-card { min-width: 100%; }
-    }
-    @media (min-width: 376px) and (max-width: 480px) {
-      .video-title { font-size: 1.05rem; }
-      .track-card { min-width: 100%; }
-    }
-    @media (min-width: 481px) and (max-width: 768px) {
-      .video-title { font-size: 1.12rem; }
-    }
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .video-title { font-size: 1.15rem; }
-    }
-    @media (min-width: 1025px) {
-      .video-title { font-size: 1.2rem; }
-    }
-  </style>
 </head>
 <body>
   <!-- Background Video (reuse) -->
@@ -123,15 +28,9 @@
   <a href="media.html" class="back-button">← Back</a>
 
   <!-- Main Section: Videos -->
-   <!-- Articles Hero -->
-<br>
-
   <section id="videos-section" class="container text-white">
-   <h1 class="text-center text-white mt-3">Watch &amp; Experience</h1>
-        <p>Enjoy the latest performances, battles, and moments. Videos auto-scale to your device—just press play!</p>
-    </div>
-</section>
-
+    <h1 class="text-center text-white mt-3">Watch &amp; Experience</h1>
+    <p>Enjoy the latest performances, battles, and moments. Videos auto-scale to your device—just press play!</p>
     <div class="row gx-4 gy-5">
       <!-- Video Card 1 -->
       <div class="col-12 col-md-6 col-lg-4 d-flex">
@@ -153,7 +52,7 @@
           </div>
         </div>
       </div>
-      <!-- Video Card 3 -->
+      <!-- Video Card 2 -->
       <div class="col-12 col-md-6 col-lg-4 d-flex">
         <div class="card track-card h-100 w-100">
           <div class="video-wrapper">
@@ -173,31 +72,30 @@
           </div>
         </div>
       </div>
+      <!-- Video Card 3 -->
       <div class="col-12 col-md-6 col-lg-4 d-flex">
-  <div class="card track-card h-100 w-100">
-    <div class="video-wrapper">
-      <video controls style="width: 100%; height: auto;">
-        <source src="assets/video/musicsong.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="card-body d-flex flex-column">
-      <div class="video-title">Ring Tone Raido/Club Edition</div>
-      <div class="video-meta">Uploaded: <time datetime="2025-05-27">May 27, 2021</time></div>
-      <div class="video-description">
-        Mixed by Candas very own Vlad - the radio editon qualiuty adds that took to the
+        <div class="card track-card h-100 w-100">
+          <div class="video-wrapper">
+            <video controls style="width: 100%; height: auto;">
+              <source src="assets/video/musicsong.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <div class="video-title">Ring Tone Radio/Club Edition</div>
+            <div class="video-meta">Uploaded: <time datetime="2025-05-27">May 27, 2021</time></div>
+            <div class="video-description">
+              Mixed by Candas very own Vlad - the radio edition quality adds that took to the
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
     </div>
   </section>
 
   <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- Main Custom JS -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
