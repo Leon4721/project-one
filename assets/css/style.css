@@ -215,7 +215,11 @@ body {
   }
 }
 
-
+/* → #popup & #popup-overlay should not force extra height */
+#popup,
+#popup-overlay {
+  flex: 0 0 auto; /* do not flex-grow or flex-shrink */
+}
 
 /* → Footer must not shrink; it will sit at the bottom */
 footer {
@@ -537,8 +541,6 @@ header {
   z-index: 1000;
   border-radius: 8px;
   overflow: hidden;
-  box-sizing: border-box;
-}
 }
 #popup-inner {
   max-height: calc(90vh - 2rem);
@@ -556,7 +558,7 @@ header {
   z-index: 1001;
 }
 #popup-overlay {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -567,16 +569,11 @@ header {
 }
 @media (max-width: 400px) {
   #popup {
-    width: 95vw;
-    max-width: none;
-    max-height: 95vh;
-    padding: 0.75rem;
-    border-radius: 6px;
+    height: fit-content;
+ 
   }
   #popup .close-btn {
     font-size: 1.25rem;
-    top: 0.5rem;
-    right: 0.5rem;
   }
 }
 
