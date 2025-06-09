@@ -645,6 +645,31 @@ header {
   align-items: center;
   gap: 10px;
 }
+@media (max-width: 500px) {
+  /* ensure the nav container is a positioned parent */
+  nav.navbar .container {
+    position: relative;
+  }
+
+  /* shrink and position the brand logo */
+  .navbar-brand {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  .navbar-brand img {
+    max-height: 30px;   /* adjust as needed */
+    width: auto;
+  }
+
+  /* move the hamburger icon to the top-left */
+  .navbar-toggler {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .logo,
   .header-logo {
@@ -657,7 +682,38 @@ header {
     max-width: 30%;
   }
 }
+.navbar-brand img {
+  transform-origin: left center; /* or center center, adjust as needed */
+  transition: transform 0.2s ease;
+}
 
+/* Desktop ≥1600px */
+@media (min-width: 1600px) {
+  .navbar-brand img {
+    transform: scale(0.047;
+  }
+}
+
+/* Laptop ≥1280px and <1600px */
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .navbar-brand img {
+    transform: scale(0.277);
+  }
+}
+
+/* Tablet ≥768px and <1280px */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .navbar-brand img {
+    transform: scale(0.219);
+  }
+}
+
+/* Mobile <768px */
+@media (max-width: 320px) {
+  .navbar-brand img {
+    max-width: 200px;
+  }
+}
 /* ---------------------------------------------- */
 /* File: pages/_gallery.css                       */
 /* ---------------------------------------------- */
