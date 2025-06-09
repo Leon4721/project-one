@@ -236,3 +236,42 @@ document.addEventListener('DOMContentLoaded', function () {
   initContactInquiry();
   initFullscreenOverlay();
 });
+
+
+ // Cache elements
+    const inquiryType = document.getElementById('inquiry-type');
+    const fileUpload   = document.getElementById('file-upload');
+    const songFile    = document.getElementById('song-file');
+    const form        = document.getElementById('contact-form');
+    const formAlert   = document.getElementById('form-alert');
+
+    // Toggle file-upload on inquiry change
+    inquiryType.addEventListener('change', () => {
+      const isSong = inquiryType.value === 'song';
+      fileUpload.style.display = isSong ? 'block' : 'none';
+      fileUpload.setAttribute('aria-expanded', isSong);
+      songFile.tabIndex = isSong ? 0 : -1;
+    });
+
+    // Custom validation + in-page alert
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Run HTML5 constraint validation
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+
+      // Show success message
+      formAlert.textContent = 'Thanks! We’ve received your message. We’ll get back to you within 48 hours.';
+      formAlert.classList.remove('visually-hidden');
+      formAlert.focus();
+
+      // Reset form state
+      form.reset();
+      fileUpload.style.display = 'none';
+      fileUpload.setAttribute('aria-expanded', false);
+      songFile.tabIndex = -1;
+      form.classList.remove('was-validated');
+    });
