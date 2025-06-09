@@ -292,6 +292,7 @@ footer {
   opacity: 0.5;
   z-index: -1;
 }
+/* Center the audio player both horizontally & vertically */
 
 /* -------------------------------- */
 /* File: components/_tables.css     */
@@ -388,6 +389,7 @@ footer {
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
   transform: translateY(-4px);
 }
+
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -458,6 +460,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 2.5rem 4rem;
+  color:#fff
 }
 .category-box img {
   width: 200px;
@@ -636,7 +639,7 @@ header {
 /* ---------------------------------------------- */
 .logo,
 .header-logo {
-  max-width: 75%;
+  max-width: auto;
   height: auto;
   object-fit: contain;
 }
@@ -695,6 +698,7 @@ header {
 }
 
 /* Laptop ≥1280px and <1600px */
+
 @media (min-width: 1280px) and (max-width: 1599px) {
   .navbar-brand img {
     transform: scale(0.277);
@@ -717,6 +721,15 @@ header {
 /* ---------------------------------------------- */
 /* File: pages/_gallery.css                       */
 /* ---------------------------------------------- */
+/* Make every gallery image fully responsive */
+.images-gallery img,
+#galleryCarousel .carousel-item img,
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;    /* if you want cropping to fill the box */
+  display: block;       /* remove bottom whitespace */
+}
 .gallery {
   display: flex;
   justify-content: center;
