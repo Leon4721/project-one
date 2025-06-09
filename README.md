@@ -129,16 +129,20 @@
 ## Wireframes
 
 ### Home Page
-![Home Page Wireframe](wireframes/home.png)
+![home](https://github.com/user-attachments/assets/cbaddd1c-fed3-4adb-a5e0-6df9ac6674a0)
+
 
 ### About Page
-![About Page Wireframe](wireframes/about.png)
+![home](https://github.com/user-attachments/assets/3b7ca434-30de-455f-a41d-440d29b1906b)
+
 
 ### Blogz Page
-![Blogz Page Wireframe](wireframes/blogz.png)
+![Blogz Page Wireframe](wireframes/blogz.png) ![blogz](https://github.com/user-attachments/assets/1017ad66-5636-4cd8-bacf-5d287813c61f)
+
 
 ### Contact Page
-![Contact Page Wireframe](wireframes/contact.png)
+![Contact Page Wireframe](wireframes/contact.png)![contact](https://github.com/user-attachments/assets/be6c9ab5-911d-4ca4-a427-b3e5e947e043)
+
 
 ### Events Page
 ![Events Page Wireframe](wireframes/events.png)
