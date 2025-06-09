@@ -195,3 +195,33 @@ function closeModal(id) {
     setTimeout(() => modal.style.display = 'none', 200);
   }
 }
+//----index page pop up----//
+ document.addEventListener('DOMContentLoaded', function() {
+        // References
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('popup-overlay');
+        const closeBtn = popup.querySelector('.close-btn');
+
+        // Open popup
+        function openPopup() {
+          overlay.style.display = 'block';
+          popup.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        }
+
+        // Close popup
+        function closePopup() {
+          popup.style.display = 'none';
+          overlay.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+
+        // Close when clicking the × or the overlay
+        closeBtn.addEventListener('click', closePopup);
+        overlay.addEventListener('click', closePopup);
+
+        // Attach click–listeners to each slider image
+        document.querySelectorAll('.slider .item img').forEach(img => {
+          img.addEventListener('click', openPopup);
+        });
+      });

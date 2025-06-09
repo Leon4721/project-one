@@ -39,7 +39,7 @@
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="assets/image/website image  (1).png" class="header-logo" alt="Da Big Homie logo" />
+        <img src="assets/image/logo-head.png"header-logo" alt="Da-Big-Homie-logo" />
       </a>
       <button
         class="navbar-toggler"
@@ -72,16 +72,16 @@
 
       <div class="banner">
         <div class="slider" style="--quantity: 10">
-          <div class="item" style="--position: 1"><img src="assets/image/website image  (1).jpg" alt=""></div>
-          <div class="item" style="--position: 2"><img src="assets/image/website image  (10).jpg" alt=""></div>
-          <div class="item" style="--position: 3"><img src="assets/image/website image  (11).jpg" alt=""></div>
-          <div class="item" style="--position: 4"><img src="assets/image/website image  (13).jpg" alt=""></div>
-          <div class="item" style="--position: 5"><img src="assets/image/website image  (12).jpg" alt=""></div>
-          <div class="item" style="--position: 6"><img src="assets/image/website image  (15).jpg" alt=""></div>
-          <div class="item" style="--position: 7"><img src="assets/image/website image  (7).jpg" alt=""></div>
-          <div class="item" style="--position: 8"><img src="assets/image/website image  (17).jpg" alt=""></div>
-          <div class="item" style="--position: 9"><img src="assets/image/website image  (6).jpg" alt=""></div>
-          <div class="item" style="--position: 10"><img src="assets/image/website image  (9).jpg" alt=""></div>
+          <div class="item" style="--position: 1"><img src="assets/image/webimgb.jpg" alt="bighomie-mascot-a"></div>
+          <div class="item" style="--position: 2"><img src="assets/image/webimgb.jpg" alt="bighomie-mascot-b"></div>
+          <div class="item" style="--position: 3"><img src="assets/image/webimgp.jpg" alt="bighomie-mascot-c"></div>
+          <div class="item" style="--position: 4"><img src="assets/image/webimga.jpg" alt="bighomie-mascot-d"></div>
+          <div class="item" style="--position: 5"><img src="assets/image/webimgf.jpg" alt="bighomie-mascot-e"></div>
+          <div class="item" style="--position: 6"><img src="assets/image/webimgh.jpg" alt="bighomie-mascot-f"></div>
+          <div class="item" style="--position: 7"><img src="assets/image/webimgj.jpg" alt="bighomie-mascot-g"></div>
+          <div class="item" style="--position: 8"><img src="assets/image/webimgk.jpg" alt="bighomie-mascot-h"></div>
+          <div class="item" style="--position: 9"><img src="assets/image/webimgl.jpg" alt="bighomie-mascot-i"></div>
+          <div class="item" style="--position: 10"><img src="assets/image/webimgc.jpg" alt="bighomie-mascot-j"></div>
         </div>
       </div>
     </header>
@@ -115,35 +115,7 @@
 
     <!-- POPUP SCRIPT -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // References
-        const popup = document.getElementById('popup');
-        const overlay = document.getElementById('popup-overlay');
-        const closeBtn = popup.querySelector('.close-btn');
-
-        // Open popup
-        function openPopup() {
-          overlay.style.display = 'block';
-          popup.style.display = 'block';
-          document.body.style.overflow = 'hidden';
-        }
-
-        // Close popup
-        function closePopup() {
-          popup.style.display = 'none';
-          overlay.style.display = 'none';
-          document.body.style.overflow = '';
-        }
-
-        // Close when clicking the × or the overlay
-        closeBtn.addEventListener('click', closePopup);
-        overlay.addEventListener('click', closePopup);
-
-        // Attach click–listeners to each slider image
-        document.querySelectorAll('.slider .item img').forEach(img => {
-          img.addEventListener('click', openPopup);
-        });
-      });
+     
     </script>
     <script src="assets/js/script.js"></script>
   </body>
