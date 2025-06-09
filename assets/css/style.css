@@ -1,234 +1,9 @@
 /* ---------------------------------------------- */
 /* 1) Font Imports (keep yours at the top)       */
 /* ---------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Macondo&family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
 @import url('https://fonts.cdnfonts.com/css/poppins');
-
-/* ---------------------------------------------- */
-/* 2) Reset & Core Flex Layout                    */
-/* ---------------------------------------------- */
-/* → Make html/body fill the viewport exactly    */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* → Turn the body into a vertical flex container */
-body {
-  display: flex;
-  flex-direction: column;
-  background-color: #000;
-  color: #fff;
-  font-family: var(--primary-font);
-  padding-bottom: 0; /* remove any extra bottom padding */
-  min-height: 100%;
-}
-
-/* → .wrapper encloses nav + content + footer */
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto; /* fill the full viewport height */
-}
-
-/* → .content holds all page‐specific sections (hero, main, popups, etc.) */
-.content {
-  flex: 1 0 auto; /* grow to push footer down if needed */
-  position: relative;
-  z-index: 1;
-}
-.table-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.contact-table {
-  width: 33%;
-  min-width: 240px; /* ensures it's readable on mobile */
-  max-width: 350px;
-  font-size: 0.95rem;
-  border-collapse: collapse;
-  background: #1a1a1a;
-  color: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
-}
-
-.contact-table th, .contact-table td {
-  padding: 8px 12px;
-  text-align: left;
-  border-bottom: 1px solid #333;
-}
-
-.contact-table th {
-  background: #fb621c;
-  color: #fff;
-}
-
-.contact-table tr:last-child td {
-  border-bottom: none;
-}
-
-@media (max-width: 600px) {
-  .contact-table {
-    width: 90%;
-    min-width: unset;
-    font-size: 0.88rem;
-  }
-}
-.table-expand-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-/* Hide table by default, collapse smoothly */
-#expandableTable {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s cubic-bezier(.4,2,.6,1), opacity 0.3s;
-}
-
-/* Show table when active */
-#expandableTable.active {
-  max-height: 500px; /* Should be enough for the table height */
-  opacity: 1;
-  transition: max-height 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
-}
-
-/* Sidebar layout */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0; /* Change to right: 0; for right sidebar */
-  width: 80px;
-  height: 100vh;
-  background: #222;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 999;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.10);
-  padding-top: 2rem;
-}
-
-/* Button in the sidebar */
-.sidebar-btn {
-  background: #fb621c;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 18px;
-  cursor: pointer;
-  font-weight: 700;
-  width: 50px;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
-  margin-bottom: 12px;
-  transition: background 0.2s;
-}
-
-.sidebar-btn:hover {
-  background: #ff8337;
-}
-
-/* Hidden table by default */
-.sidebar-table {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
-  width: 220px;
-}
-
-/* Show table */
-.sidebar-table.active {
-  max-height: 600px;
-  opacity: 1;
-}
-
-/* Table styling (reuse your style, just reduce width) */
-.contact-table {
-  width: 210px;
-  font-size: 0.88rem;
-  border-collapse: collapse;
-  background: #181818;
-  color: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 0.5rem auto;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
-}
-
-.contact-table th, .contact-table td {
-  padding: 7px 10px;
-  text-align: left;
-  border-bottom: 1px solid #333;
-}
-
-.contact-table th {
-  background: #fb621c;
-  color: #fff;
-  font-size: 0.97em;
-}
-
-.contact-table tr:last-child td {
-  border-bottom: none;
-}
-
-/* Responsive: make sidebar horizontal on mobile if needed */
-@media (max-width: 650px) {
-  .sidebar {
-    flex-direction: row;
-    height: 80px;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    padding-top: 0;
-    align-items: flex-start;
-  }
-  .sidebar-btn {
-    writing-mode: horizontal-tb;
-    transform: none;
-    width: auto;
-    margin: 12px;
-  }
-  .sidebar-table, .contact-table {
-    width: 95vw;
-    min-width: unset;
-    font-size: 0.9rem;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .contact-table {
-    width: 90vw;
-    min-width: unset;
-    font-size: 0.88rem;
-  }
-}
-
-/* → #popup & #popup-overlay should not force extra height */
-#popup,
-#popup-overlay {
-  flex: 0 0 auto; /* do not flex-grow or flex-shrink */
-}
-
-/* → Footer must not shrink; it will sit at the bottom */
-footer {
-  flex-shrink: 0;
-}
-
-/* ---------------------------------------------- */
-/* 3) Font & Color Variables                      */
-/* ---------------------------------------------- */
 :root {
   --primary-color: #fb621c;
   --secondary-color: #28a745;
@@ -243,63 +18,76 @@ footer {
   --other-font: '', cursive;
 }
 
-/* ---------------------------------------------- */
-/* 4) Reset & Basic Styles                        */
-/* ---------------------------------------------- */
+/* -------------------------------- */
+/* File: base/_reset.css           */
+/* -------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 nav, main, header, .container, .content-section {
   position: relative;
   z-index: 1;
 }
 
-.navbar {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+/* -------------------------------- */
+/* File: base/_core-layout.css      */
+/* -------------------------------- */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: #fff;
+  font-family: var(--primary-font);
+  padding-bottom: 0;
+  min-height: 100%;
+  overscroll-behavior-y: contain;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+.content {
+  flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-.navbar-brand {
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.header-logo {
-  max-width: 150px;
-}
-/* 1) Make the header a relatively positioned flex container, centered by default */
+/* -------------------------------- */
+/* File: layout/_header.css         */
+/* -------------------------------- */
 .site-header {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; /* nav will sit in the exact horizontal center */
-  height: 80px;            /* adjust as needed */
-  padding: 0 20px;         /* give some left/right breathing room */
-  background: #000;        /* example background color */
+  justify-content: center;
+  height: 80px;
+  padding: 0 20px;
+  background: #000;
 }
-
-/* 2) Absolutely position the logo at top-left */
 .site-header .logo {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;            /* so it spans the full header height */
+  height: 100%;
   display: flex;
-  align-items: center;     /* vertically center the logo image */
-  padding-left: 20px;      /* optional: add some left padding so it’s not flush to the very edge */
+  align-items: center;
+  padding-left: 20px;
 }
 .site-header .logo img {
-  max-height: 60px;        /* adjust so it fits nicely inside the header */
+  max-height: 60px;
   width: auto;
 }
-
-/* 3) Center the nav horizontally (flex + justify-content:center already does this),
-      and make it display its links in a row */
 .site-header .main-nav {
   display: flex;
   justify-content: center;
-  flex: 1;               /* fill all available space so centering works perfectly */
+  flex: 1;
 }
 .site-header .main-nav ul {
   display: flex;
@@ -308,226 +96,93 @@ nav, main, header, .container, .content-section {
   padding: 0;
 }
 .site-header .main-nav li {
-  margin: 0 15px;        /* spacing between links */
+  margin: 0 15px;
 }
 .site-header .main-nav a {
   color: #fff;
   text-decoration: none;
   font-size: 16px;
 }
-
-
 .nav-link {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
 }
 
-/* ---------------------------------------------- */
-/* 5) Video Background                            */
-/* ---------------------------------------------- */
-.video-container {
+/* -------------------------------- */
+/* File: layout/_sidebar.css        */
+/* -------------------------------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.10);
+  padding-top: 2rem;
+}
+.sidebar-btn {
+  background: #fb621c;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 700;
+  width: 50px;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  margin-bottom: 12px;
+  transition: background 0.2s;
+}
+.sidebar-btn:hover {
+  background: #ff8337;
+}
+.sidebar-table {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+  width: 220px;
+}
+.sidebar-table.active {
+  max-height: 600px;
+  opacity: 1;
+}
+
+/* -------------------------------- */
+/* File: layout/_footer.css         */
+/* -------------------------------- */
+footer {
+  flex-shrink: 0;
+}
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* -------------------------------- */
+/* -------------------------------- */
+/* File: layout/_popups.css         */
+/* -------------------------------- */
+#popup,
+#popup-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-  pointer-events: none;
+  z-index: 900;
+  background: rgba(0,0,0,0.4);
 }
-
-.video-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.back-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: -1;
-
-  /* Add this line: */
-  opacity: 0.5;
-}
-#hero .banner {
-  margin-bottom: 0;
-}
-
-/* ---------------------------------------------- */
-/* 6) Category Tiles (Media Page)                 */
-/* ---------------------------------------------- */
-.category-image {
-height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  max-width: 200px;
-  width: 100%;
-}
-
-.category-label {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-  color: white;
-}
-
-.category-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #fff;
-}
-
-.category-box img {
-  width: 200px;   /* adjust as needed */
-  height: 200px;  /* adjust as needed */
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-.category-box:hover img {
-  transform: scale(1.05);
-}
-.category-box .label {
-  margin-top: 0.75rem;
-  font-size: 1rem;
-}
-
-/* Positioning Top and Bottom Rows of Categories */
-.top-row {
-  margin-top: 10vh;  /* push down to 30% of viewport height */
-}
-.bottom-row {
-  margin-top: 150px;  /* add extra vertical spacing under bottom row */
-}
-
-/* Full‐height container and grid adjustments */
-.categories-wrapper {
-  position: relative;
-  height: 100vh; /* full viewport height */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem 4rem;
-}
-.categories-grid {
-  position: absolute;
-  bottom: 20%;          /* push rows up from bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 960px;
-}
-.categories-grid .row {
-  --bs-gutter-x: 2rem;  /* horizontal gap */
-  --bs-gutter-y: 2rem;  /* vertical gap */
-}
-
-@media (max-width: 576px) {
-  .top-row {
-    margin-top: 15vh;
-  }
-  .category-image {
-    width: 200px;
-    height: 200px;
-  }
-  .bottom-row {
-    margin-top: 200px;  /* maintain spacing */
-  }
-  .categories-grid {
-    bottom: 15%;
-  }
-}
-
-
-/* ---------------------------------------------- */
-/* 7) Header (Hero)                               */
-/* ---------------------------------------------- */
-header {
-  height: 35vh;
-}
-
-/* ---------------------------------------------- */
-/* 8) Titles                                      */
-/* ---------------------------------------------- */
-.title,
-.subtitle {
-  position: absolute;
-  left: 50%;
-  text-align: center;
-  transform: translateX(-50%);
-}
-.title {
-  top: 40%;
-  font-size: 3em;
-  font-weight: bold;
-}
-.subtitle {
-  top: 50%;
-  font-size: 1.5em;
-}
-
-/* ---------------------------------------------- */
-/* 9) Buttons                                     */
-/* ---------------------------------------------- */
-.btn {
-  padding: 0.8rem 1.5rem;
-  background: var(--primary-color);
-  color: black;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 2rem;
-}
-.btn-custom:hover {
-  background: rgb(247, 246, 246);
-  color: white;
-}
-
-/* ---------------------------------------------- */
-/*10) Location Cards                              */
-/* ---------------------------------------------- */
-.location-cards {
-  display: flex;
-  justify-content: space-between;
-}
-.card {
-  background: #fff;
-  color: #000;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 10px;
-  width: 22%;
-}
-.btn-check {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 0.5rem;
-}
-
-/* ---------------------------------------------- */
-/*11) Popup                                       */
-/* ---------------------------------------------- */
 #popup {
   display: none;
-  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -537,8 +192,7 @@ header {
   background-color: var(--primary-color);
   color: white;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -557,101 +211,275 @@ header {
   color: white;
   z-index: 1001;
 }
-#popup-overlay {
+.modal-custom {
   display: none;
+  position: fixed;
+  z-index: 1200;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.65);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s;
+}
+.modal-custom.show { display: flex; }
+.modal-content-custom {
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  max-width: 95vw;
+  width: 100%;
+  max-width: 410px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+  padding: 2rem 1.5rem 1.25rem 1.5rem;
+  position: relative;
+  animation: fadeInUp .4s cubic-bezier(.39,.575,.565,1.000);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.close-modal {
+  position: absolute;
+  top: .7rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  color: #888;
+  cursor: pointer;
+  z-index: 2;
+}
+.success-icon {
+  font-size: 3.2rem;
+  color: #28a745;
+  margin-bottom: 0.6rem;
+}
+
+/* -------------------------------- */
+/* -------------------------------- */
+/* File: components/_video-bg.css   */
+/* -------------------------------- */
+.video-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 900;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
 }
-@media (max-width: 400px) {
-  #popup {
-    height: fit-content;
- 
-  }
-  #popup .close-btn {
-    font-size: 1.25rem;
-  }
-}
-
-/* ---------------------------------------------- */
-/*12) Responsive Adjustments                      */
-/* ---------------------------------------------- */
-@media (max-width: 767px) {
-  html, body {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow-y: auto !important;
-  }
-  main, .container, #popup, #popup-inner {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    overflow-y: visible !important;
-  }
-  /* Remove tall padding/margins on sections */
-  .my-5, .py-5, .pt-5, .pb-5 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-}
-
-/* ---------------------------------------------- */
-/*13) About Hero                                  */
-/* ---------------------------------------------- */
-.about-hero {
-  position: relative;
-  height: 60vh;
-  color: #fff;
-}
-.about-hero .hero-overlay {
-  background: rgba(0, 0, 0, 0.5);
+.video-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.back-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* -------------------------------- */
+/* File: components/_tables.css     */
+/* -------------------------------- */
+.table-wrapper,
+.table-expand-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.contact-table {
+  width: 33%;
+  min-width: 240px;
+  max-width: 350px;
+  font-size: 0.95rem;
+  border-collapse: collapse;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  margin: 0.5rem auto;
+}
+.contact-table th,
+.contact-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+.contact-table th {
+  background: var(--primary-color);
+  font-size: 0.97em;
+}
+.contact-table tr:last-child td {
+  border-bottom: none;
+}
+#expandableTable {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(.4,2,.6,1), opacity 0.3s;
+}
+#expandableTable.active {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+}
+
+/* -------------------------------- */
+/* File: components/_buttons.css    */
+/* -------------------------------- */
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: var(--primary-color);
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.btn:hover,
+.btn:focus {
+  transform: translateY(-2px);
+}
+.btn-custom:hover {
+  background: rgb(247, 246, 246);
+  color: white;
+}
+.btn-check {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* -------------------------------- */
+/* File: components/_cards.css      */
+/* -------------------------------- */
+.card,
+.track-card,
+.card-body {
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.card:hover,
+.card:focus-within,
+.track-card img.card-img-top:hover,
+.image-pane img:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+}
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.4rem 0.4rem 0 0;
+  margin-bottom: 1rem;
+  background: #000;
+}
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+.track-card img.card-img-top,
+.image-pane img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: #151515;
+  border: 3px solid var(--primary-color);
+  border-radius: 18px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.image-pane img {
+  max-height: 45vh;
+  object-fit: contain;
+}
+
+/* -------------------------------- */
+/* File: pages/_hero.css            */
+/* -------------------------------- */
+header {
+  height: 35vh;
+}
+.title,
+.subtitle {
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+}
+.title {
+  top: 40%;
+  font-size: 3em;
+  font-weight: bold;
+}
+.subtitle {
+  top: 50%;
+  font-size: 1.5em;
+}
+
+/* -------------------------------- */
+/* File: pages/_media-tiles.css     */
+/* -------------------------------- */
+.category-box,
+.categories,
+.categories-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  gap: 2.5rem 4rem;
 }
-.hero-title {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+.category-box img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
-.hero-subtitle {
-  font-size: 1.25rem;
+.category-box:hover img {
+  transform: scale(1.05);
 }
-
-/* ---------------------------------------------- */
-/*14) Site Footer Widgets (extra styling if used) */
-/* ---------------------------------------------- */
-.site-footer .footer-widgets {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.top-row { margin-top: 10vh; }
+.bottom-row { margin-top: 150px; }
+.categories-wrapper { position: relative; height: 100vh; }
+.categories-grid {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 960px;
 }
-.site-footer .footer-widgets .widget {
-  flex: 1 1 200px;
-  margin: 1rem;
-}
-.site-footer .social-icons {
-  list-style: none;
-  padding: 0;
-}
-.site-footer .social-icons li {
-  display: inline-block;
-  margin-right: 0.5rem;
-}
-.site-footer a {
-  color: #fff;
-  text-decoration: none;
-}
-
 /* ---------------------------------------------- */
 /*15) Image Slider                                */
 /* ---------------------------------------------- */
@@ -831,7 +659,7 @@ header {
 }
 
 /* ---------------------------------------------- */
-/*18) Gallery Section                              */
+/* File: pages/_gallery.css                       */
 /* ---------------------------------------------- */
 .gallery {
   display: flex;
@@ -891,360 +719,81 @@ header {
   font-size: 1.1rem;
 }
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* ---------------------------------------------- */
-/*19) Miscellaneous                                */
+/* File: pages/_about-hero.css                    */
 /* ---------------------------------------------- */
-
-.features-list {
-  list-style: none;
-  padding-left: 0;
-}
-.features-list li::before {
-  content: "✔️ ";
-  margin-right: 0.5rem;
-  color: #0d6efd;
-}
-
-/* ---------------------------------------------- */
-/*20) Sticky Header Logo (if needed)               */
-/* ---------------------------------------------- */
-.header-logo {
-  position: sticky;
-  bottom: 0%;
-  left: 80%;
-}
-#photo-section {
+.about-hero {
   position: relative;
-  height: 100vh; /* full viewport height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 60vh;
+  color: #fff;
 }
-  #carouselExampleIndicators {
-    position: sticky;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1; /* so it stays above the video background */
-  }
-
-  /* 2) Prevent “dead” overscroll around it */
-  body {
-    overscroll-behavior-y: contain;
-  }
-#carouselExampleCaptions {
-        max-width: 100%;
-        height: 60vh; /* Carousel is 60% of viewport height */
-        margin: 0 auto; /* center horizontally if inside a larger container */
-      }
-
-      /* 2) Make sure the inner .carousel-inner also spans that 60vh */
-      #carouselExampleCaptions .carousel-inner {
-        height: 100%;position: relative;
-    width: 100%;
-    /* 9/16 = 56.25% */
-    padding-top: 56.25%;
-    overflow: hidden;
-      }
-
-      /* 3) Force each slide’s <img> to fill 100% width & height of its parent, cropping as needed */
-      #carouselExampleCaptions .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* scale & crop so the image always covers the 60vh area */
-      }
-       #carouselExampleIndicators .carousel-item {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  #carouselExampleIndicators .carousel-control-prev-icon,
-  #carouselExampleIndicators .carousel-control-next-icon {
-    filter: invert(1);
-    background-color: rgba(255,255,255,0.3);
-    border-radius: 50%;
-  }
-
-      /* 5) Adjust captions’ font size so they’re legible within a shorter carousel */
-      #carouselExampleCaptions .carousel-caption h5 {
-        font-size: 1.25rem;
-      }
-      #carouselExampleCaptions .carousel-caption p {
-        font-size: 1rem;
-      }
-
-      /* 6) On very small screens, shrink the caption text further */
-      @media (max-width: 576px) {
-        #carouselExampleCaptions {
-          height: 50vh; /* reduce to 50vh on small phones if desired */
-        }
-        #carouselExampleCaptions .carousel-caption h5 {
-          font-size: 1rem;
-        }
-        #carouselExampleCaptions .carousel-caption p {
-          font-size: 0.875rem;
-        }
-      }
-
-    body {
-      margin: 0;
-      padding-bottom: 4rem; /* at least as tall as your footer */
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
-html, body {
+.about-hero .hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
   height: 100%;
-  margin: 0;
-}
-
-.page-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.gallery .container {
-  min-height: 568px;
-  max-height: 900px;
-  overflow-y: auto;
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
-
-main {
-  flex: 1; /* this pushes footer down when content is short */
-}
-
-
-  footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 0.5rem;
-      z-index: 1000; /* make sure it sits on top of other content */
-      height: 2.5rem;
-  line-height: 2.5rem; /* vertically center text if it’s a single line */
-  padding: 0;          /* remove extra padding */
-  font-size: 0.8rem;
-    }
-
-    /* 2) Add bottom padding to body so content isn't hidden behind footer */
-   
-
-    /* 3) Example content styling */
-    main {
-      padding: 2rem;
-    }
-
-    /* 4) (Optional) Responsive tweaks if you want different padding/font on small screens */
-    @media (max-width: 600px) {
-      footer {
-        padding: 0.75rem;
-        font-size: 0.9rem;
-      }
-    }
-    @media (min-width: 601px) and (max-width: 1024px) {
-      footer {
-        padding: 1rem;
-        font-size: 1rem;
-      }
-    }
-    @media (min-width: 1025px) {
-      footer {
-        padding: 1.25rem;
-        font-size: 1.1rem;
-      }
-    }
-    /*  — Merit: subtle hover/transition effects — */
-
-/* Buttons */
-.btn {
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-.btn:hover,
-.btn:focus {
-  transform: translateY(-2px);
+.hero-subtitle {
+  font-size: 1.25rem;
 }
 
-/* Cards (track-cards, article-cards, event-cards) */
-.card {
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+/* ---------------------------------------------- */
+/* File: pages/_iframe-footer.css                 */
+/* ---------------------------------------------- */
+.iframe-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top: 2px solid #333;
+  z-index: 1000;
 }
-.card:hover,
-.card:focus-within {
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-  transform: translateY(-4px);
+.iframe-bottom,
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
-
-/* Nav links */
-.nav__link {
-  transition: color 0.2s ease;
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
-.nav__link:hover,
-.nav__link:focus {
-  color: var(--color-accent);
-}
-
-/*---------------------------------------------------------------------------*/
-/* 2×2 GRID AT <=400px                                                      */
-/*---------------------------------------------------------------------------*/
-@media (max-width: 600px) {
-  .categories-wrapper .row {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem;
-    justify-content: center;
-  }
-  .categories-wrapper .col-6 {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-    padding: 0.25rem;
-  }
-  .categories-wrapper .category-image {
-    width: 90%;
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto 0.5rem;
-  }
-  .categories-wrapper .category-label {
-    font-size: 0.9rem;
-    text-align: center;
-  }
-}
-@media (max-width: 600px) {
-  /* …your existing 2×2 grid overrides… */
-
-  /* Raise both rows closer to the top of their parent */
-  .categories-wrapper .top-row,
-  .categories-wrapper .bottom-row {
-    margin-top: -0.5rem !important;
-  }
-}
-@media (max-width: 700px) {
-  html, body {
-    height: 100%;
-  }
-
-  .video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-  }
-
-  .back-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* ────────────────────────────────────────────────────────────────────────── */
-/* MAINTAIN 1269×945 (47∶35) RATIO FOR BANNER                               */
-/* ────────────────────────────────────────────────────────────────────────── */
-#hero .banner {
-  width: 100%;               /* always fill its parent’s width */
-  aspect-ratio: 47 / 35;     /* locks the 1269×945 ratio */
-  overflow: hidden;          /* hide any overflow from slides */
-  position: relative;        /* so children can position absolutely */
-}
-/* ────────────────────────────────────────────────────────────────────────── */
-/* At widths ≤600px, make #hero .banner height = 1.5 × its width (2:3 ratio) */
-/* ────────────────────────────────────────────────────────────────────────── */
-@media (max-width: 600px) {
-  #hero .banner {
-    width: 100%;            /* fill its parent */
-    aspect-ratio: 3 / 3;    /* width:height = 2:3 ⇒ height = width × 1.5 */
-    height: fit-content;           /* ensure height is governed by aspect-ratio */
-  }
-}
-
-/* Ensure back-link sits above everything */
-a.text-white.position-absolute {
+.map-responsive iframe {
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
+  width: 100%;
+  height: 100%;
 }
 
-/* At very small widths, center the gallery and add top padding */
-@media (max-width: 400px) {
-  main {
-    justify-content: center !important; /* vertical centering */
-    align-items: center !important;     /* horizontal centering */
-    padding-top: 3rem;                  /* push below the back link */
-    padding-bottom: 10rem;               /* small bottom buffer */
-  }
-}
-
-
-      @media (max-width:420px) {
-  /* make the gallery section a positioning context */
-  #gallery {
-    position: relative;
-  }
-
-  /* pull the heading down toward the bottom */
-  #gallerytext {
-    position:sticky;
-    bottom: -1.6 rem;       /* tweak this value to taste */
-    right: 509%;
-    transform: translateX(-50%);
-    margin: 0;            /* reset any default margins */
-  }
-}
-
-.articles-hero h2 {
-  /* never smaller than 1.5rem, never bigger than 3rem, but otherwise 6vw */
-  font-size: clamp(1.5rem, 6vw, 3rem);
-}
-
-.articles-hero p {
-  /* never smaller than 0.875rem, never bigger than 1.25rem, but otherwise 3vw */
-  font-size: clamp(0.875rem, 3vw, 1.25rem);
-}
-
-/* default (desktop) */
-.articles-hero h2 { font-size: 3rem; }
-.articles-hero p  { font-size: 1.25rem; }
-
-/* tablets and below */
-@media (max-width: 768px) {
-  .articles-hero h2 { font-size: 2.25rem; }
-  .articles-hero p  { font-size: 1.125rem; }
-}
-
-/* phones */
-@media (max-width: 576px) {
-  .articles-hero h2 { font-size: 1rem; }
-  .articles-hero p  { font-size: 0.875rem; }
-}
-
+/* ---------------------------------------------- */
+/* File: utilities/_responsive.css                */
+/* ---------------------------------------------- */
 /* super-small phones */
 @media (max-width: 350px) {
-  /* collapse container padding to edge-to-edge */
   main.container {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
-
-  /* tighten up the hero */
   .articles-hero {
-    height: auto;            /* let it grow */
-    padding: 1rem 0.5rem;    /* less side padding */
+    height: auto;
+    padding: 1rem 0.5rem;
     text-align: left;
   }
   .articles-hero h2 {
@@ -1254,107 +803,51 @@ a.text-white.position-absolute {
   .articles-hero p {
     font-size: clamp(0.75rem, 4vw, 1rem);
   }
-
-  /* collapse grid gutters */
   .row.gx-3 {
     --bs-gutter-x: 0.5rem;
     --bs-gutter-y: 0.5rem;
   }
-
-  /* shrink cards */
   .card.track-card {
     flex-direction: column;
   }
   .card-body {
     padding: 0.75rem;
   }
-  .card-title {
-    font}
-  }
-
-  @media (max-width: 320px) {
-  .catergories-wrapper{ height: fit-content;   }
 }
-/* -------------------------------------------------- */
-/* Very small screens – ensure full media page fits   */
-/* -------------------------------------------------- */
+
+/* ≤ 400px */
 @media (max-width: 400px) {
-  /* prevent any horizontal scroll */
   html, body {
     overflow-x: hidden;
   }
-
-  /* Back-link: keep it accessible */
   a.text-white.position-absolute {
     top: 0.5rem;
     left: 0.5rem;
     font-size: 1rem;
     z-index: 20;
   }
-
-  /* Sidebar → bottom bar */
-  .sidebar {
-    position: fixed;
-    bottom: 0;
-    top: auto;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 0.5rem;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  main {
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 10rem;
   }
-  .sidebar-btn {
-    writing-mode: horizontal-tb;
-    transform: none;
-    margin-right: 0.5rem;
-    padding: 8px 12px;
-    font-size: 0.75rem;
-  }
-  .sidebar-table, .contact-table {
-    width: 90vw;
-    margin: 0.5rem auto;
-    font-size: 0.8rem;
-  }
-
-  /* Collapse hero to auto height, shrink text */
-  .articles-hero {
-    height: auto !important;
-    padding: 1rem 0.5rem;
-    text-align: center;
-  }
-  .articles-hero h2 {
-    font-size: clamp(1rem, 8vw, 1.75rem) !important;
-    margin: 0;
-  }
-  .articles-hero p {
-    font-size: clamp(0.75rem, 5vw, 1rem) !important;
-  }
-
-  /* Main container: remove side padding */
-  main.container {
-    padding: 1rem 0.5rem;
-  }
-
-  /* 2×2 grid for categories */
   .categories-wrapper {
-    height: auto !important;
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem 0.5rem;
     padding: 1rem 0;
-    align-items: start;
-    justify-items: center;
-    position: static !important;
-    transform: none !important;
+    position: static;
+    transform: none;
+    height: auto;
   }
   .categories-grid {
-    width: 100% !important;
-    bottom: auto !important;
-    left: auto !important;
+    width: 100%;
+    bottom: auto;
+    left: auto;
   }
   .top-row, .bottom-row {
-    margin-top: 1rem !important;
+    margin-top: 1rem;
   }
   .category-box {
     width: 100%;
@@ -1369,249 +862,149 @@ a.text-white.position-absolute {
   .category-label {
     font-size: 0.8rem;
   }
-
-  /* Tighten up card layouts if you have any on this page */
   .card {
     margin: 0 auto;
     width: 90%;
     font-size: 0.85rem;
   }
 }
-/* -------------------------------------------------- */
-/* Force 3-up layout at ≥900px (instead of Bootstrap’s 992px) */
-/* -------------------------------------------------- */
-@media (min-width: 1044px) {
-  #videos-section .row {
+
+/* ≤ 420px */
+@media (max-width: 420px) {
+  #gallery {
+    position: static;
+    max-width: fit-content;
+    height: fit-content;
+  }
+  #gallerytext {
+    position: sticky;
+    bottom: -1.6rem;
+    right: 100%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+}
+
+/* ≤ 480px */
+@media (max-width: 480px) {
+  .header-logo,
+  .logo {
+    max-width: 30%;
+  }
+  .modal-content-custom {
+    padding: 1.1rem 0.3rem 0.7rem 0.3rem;
+  }
+}
+
+/* ≤ 576px */
+@media (max-width: 576px) {
+  .top-row {
+    margin-top: 15vh;
+  }
+  .categories-grid {
+    bottom: 15%;
+  }
+  .gallery .container {
+    min-height: 568px;
+    max-height: 900px;
+    overflow-y: auto;
+  }
+  #carouselExampleCaptions {
+    height: 50vh;
+  }
+  #carouselExampleCaptions .carousel-caption h5 {
+    font-size: 1rem;
+  }
+  #carouselExampleCaptions .carousel-caption p {
+    font-size: 0.875rem;
+  }
+}
+
+/* ≤ 600px */
+@media (max-width: 600px) {
+  .contact-table {
+    width: 90vw;
+    font-size: 0.88rem;
+  }
+  .categories-wrapper .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -0.75rem;  /* match your .gx-4 gutter */
-    margin-right: -0.75rem;
-    
+    gap: 0.5rem;
+    justify-content: center;
   }
-  #videos-section .row > .col-12 {
-    flex: 0 0 33.3333%;
-    max-width: 33.3333%;
-    padding-left: 0.75rem;  /* match your .gx-4 gutter */
-    padding-right: 0.75rem;
+  .categories-wrapper .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0.25rem;
+  }
+  .categories-wrapper .category-image {
+    width: 90%;
+    max-width: 150px;
+    margin-bottom: 0.5rem;
+  }
+  .categories-wrapper .category-label {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .sidebar {
+    flex-direction: row;
+    height: 80px;
+    width: 100vw;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  }
+  .sidebar-btn {
+    writing-mode: horizontal-tb;
+    transform: none;
+    width: auto;
+    margin: 12px;
+  }
+  .sidebar-table, .contact-table {
+    width: 95vw;
+    font-size: 0.9rem;
   }
 }
 
-/* 1. Force all cards to be equal height */
-.track-card {
-  display: flex;
-  flex-direction: column;
+/* ≤ 650px */
+@media (max-width: 650px) {
+  .sidebar {
+    flex-direction: row;
+    height: 80px;
+    width: 100vw;
+  }
 }
 
-/* 2. Lock in a 16:9 aspect ratio for the video wrapper,
-      and make it never shrink or stretch beyond that ratio */
-.video-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  flex: 0 0 auto;    /* don’t grow or shrink */
-  background: #000;
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-/* 3. Make the card-body fill the *remaining* vertical space */
-.card-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;    /* grow to fill container */
-}
-
-/* 4. (Optional) If you want the title/meta/description to share space evenly: */
-.video-title,
-.video-meta,
-.video-description {
-  flex: 0 0 auto;    /* they size according to content */
-}
-/*—or—*/
-/* .video-description { flex: 1 1 auto; }  to stretch the description if some cards have less text */
-
-/* 5. Ensure your columns don’t wrap weirdly on small viewports */
-.row.gx-4.gy-5 {
-  align-items: stretch;
-}
-/* 1. Make the wrapper a positioned, clipped box */
-.video-wrapper {
-  position: relative;            /* for absolute‐position children */
-  width: 100%;
-  aspect-ratio: 16 / 9;          /* lock in 16∶9 */
-  overflow: hidden;              /* clip any overflow */
-  border-radius: 0.4rem 0.4rem 0 0; /* match your card corners */
-  margin-bottom: 1rem;
-}
-
-/* 2. Force both iframe and video to absolutely fill that box */
-.video-wrapper iframe,
-.video-wrapper video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;             /* crop and scale uniformly */
-  border: 0;
-}
-
-/* 3. Ensure cards remain equal height (repeat if needed) */
-.track-card {
-  display: flex;
-  flex-direction: column;
-}
-.card-body {
-  flex: 1 1 auto;
-}
-.row {
-  align-items: stretch;
-}
-/* --- Image Borders, Rounded Corners, and Fullscreen Feature --- */
-
-.track-card img.card-img-top,
-.image-pane img {
-  border: 3px solid #fb621c;
-  border-radius: 18px;
-  transition: box-shadow 0.2s, transform 0.2s;
-  cursor: pointer;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  background: #151515;
-}
-
-.track-card img.card-img-top:hover,
-.image-pane img:hover {
-  box-shadow: 0 4px 16px rgba(251,98,28,0.35);
-  transform: scale(1.03);
-}
-
-/* Maintain 16:9 ratio for card images */
-.track-card img.card-img-top {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-}
-
-/* Allow modal images to be contained in modal */
-.image-pane img {
-  width: 100%;
-  height: auto;
-  max-height: 45vh;
-  object-fit: contain;
-}
-
- .modal-custom {
-        display: none;
-        position: fixed;
-        z-index: 1200;
-        left: 0; top: 0;
-        width: 100vw; height: 100vh;
-        background: rgba(0,0,0,0.65);
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.25s;
-      }
-      .modal-custom.show { display: flex; }
-      .modal-content-custom {
-        background: #fff;
-        color: #222;
-        border-radius: 12px;
-        max-width: 95vw;
-        width: 100%;
-        max-width: 410px;
-        box-shadow: 0 12px 48px rgba(0,0,0,0.25);
-        padding: 2rem 1.5rem 1.25rem 1.5rem;
-        position: relative;
-        animation: fadeInUp .4s cubic-bezier(.39,.575,.565,1.000);
-      }
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(60px);}
-        to { opacity: 1; transform: translateY(0);}
-      }
-      .close-modal {
-        position: absolute;
-        top: .7rem; right: 1rem;
-        font-size: 1.8rem;
-        color: #888;
-        cursor: pointer;
-        z-index: 2;
-      }
-      .success-icon {
-        font-size: 3.2rem;
-        color: #28a745;
-        margin-bottom: 0.6rem;
-      }
-      @media (max-width: 480px) {
-        .modal-content-custom { padding: 1.1rem 0.3rem 0.7rem 0.3rem; }
-      }
-      
-/* Fullscreen Overlay */
-.fullscreen-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(10,10,10,0.98);
-  z-index: 3000;
-  justify-content: center;
-  align-items: center;
-}
-.fullscreen-overlay.active {
-  display: flex;
-}
-.fullscreen-overlay img {
-  max-width: 90vw;
-  max-height: 88vh;
-  border-radius: 24px;
-  box-shadow: 0 4px 40px #000;
-  border: 4px solid #fb621c;
-  background: #1a1a1a;
-  object-fit: contain;
-}
-.fullscreen-close {
-  position: absolute;
-  top: 3vw;
-  right: 3vw;
-  font-size: 2.5rem;
-  color: #fff;
-  background: rgba(0,0,0,0.6);
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  z-index: 3010;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* ≤ 700px */
 @media (max-width: 700px) {
-  .fullscreen-overlay img { max-width: 98vw; max-height: 75vh; }
-  .fullscreen-close { font-size: 2rem; width: 38px; height: 38px; }
+  .video-container,
+  .back-video {
+    width: 100%;
+    height: 100%;
+  }
+  .fullscreen-overlay img {
+    max-width: 98vw;
+    max-height: 75vh;
+  }
+  .fullscreen-close {
+    font-size: 2rem;
+    width: 38px;
+    height: 38px;
+  }
 }
 
-.map-responsive {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-}
-.map-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
-.about-popup {
-  background: #fff;
-  color: #000;
-  border-radius: 16px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.12);
-  max-width: 520px;
-  margin: auto;
-  width: 95vw;
-  min-width: 0;
-  font-size: 1rem;
-  transition: max-width 0.2s;
-}
+/* ≤ 767px */
+@media (max-width: 767px) {
+  html, body {
+    height: auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+  main, .container, #popup, #popup-inner {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow-y: visible;
+  }
+  .my-5, .py-5, .pt-5, .pb-5 {
+    margin-top: 1rem;
+    margin-

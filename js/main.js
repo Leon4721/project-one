@@ -225,3 +225,34 @@ function closeModal(id) {
           img.addEventListener('click', openPopup);
         });
       });
+      // assets/js/script.js
+
+// Popup functionality
+const openBtn = document.getElementById('openPopup');
+const popup = document.getElementById('popup');
+const overlay = document.getElementById('popup-overlay');
+const closeBtn = document.querySelector('#popup .close-btn');
+
+openBtn.addEventListener('click', () => {
+  overlay.classList.remove('d-none');
+  popup.classList.remove('d-none');
+});
+
+closeBtn.addEventListener('click', () => {
+  overlay.classList.add('d-none');
+  popup.classList.add('d-none');
+});
+
+// 3D banner slider animation
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.slider');
+  let angle = 0;
+
+  function rotate() {
+    angle = (angle + 1) % 360;
+    slider.style.transform = `perspective(1000px) rotateX(-16deg) rotateY(${angle}deg)`;
+    requestAnimationFrame(rotate);
+  }
+
+  rotate();
+});

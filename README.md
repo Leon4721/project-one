@@ -126,18 +126,39 @@
 - **events.html**: Event cards, modal RSVP/ticket/artist forms
 - **contact.html**: Contact form, Google Map, info box
 
-### Wireframes
+## Wireframes
 
-_(Add images or PDF wireframes for each page. Example:)_
-![Home.](wireframes/home.png)
-![about](wireframes/about.png)
-![media](wireframes/media.png)
-![contact](wirefraems/contact.png)
-![events](wireframes/events.png)
-![music](wireframes/music.png)
-![blogz(wireframes/blogz.png)
-![image](wirefraems/image.png)
-![video](wirefraems/video.png)
+### Home Page
+![home](https://github.com/user-attachments/assets/cbaddd1c-fed3-4adb-a5e0-6df9ac6674a0)
+
+
+### About Page
+![home](https://github.com/user-attachments/assets/3b7ca434-30de-455f-a41d-440d29b1906b)
+
+
+### Blogz Page
+![Blogz Page Wireframe](wireframes/blogz.png) ![blogz](https://github.com/user-attachments/assets/1017ad66-5636-4cd8-bacf-5d287813c61f)
+
+
+### Contact Page
+![Contact Page Wireframe](wireframes/contact.png)![contact](https://github.com/user-attachments/assets/be6c9ab5-911d-4ca4-a427-b3e5e947e043)
+
+
+### Events Page
+![Events Page Wireframe](wireframes/events.png)
+
+### Images/Gallery Page
+![Images/Gallery Wireframe](wireframes/images.png)
+
+### Media Hub Page
+![Media Hub Wireframe](wireframes/media.png)
+
+### Music Page
+![Music Page Wireframe](wireframes/music.png)
+
+### Video Page
+![Video Page Wireframe](wireframes/video.png)
+
 
 
 
