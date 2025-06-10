@@ -65,6 +65,7 @@ function generateArtistForm() {
     </form>`;
 }
 
+
 // Modal logic for Event forms
 document.addEventListener('DOMContentLoaded', function () {
   // Only run if .event-btn exists
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
           closeModal('form-modal');
           if(document.getElementById('success-type')) {
             document.getElementById('success-type').textContent =
-              formType === 'tickets' ? 'tickets' : 'registration';
+              formType === 'tickets' ? 'Booked' : 'All Done';
             openModal('success-modal');
           }
         };
@@ -187,3 +188,34 @@ function closeModal(id) {
     if (lastFocusedElement) lastFocusedElement.focus();
   }, 200);
 }
+
+
+// Popup Functions
+function showPopup() {
+  document.getElementById('popup-overlay').classList.add('active');
+  document.getElementById('popup').classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function hidePopup() {
+  document.getElementById('popup-overlay').classList.remove('active');
+  document.getElementById('popup').classList.remove('active');
+  document.body.style.overflow = ''; // Re-enable scrolling
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Close button event
+  document.querySelector('#popup .close-btn').addEventListener('click', hidePopup);
+  
+  // Close when clicking overlay
+  document.getElementById('popup-overlay').addEventListener('click', hidePopup);
+  
+  // Prevent closing when clicking inside popup
+  document.getElementById('popup').addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+  
+  // Add this to any button that should trigger the popup:
+  // document.getElementById('trigger-button').addEventListener('click', showPopup);
+});
