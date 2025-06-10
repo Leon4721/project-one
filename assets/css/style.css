@@ -13,6 +13,38 @@
   --secondary-font: 'Bebas Neue', cursive;
   --other-font: '', cursive;
 }
+/* 1. Make sure the page really is 100% high, no gaps */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* 2. Full‐screen background on the <body> itself */
+body {
+  /* correct path from assets/css/ to assets/image/ */
+  background-image: url('../image/city.png');
+
+  /* center it, don’t tile it */
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /* scale to cover the entire viewport, cropping if needed */
+  background-size: cover;
+
+  /* “lock” it in place so content scrolls over it (optional) */
+  background-attachment: fixed;
+
+  /* fall-back background color in case image fails */
+  background-color: #000;
+}
+
+/* 3. Ensure your content sits above the background */
+nav, main, footer, .wrapper {
+  position: relative;
+  z-index: 1;
+}
+
 
 
 /* File: base/_reset.css           */
