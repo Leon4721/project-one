@@ -129,35 +129,52 @@
 ## Wireframes
 
 ### Home Page
-![home](https://github.com/user-attachments/assets/cbaddd1c-fed3-4adb-a5e0-6df9ac6674a0)
+<details><summary>Home</summary>
+<img src="docs/wireframes/wireframes-homepage.png">
+</details>
 
 
 ### About Page
-![home](https://github.com/user-attachments/assets/3b7ca434-30de-455f-a41d-440d29b1906b)
+<details><summary>Home</summary>
+<img src="docs/wireframes/wireframes-homepage.png">
+</details>
 
 
 ### Blogz Page
-![Blogz Page Wireframe](wireframes/blogz.png) ![blogz](https://github.com/user-attachments/assets/1017ad66-5636-4cd8-bacf-5d287813c61f)
+<details><summary>Home</summary>
+<img src="docs/wireframes/wireframes-blogz.png">
+</details>
 
 
 ### Contact Page
-![Contact Page Wireframe](wireframes/contact.png)![contact](https://github.com/user-attachments/assets/be6c9ab5-911d-4ca4-a427-b3e5e947e043)
-
+<details><summary>contact</summary>
+<img src="docs/wireframes/wireframes-contact.png">
+</details>
 
 ### Events Page
-![Events Page Wireframe](wireframes/events.png)
+<details><summary>IEvents</summary>
+<img src="docs/wireframes/wireframes-events.png">
+</details>
 
 ### Images/Gallery Page
-![Images/Gallery Wireframe](wireframes/images.png)
+<details><summary>Images</summary>
+<img src="docs/wireframes/wireframes-images.png">
+</details>
 
 ### Media Hub Page
-![Media Hub Wireframe](wireframes/media.png)
+<details><summary>Media</summary>
+<img src="docs/wireframes/wireframes-media.png">
+</details>
 
 ### Music Page
-![Music Page Wireframe](wireframes/music.png)
+<details><summary> Music</summary>
+<img src="docs/wireframes/wireframes-music.png">
+</details>
 
 ### Video Page
-![Video Page Wireframe](wireframes/video.png)
+<details><summary>Vidoe</summary>
+<img src="docs/wireframes/wireframes-video.png">
+</details>
 
 
 
@@ -222,7 +239,7 @@
 ### Performance
 
 - Lighthouse scores:  
-  - Performance: 90+
+  - Performance: 
   - Accessibility: 100
   - Best Practices: 100
   - SEO: 100
