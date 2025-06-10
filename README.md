@@ -206,6 +206,48 @@
 
 ## Features
 
+## Features
+
+- **Responsive Navigation Bar**  
+  Present on all pages; Bootstrap navbar collapses into a hamburger menu on smaller screens for mobile-friendly navigation :contentReference[oaicite:0]{index=0}![nav-bar](https://github.com/user-attachments/assets/d5baadf6-ac74-4e5e-9eb2-5671fd61df45)
+
+
+- **Homepage Hero Banner & 3D Mascot Slider**  
+  Full-width hero section with overlay text and “Browse Events” CTA, plus a 3D rotating mascot slider :contentReference[oaicite:1]{index=1} :contentReference[oaicite:2]{index=2}![homepage](https://github.com/user-attachments/assets/99936e29-4260-4861-94b2-6460073e82bc)
+
+
+- **About Page: Story & Mission**  
+  Hero overlay titled “The Story Behind Da Big Homie,” followed by a two-column roots & mission section and a “Read More” link :contentReference[oaicite:3]{index=3}
+
+- **Media Hub**  
+  Grid of four interactive category tiles (Music, Images, Videos, Blogz) with animated icon “buttons” :contentReference[oaicite:4]{index=4}![media](https://github.com/user-attachments/assets/ea9c3a12-4187-4c4c-9f60-dc49221ffa1f)
+
+
+- **Music Player**  
+  Vinyl-styled track cards with cover art and native HTML5 audio controls (play/pause/seek) :contentReference[oaicite:5]{index=5}
+
+- **Image Gallery Carousel**  
+  Bootstrap carousel with slide indicators and prev/next controls for seamless browsing :contentReference[oaicite:6]{index=6}
+
+- **Video Showcase**  
+  Responsive cards embedding YouTube iframes with titles, upload dates, and descriptions :contentReference[oaicite:7]{index=7}
+
+- **Blog Articles & Accessible Modals**  
+  Article preview cards; “Read More” opens full stories in ARIA-friendly modal dialogs :contentReference[oaicite:8]{index=8}
+![Uploading blogz.png…]()
+
+- **Events Listings**  
+  Event cards with images, titles, descriptions, and “Book Now” buttons that launch dynamic JS booking modals :contentReference[oaicite:9]{index=9}![eventr](https://github.com/user-attachments/assets/1ea11eca-5a4a-461b-a8f0-e4b7d31b02e0)
+
+
+- **Contact Form with Dynamic Validation**  
+  Multi-field form (name, phone, email, inquiry type) with conditional file upload for song submissions and live client-side validation :contentReference[oaicite:10]{index=10}![contact page ](https://github.com/user-attachments/assets/e5332419-c3e9-4451-983e-bcf4babdf5dd)
+
+
+- **Custom Styling & Theming**  
+  CSS variables for colors and fonts plus bespoke layouts/components in `style.css`, ensuring a cohesive, responsive brand identity :contentReference[oaicite:11]{index=11}
+
+
 | Feature                | Page(s)        | User Stories Addressed          | Screenshot  |
 |------------------------|---------------|-------------------------------|-------------|
 | Responsive Navbar      | All           | All (navigation)               | [(doc/features)]       |
