@@ -1,6 +1,7 @@
 ﻿# Da Big Homie | Community Sounds & Events
 (Developer: Leon Freeman)
-[Mockup image](docs/ami.png)
+[Mockup image](![ami](https://github.com/user-attachments/assets/606b9487-13ec-4496-9e52-83f288abc2e1)
+
 
 [Live webpage](https://leon4721.github.io/project-one/)
 
