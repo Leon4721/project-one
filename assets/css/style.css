@@ -2,8 +2,7 @@
 /* 1) Font Imports (keep yours at the top)       */
 /* ---------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
-@import url('https://fonts.cdnfonts.com/css/poppins');
+
 :root {
   --primary-color: #fb621c;
   --secondary-color: #28a745;
