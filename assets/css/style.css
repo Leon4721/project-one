@@ -561,6 +561,26 @@ footer {
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
   transform: translateY(-4px);
 }
+/* ————————————————————————————————————————————————
+   Event‐card images: show full image, no cropping
+   ———————————————————————————————————————————————— */
+.card.track-card img.card-img-top {
+  /* 1. Full width of card, but height auto so image scales proportionally */
+  width: 100%;
+  height: auto;
+
+  /* 2. Show the entire image—letterbox if needed, but never crop */
+  object-fit: contain;
+
+  /* 3. Remove any forced aspect‐ratio so box height matches the image */
+  aspect-ratio: auto !important;
+
+  /* 4. Preserve your existing styling */
+  background: #151515;
+  border: 3px solid var(--primary-color);
+  border-radius: 18px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
 
 .video-wrapper {
   position: relative;
@@ -952,6 +972,7 @@ width:auto;}}
   min-height: 100vh;
   margin: 0;
 }
+
 .categories {
   display: flex;
   flex-wrap: wrap;
@@ -1186,6 +1207,34 @@ padding: 1rem 1rem;
     }
   }
 
+@media (min-width: 800px) {
+  /* 1) Give the inner wrapper a fixed height (viewport minus header) */
+  #galleryCarousel .carousel-inner {
+    height: calc(100vh - 100px); /* adjust 100px for your header height */
+  }
+
+  /* 2) Make each slide fill that height (keeping its default display: block) */
+  #galleryCarousel .carousel-item {
+    height: 100%;
+  }
+
+  /* 3) Resize the image itself—full height, auto width, centered */
+  #galleryCarousel .carousel-item img {
+    max-height: 100%;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain; /* ensures the whole image shows, no distortion */
+  }
+
+  /* 4) (Optional) Center the entire carousel on very wide screens */
+  #galleryCarousel {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+}
+
+  
 /* ≤ 420px */
 @media (max-width: 420px) {
   #gallery {

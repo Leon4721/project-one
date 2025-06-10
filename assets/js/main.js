@@ -243,3 +243,4 @@ window.addEventListener('resize', () => {
   // Reapply limit on resize
   applyScrollLimit();
 });
+
