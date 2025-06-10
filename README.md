@@ -74,13 +74,6 @@
 - Simple, mobile-friendly contact forms
 - Responsive layout with visually engaging design on all devices
 
-### Accessibility
-
-- High contrast for text over backgrounds
-- All images and controls have descriptive `alt` text and `aria` labels
-- Keyboard navigation for navbars, carousels, and modals
-- Responsive design adapts from iPhone SE to 4K desktop
-- Forms provide validation messages and use semantic labels
 
 ### User Stories
 
@@ -303,6 +296,15 @@
   - ![CSS Validator Screenshot](assets/testing/css.png)
 
 ### Accessibility Validation
+
+### Accessibility
+
+- High contrast for text over backgrounds
+- All images and controls have descriptive `alt` text and `aria` labels
+- Keyboard navigation for navbars, carousels, and modals
+- Responsive design adapts from iPhone SE to 4K desktop
+- Forms provide validation messages and use semantic labels
+
 
 - WAVE and Lighthouse run on all main pages
   - 0 critical accessibility errors reported
