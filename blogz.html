@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Da Big Homie | Articles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Da Big Homie | Videos</title>
 
   <!-- Bootstrap CSS -->
   <link
@@ -11,24 +11,22 @@
     rel="stylesheet"
     crossorigin="anonymous"
   />
-  <!-- Font Awesome for footer icons -->
-  <script src="https://kit.fontawesome.com/aa9af45995.js" crossorigin="anonymous"></script>
-
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css"/>
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-
 <body>
-  <!-- Background Video -->
+  <!-- Background Video (reuse) -->
   <div class="video-container">
     <video autoplay loop muted playsinline id="bg-video" class="back-video">
       <source src="assets/video/batnm.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
-    <!-- Back Button -->
-    <a href="media.html" class="back-button">← Back</a>
+    <div class="overlay"></div>
   </div>
+
+  <!-- Back Button -->
+  <a href="media.html" class="back-button">← Back</a>
+
 
   <main>
     <section id="gallery" class="container">
