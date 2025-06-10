@@ -1,7 +1,9 @@
 ﻿# Da Big Homie | Community Sounds & Events
 (Developer: Leon Freeman)
+[Mockup image](docs/am-i-responsive.jpg)
 
-[Live webpage](/)
+[Live webpage](https://leon4721.github.io/project-one/index.html/)
+
 ## Table of Content
 
 1. [Project Goals](#project-goals)
@@ -133,7 +135,7 @@
 <img src="docs/wireframes/homepage.png">
 </details>
 
-docs/wireframes/about.png
+
 ### About Page
 <details><summary>Home</summary>
 <img src="docs/wireframes/about.png">
@@ -186,7 +188,7 @@ docs/wireframes/about.png
 
 - HTML5
 - CSS3
-
+  
 ### Frameworks & Tools
 
 - Bootstrap 5.3 (CDN)
@@ -223,33 +225,70 @@ docs/wireframes/about.png
   - No errors found (custom code only; some 3rd-party libs may generate benign warnings)
   - 
 <details><summary>Home</summary>
-<img src="docs/validation/validation-html-index.jpg">
+<img src="docs/validation/index.jpg">
 </details>
 <details><summary>About</summary>
+<img src="docs/validation/about.jpg>
+</details>
+<details><summary>Media</summary>
+<img src="docs/validation/media.jpg">
+</details>
+<details><summary>Events</summary>
+<img src="docs/validation/events.jpg">
+</details>
+<details><summary>Contact</summary>
+<img src="docs/validation/contact.jpg">
+</details>
+<details><summary>Music</summary>
 <img src="docs/.jpg">
 </details>
-<details><summary>Menu</summary>
-<img src="docs/validation/validation-html-menu.jpg">
+<details><summary>Video</summary>
+<img src="docs/validation/video.jpg">
 </details>
 <details><summary>Gallery</summary>
-<img src="docs/validation/validation-html-gallery.jpg">
+<img src="docs/validation/gallery.jpg">
 </details>
-<details><summary>Home</summary>
-<img src="docs/validation/validation-html-contact.jpg">
+<details><summary>Blogz</summary>
+<img src="docs/validation/blogz.jpg">
 </details>
-
 ### CSS Validation
 
 - Custom CSS validated via [W3C Jigsaw](https://jigsaw.w3.org/css-validator/)
   - No errors, minor warnings for variables
-  - ![CSS Validator Screenshot](assets/testing/css-valid.png)
+  - ![CSS Validator Screenshot](assets/testing/css.png)
 
 ### Accessibility Validation
 
 - WAVE and Lighthouse run on all main pages
   - 0 critical accessibility errors reported
   - High color contrast, focusable nav, ARIA labels
-  - ![WAVE Screenshot](assets/testing/wave.png)
+  -<details><summary>Home</summary>
+<img src="docs/accessibility/index.jpg">
+</details>
+<details><summary>About</summary>
+<img src="docs/accessibility/about.jpg>
+</details>
+<details><summary>Media</summary>
+<img src="docs/accessibility/media.jpg">
+</details>
+<details><summary>Events</summary>
+<img src="docs/accessibility/events.jpg">
+</details>
+<details><summary>Contact</summary>
+<img src="docs/accessibility/contact.jpg">
+</details>
+<details><summary>Music</summary>
+<img src="docs/accessibility.jpg">
+</details>
+<details><summary>Video</summary>
+<img src="docs/accessibility/video.jpg">
+</details>
+<details><summary>Gallery</summary>
+<img src="docs/accessibility/gallery.jpg">
+</details>
+<details><summary>Blogz</summary>
+<img src="docs/accessibility/blogz.jpg">
+</details>
 
 ### Performance
 
