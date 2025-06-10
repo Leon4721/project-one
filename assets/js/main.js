@@ -156,19 +156,34 @@ document.addEventListener('DOMContentLoaded', function () {
   // ... (rest unchanged)
 });
 
-// ========== Helper Functions ==========
+let lastFocusedElement;
+
 function openModal(id) {
   const modal = document.getElementById(id);
-  if (modal) {
-    modal.style.display = 'flex';
-    setTimeout(() => modal.classList.add('show'), 10);
-  }
-}
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.remove('show');
-    setTimeout(() => modal.style.display = 'none', 200);
-  }
+  if (!modal) return;
+  // 1) Remember what had focus
+  lastFocusedElement = document.activeElement;
+  // 2) Show & announce to AT
+  modal.setAttribute('aria-hidden', 'false');
+  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.classList.add('show');
+    // 3) Move focus into the modal
+    const focusable = modal.querySelector(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable) focusable.focus();
+  }, 10);
 }
 
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+  setTimeout(() => {
+    modal.style.display = 'none';
+    // 4) Restore focus to the trigger
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }, 200);
+}
