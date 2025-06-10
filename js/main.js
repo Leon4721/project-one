@@ -196,4 +196,45 @@ function initBannerSlider() {
   }
 
   setInterval(updateSlider, 5000);
+  
+}
+import express from 'express';
+import path from 'path';
+const app = express();
+
+// Tell Express: “Anything under /public is served at the web root”
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(3000, () => console.log('Running on http://localhost:3000'));
+
+let lastFocusedElement;
+
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  // Remember what had focus
+  lastFocusedElement = document.activeElement;
+  // Show modal
+  modal.setAttribute('aria-hidden', 'false');
+  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.classList.add('show');
+    // Move focus into modal
+    const focusable = modal.querySelector(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable) focusable.focus();
+  }, 10);
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+  setTimeout(() => {
+    modal.style.display = 'none';
+    // Return focus to trigger
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }, 200);
 }
