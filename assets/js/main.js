@@ -219,3 +219,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add this to any button that should trigger the popup:
   // document.getElementById('trigger-button').addEventListener('click', showPopup);
 });
+
+
+function applyScrollLimit() {
+  const banner = document.getElementById('banner');
+
+  if (!banner) return;
+
+  if (window.innerWidth <= 600) {
+    const bannerBottom = banner.offsetTop + banner.offsetHeight;
+    const maxScroll = bannerBottom * 0.4;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > maxScroll) {
+        window.scrollTo({ top: maxScroll, behavior: 'smooth' });
+      }
+    });
+  }
+}
+
+window.addEventListener('load', applyScrollLimit);
+window.addEventListener('resize', () => {
+  // Reapply limit on resize
+  applyScrollLimit();
+});

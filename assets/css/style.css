@@ -841,7 +841,7 @@ width:auto;}}
 /* Desktop ≥1600px */
 @media (min-width: 1600px) {
   .navbar-brand img {
-    transform: scale(0.047);
+    transform: scale(1);
   }
 }
 
@@ -849,14 +849,14 @@ width:auto;}}
 
 @media (min-width: 1280px) and (max-width: 1599px) {
   .navbar-brand img {
-    transform: scale(0.277);
+    transform: scale(0.9);
   }
 }
 
 /* Tablet ≥768px and <1280px */
 @media (min-width: 768px) and (max-width: 1279px) {
   .navbar-brand img {
-    transform: scale(0.219);
+    transform: scale(0.65);
   }
 }
 
@@ -866,6 +866,22 @@ width:auto;}}
     max-width: 200px;
   }
 }
+/* wrap your “Our Roots” and “Story” divs in .content-section */
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.content-section > div {
+  background: rgba(0,0,0,0.5);
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: static;  /* undo any absolute positioning */
+}
+
 /* ---------------------------------------------- */
 /* File: pages/_gallery.css                       */
 /* ---------------------------------------------- */
@@ -949,7 +965,7 @@ width:auto;}}
   justify-content: center;    /* Horizontal centering */
   height: 60vh;               /* Already present, ensures vertical space */
   min-height: 350px;          /* Optional: keeps it from getting too small */
-  width: 10vw;               /* Ensures full width */
+  width: 100vw;               /* Ensures full width */
   color: #fff;
   text-align: center;         /* Center all text inside */
   position: relative;         /* Retain positioning for overlays etc */
@@ -973,13 +989,36 @@ width:auto;}}
 .hero-title {
   font-size: 3rem;
   margin-bottom: 0.5rem;
-  margin-right: -100%;
+  margin: 0 0 0.5rem;
+  text-align: center;
   
 }
 .hero-subtitle {
   font-size: 1.25rem;
+   color: #ddd;
 }
-
+/* ----- Two-column content section ----- */
+    .content-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .content-section > div {
+      background: rgba(0,0,0,0.6);
+      padding: 1.5rem;
+      border-radius: 8px;
+      position: static;         /* ensure nothing overlaps */
+      color: #fff;
+      font-family: var(--primary-font);
+      line-height: 1.5;
+    }
+    .content-section h3 {
+      margin-top: 0;
+      font-family: var(--primary-font);
+      color: var(--primary-color)}
 /* ---------------------------------------------- */
 /* File: pages/_iframe-footer.css                 */
 /* ---------------------------------------------- */
@@ -1221,6 +1260,20 @@ width:auto;}}
     font-size: 2rem;
     width: 38px;
     height: 38px;
+  }
+}
+@media (max-width: 700px) {
+  .about-hero {
+    padding-top: 100px; /* Pushes hero below nav/logo */
+  }
+
+  .about-hero .hero-title {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .about-hero .hero-subtitle {
+    font-size: 1rem;
   }
 }
 
