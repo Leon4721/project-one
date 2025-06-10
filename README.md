@@ -221,7 +221,22 @@ docs/wireframes/about.png
 
 - All pages validated with [W3C HTML Validator](https://validator.w3.org/)  
   - No errors found (custom code only; some 3rd-party libs may generate benign warnings)
-  - ![HTML Validator Screenshot](assets/testing/html-valid.png)
+  - 
+<details><summary>Home</summary>
+<img src="docs/validation/validation-html-index.jpg">
+</details>
+<details><summary>About</summary>
+<img src="docs/.jpg">
+</details>
+<details><summary>Menu</summary>
+<img src="docs/validation/validation-html-menu.jpg">
+</details>
+<details><summary>Gallery</summary>
+<img src="docs/validation/validation-html-gallery.jpg">
+</details>
+<details><summary>Home</summary>
+<img src="docs/validation/validation-html-contact.jpg">
+</details>
 
 ### CSS Validation
 
