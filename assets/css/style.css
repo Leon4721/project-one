@@ -14,9 +14,9 @@
   --other-font: '', cursive;
 }
 
-/* -------------------------------- */
+
 /* File: base/_reset.css           */
-/* -------------------------------- */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -1147,10 +1147,11 @@ padding: 1rem 1rem;
   .category-label {
     font-size: 0.8rem;
   }
-  .card {
-    margin: 0 auto;
-    width: 90%;
-    font-size: 0.85rem;
+    .card {
+      margin: 0 auto;
+      width: 90%;
+      font-size: 0.85rem;
+    }
   }
 
 /* ≤ 420px */
@@ -1289,4 +1290,5 @@ padding: 1rem 1rem;
   .about-hero .hero-subtitle {
     font-size: 1rem;
   }
-}
+} 
+ 
