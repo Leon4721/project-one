@@ -287,7 +287,6 @@ footer {
   color: white;
   z-index: 1001;
 }
-/*---pop up indeex page*/
 /* Popup Overlay Styles */
 #popup-overlay {
   position: fixed;
@@ -842,7 +841,7 @@ width:auto;}}
 /* Desktop ≥1600px */
 @media (min-width: 1600px) {
   .navbar-brand img {
-    transform: scale(0.047;
+    transform: scale(0.047);
   }
 }
 
@@ -1240,8 +1239,8 @@ width:auto;}}
   }
   .my-5, .py-5, .pt-5, .pb-5 {
     margin-top: 1rem;
-    margin-}
-  }
+    margin-}}
+  
 
   
 
