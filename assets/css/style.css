@@ -432,38 +432,7 @@ footer {
 /* -------------------------------- */
 /* File: components/_video-bg.css   */
 /* -------------------------------- */
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-  pointer-events: none;
-}
-.video-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-}
-.back-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  opacity: 0.5;
-  z-index: -1;
-}
+
 /* Center the audio player both horizontally & vertically */
 
 /* -------------------------------- */
@@ -542,6 +511,23 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 0.5rem;
+}
+/* ————————————————————————————————————————————————
+   Universal back-button styling
+   ———————————————————————————————————————————————— */
+.back-button {
+  /* Use your site’s orange; you can also swap in “orange” or any hex */
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Optional: darker on hover/focus for affordance */
+.back-button:hover,
+.back-button:focus {
+  color: #ff8337;
+  outline: none;
+  text-decoration: underline;
 }
 
 /* -------------------------------- */
