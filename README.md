@@ -130,50 +130,50 @@
 
 ### Home Page
 <details><summary>Home</summary>
-<img src="docs/wireframes/wireframes-homepage.png">
+<img src="docs/wireframes/homepage.png">
 </details>
 
-
+docs/wireframes/about.png
 ### About Page
 <details><summary>Home</summary>
-<img src="docs/wireframes/wireframes-homepage.png">
+<img src="docs/wireframes/about.png">
 </details>
 
 
 ### Blogz Page
 <details><summary>Home</summary>
-<img src="docs/wireframes/wireframes-blogz.png">
+<img src="docs/wireframes/blogz.png">
 </details>
 
 
 ### Contact Page
 <details><summary>contact</summary>
-<img src="docs/wireframes/wireframes-contact.png">
+<img src="docs/wireframes/contact.png">
 </details>
 
 ### Events Page
 <details><summary>IEvents</summary>
-<img src="docs/wireframes/wireframes-events.png">
+<img src="docs/wireframes/events.png">
 </details>
 
 ### Images/Gallery Page
 <details><summary>Images</summary>
-<img src="docs/wireframes/wireframes-images.png">
+<img src="docs/wireframes/images.png">
 </details>
 
 ### Media Hub Page
 <details><summary>Media</summary>
-<img src="docs/wireframes/wireframes-media.png">
+<img src="docs/wireframes/media.png">
 </details>
 
 ### Music Page
 <details><summary> Music</summary>
-<img src="docs/wireframes/wireframes-music.png">
+<img src="docs/wireframes/music.png">
 </details>
 
 ### Video Page
 <details><summary>Vidoe</summary>
-<img src="docs/wireframes/wireframes-video.png">
+<img src="docs/wireframes/video.png">
 </details>
 
 
