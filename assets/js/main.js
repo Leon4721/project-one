@@ -6,23 +6,25 @@ function generateTicketForm() {
   return `
     <form id="ticket-form" autocomplete="off">
       <h4 class="mb-3">Get Tickets</h4>
-      <div class="mb-3"><label class="form-label">Name</label>
-        <input class="form-control" required>
-      </div>
-      <div class="mb-3"><label class="form-label">Email</label>
-        <input type="email" class="form-control" required>
+      <div class="mb-3">
+        <label for="ticket-name" class="form-label">Name</label>
+        <input id="ticket-name" class="form-control" required>
       </div>
       <div class="mb-3">
-        <label class="form-label">Number of Tickets</label>
+        <label for="ticket-email" class="form-label">Email</label>
+        <input id="ticket-email" type="email" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="ticket-count" class="form-label">Number of Tickets</label>
         <div class="input-group">
           <button type="button" class="btn btn-secondary" id="decrement">-</button>
-          <input type="number" min="1" value="1" class="form-control text-center" id="ticket-count" required>
+          <input id="ticket-count" type="number" min="1" value="1" class="form-control text-center" required>
           <button type="button" class="btn btn-secondary" id="increment">+</button>
         </div>
       </div>
       <div class="mb-3">
-        <label class="form-label">Payment Method</label>
-        <select class="form-select" required>
+        <label for="payment-method" class="form-label">Payment Method</label>
+        <select id="payment-method" class="form-select" required>
           <option>Cash</option>
           <option>Credit Card</option>
           <option>Crypto</option>
@@ -36,15 +38,17 @@ function generateArtistForm() {
   return `
     <form id="artist-form" autocomplete="off">
       <h4 class="mb-3">Register as Artist</h4>
-      <div class="mb-3"><label class="form-label">Name</label>
-        <input class="form-control" required>
-      </div>
-      <div class="mb-3"><label class="form-label">Email</label>
-        <input type="email" class="form-control" required>
+      <div class="mb-3">
+        <label for="artist-name" class="form-label">Name</label>
+        <input id="artist-name" class="form-control" required>
       </div>
       <div class="mb-3">
-        <label class="form-label">Role</label>
-        <select class="form-select" required>
+        <label for="artist-email" class="form-label">Email</label>
+        <input id="artist-email" type="email" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="artist-role" class="form-label">Role</label>
+        <select id="artist-role" class="form-select" required>
           <option>Solo Artist</option>
           <option>Group/crew</option>
           <option>Rapper</option>
@@ -54,12 +58,13 @@ function generateArtistForm() {
         </select>
       </div>
       <div class="mb-3">
-        <label class="form-label">Performance Requirements</label>
-        <textarea class="form-control" placeholder="Tech riders, equipment needs, etc."></textarea>
+        <label for="performance-req" class="form-label">Performance Requirements</label>
+        <textarea id="performance-req" class="form-control" placeholder="Tech riders, equipment needs, etc."></textarea>
       </div>
       <button class="btn btn-primary w-100" type="submit">Submit</button>
     </form>`;
 }
+
 
 // Modal logic for Event forms
 document.addEventListener('DOMContentLoaded', function () {
