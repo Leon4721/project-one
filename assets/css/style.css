@@ -1275,6 +1275,7 @@ padding: 1rem 1rem;
     height: 38px;
   }
 }
+
 @media (max-width: 700px) {
   .about-hero {
     padding-top: 100px; /* Pushes hero below nav/logo */
@@ -1289,35 +1290,3 @@ padding: 1rem 1rem;
     font-size: 1rem;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
