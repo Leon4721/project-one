@@ -1,0 +1,20 @@
+{
+  "name": "Da Big Homie",
+  "short_name": "Big Homie",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fb621c",
+  "theme_color": "#fb621c",
+  "icons": [
+    {
+      "src": "assets/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
