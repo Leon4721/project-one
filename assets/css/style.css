@@ -10,8 +10,7 @@
   --light-color: #f8f9fa;
   --dark-color: #343a40;
   --primary-font: 'Press Start 2P', cursive;
-  --secondary-font: 'Bebas Neue', cursive;
-  --other-font: '', cursive;
+
 }
 /* 1. Make sure the page really is 100% high, no gaps */
 html, body {
