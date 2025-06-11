@@ -147,11 +147,11 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 
 ## Wireframes
 
-### Home Page
+
+### home Page
 <details><summary>Home</summary>
 <img src="docs/wireframes/home.png">
 </details>
-
 
 ### About Page
 <details><summary>Home</summary>
@@ -175,9 +175,9 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 <img src="docs/wireframes/events.png">
 </details>
 
-### Images/Gallery Page
-<details><summary>Images</summary>
-<img src="docs/wireframes/images.png">
+### Video Page
+<details><summary>Video</summary>
+<img src="docs/wireframes/video.png">
 </details>
 
 ### Media Hub Page
