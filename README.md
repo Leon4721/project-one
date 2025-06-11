@@ -122,7 +122,7 @@
 
 
 ### Colour Scheme
-![AdobeColor-Big homie](https://github.com/user-attachments/assets/09c4afbf-7a97-416e-8ebc-a64ceb820bc7)
+![AdobeColor-My Color Theme (1)](https://github.com/user-attachments/assets/65cee7e3-7e49-419b-9ccd-049ec4f320c7)
 
 - Rich dark backgrounds (#000, #111) for immersive vibe
 - Accent colors drawn from cover art and background
@@ -135,26 +135,6 @@ Its blocky, pixelated forms echo classic arcade type and street-art stencil lett
 ### Structure
 
 The site follows a familiar, easy-to-learn layout: a left-aligned logo in the navbar, right-aligned links that collapse into a hamburger menu on mobile, and five main pages:
-
-# Home (index.html)
-with a Hero banner/slider spotlighting featured art peices.
-Quick links to the events section.
-# About (about.html, modal)
-In-page overlay with Big Homie’s mission, community history, and ethos.
-# Media Hub (media.html)
-Cards linking to four sub-sections:
--Music (music.html): Track cards with cover art and inline players
--Gallery (gallery.html): Full-screen, swipeable image carousel
--Video (video.html): Responsive video cards with embeds
--Blogz (blogz.html): Teaser cards that open full articles in a modal
-# events (events.html)
- -Event cards with “Register” or “Buy Tickets” buttons
- -Pop-up modal forms for attendee and artist registration
-# contact (contact.html)
--Multi-type inquiry form (general, collab, submission)
--Embedded Google Map showing the venue location
- 
-
 - **index.html**: Home/landing, hero slider, 
 - **about.html**: Community story, mission, and call to action
 - **media.html**: Grid links to music, gallery, video, and blogz
@@ -167,11 +147,11 @@ Cards linking to four sub-sections:
 
 ## Wireframes
 
-### Home Page
-<details><summary>Home</summary>
-<img src="docs/wireframes/homepage.png">
-</details>
 
+### home Page
+<details><summary>Home</summary>
+<img src="docs/wireframes/home.png">
+</details>
 
 ### About Page
 <details><summary>Home</summary>
@@ -195,9 +175,9 @@ Cards linking to four sub-sections:
 <img src="docs/wireframes/events.png">
 </details>
 
-### Images/Gallery Page
-<details><summary>Images</summary>
-<img src="docs/wireframes/images.png">
+### Video Page
+<details><summary>Video</summary>
+<img src="docs/wireframes/video.png">
 </details>
 
 ### Media Hub Page
@@ -211,7 +191,7 @@ Cards linking to four sub-sections:
 </details>
 
 ### Video Page
-<details><summary>Vidoe</summary>
+<details><summary>Video</summary>
 <img src="docs/wireframes/video.png">
 </details>
 
@@ -246,58 +226,65 @@ Cards linking to four sub-sections:
 ## Features
 
 ## Features
-
-- **Responsive Navigation Bar**  
-  Present on all pages; Bootstrap navbar collapses into a hamburger menu on smaller screens for mobile-friendly navigation :contentReference[oaicite:0]{index=0}![nav-bar](https://github.com/user-attachments/assets/d5baadf6-ac74-4e5e-9eb2-5671fd61df45)
-
-
-- **Homepage Hero Banner & 3D Mascot Slider**  
-  Full-width hero section with overlay text and “Browse Events” CTA, plus a 3D rotating mascot slider :contentReference[oaicite:1]{index=1} :contentReference[oaicite:2]{index=2}![homepage](https://github.com/user-attachments/assets/99936e29-4260-4861-94b2-6460073e82bc)
+Responsive Navigation Bar
+Present on all pages and collapses to a hamburger menu on mobile.
+Fulfills: All navigation-related user stories for easy access on all devices.
+:![nav-bar](https://github.com/user-attachments/assets/bd170238-2e5c-4603-8b52-2d9a08b59967)
+![hamburger](https://github.com/user-attachments/assets/7169862b-57a2-420f-af15-591b4f765fab)
 
 
-- **About Page: Story & Mission**  
-  Hero overlay titled “The Story Behind Da Big Homie,” followed by a two-column roots & mission section and a “Read More” link :contentReference[oaicite:3]{index=3}
-
-- **Media Hub**  
-  Grid of four interactive category tiles (Music, Images, Videos, Blogz) with animated icon “buttons” :contentReference[oaicite:4]{index=4}![media](https://github.com/user-attachments/assets/ea9c3a12-4187-4c4c-9f60-dc49221ffa1f)
-
-
-- **Music Player**  
-  Vinyl-styled track cards with cover art and native HTML5 audio controls (play/pause/seek) :contentReference[oaicite:5]{index=5}
-
-- **Image Gallery Carousel**  
-  Bootstrap carousel with slide indicators and prev/next controls for seamless browsing :contentReference[oaicite:6]{index=6}
-
-- **Video Showcase**  
-  Responsive cards embedding YouTube iframes with titles, upload dates, and descriptions :contentReference[oaicite:7]{index=7}
-
-- **Blog Articles & Accessible Modals**  
-  Article preview cards; “Read More” opens full stories in ARIA-friendly modal dialogs :contentReference[oaicite:8]{index=8}
-![Uploading blogz.png…]()
-
-- **Events Listings**  
-  Event cards with images, titles, descriptions, and “Book Now” buttons that launch dynamic JS booking modals :contentReference[oaicite:9]{index=9}![eventr](https://github.com/user-attachments/assets/1ea11eca-5a4a-461b-a8f0-e4b7d31b02e0)
+Hero Banner & Mascot Slider (Home):
+Animated hero section with a 3D mascot slider greets users on the home page.
+Fulfills: User Story 4 — gives first-time users a clear sense of mission, vibe, and the site's community focus.
+![homepage](https://github.com/user-attachments/assets/fd263bd1-4017-4c32-b61c-586f0808970b)
 
 
-- **Contact Form with Dynamic Validation**  
-  Multi-field form (name, phone, email, inquiry type) with conditional file upload for song submissions and live client-side validation :contentReference[oaicite:10]{index=10}![contact page ](https://github.com/user-attachments/assets/e5332419-c3e9-4451-983e-bcf4babdf5dd)
+About Page Story:
+coloum layout with community roots, platform mission, and a call-to-action.
+Fulfills: User Story 4 — helps users and returning visitors understand the site's values and story.
+![about](https://github.com/user-attachments/assets/8d043de9-bbd9-4a49-993d-5821bed955b0)
 
 
-- **Custom Styling & Theming**  
-  CSS variables for colors and fonts plus bespoke layouts/components in `style.css`, ensuring a cohesive, responsive brand identity :contentReference[oaicite:11]{index=11}
+Media Hub Grid:
+Central page with four interactive tiles for music, gallery, video, and blogs.
+Fulfills: User Story 5 — lets returning users instantly access media and blog content.
+![media](https://github.com/user-attachments/assets/d3f7a786-3801-4212-ab84-14f65dda3b50)
 
+Music Player Cards:
+Vinyl-inspired cards with built-in audio players and track/artist info.
+Fulfills: User Story 3 (first-timers can sample music); User Story 5 (returning users can replay tracks).
+![music](https://github.com/user-attachments/assets/67ecf31d-6a51-4d05-8a23-8dbb6100f544)
 
-| Feature                | Page(s)        | User Stories Addressed          | Screenshot  |
-|------------------------|---------------|-------------------------------|-------------|
-| Responsive Navbar      | All           | All (navigation)               | [(doc/features)]       |
-| Hero Banner/Slider     | index.html    | Welcome, brand immersion       | [img]       |
-| Modal About            | index.html    | Learn about platform           | [img]       |
-| Event Modal Forms      | events.html   | RSVP, Register, Tickets        | [img]       |
-| Dynamic Gallery        | gallery.html  | Browse images, feel vibe       | [img]       |
-| Music Player           | music.html    | Listen to new tracks           | [img]       |
-| Video Cards            | video.html    | Watch battles, performances    | [img]       |
-| Blog Modal             | blogz.html    | Read urban stories             | [img]       |
-| Contact Form & Map     | contact.html  | Message, find location         | [img]       |
+Gallery Carousel:
+Responsive Bootstrap carousel displays full images with no cropping.
+Fulfills: User Story 3 — lets users view community photos to get the site’s vibe.
+![gallery](https://github.com/user-attachments/assets/bf1ba32f-eb59-48f1-9271-c8ed42e96815)
+
+Video Cards:
+Embedded, responsive video players with titles, upload dates, and descriptions.
+Fulfills: User Story 3 — lets users watch videos of performances, battles, and tutorials.
+![video](https://github.com/user-attachments/assets/90787808-78f9-4d0a-9ec5-f3e8b7ff4680)
+
+Blog Previews & Modals:
+Preview cards open full articles in accessible modals.
+Fulfills: User Story 5 (easy access to blog content for returning users); Admin Story 9 (site owner can easily update content).
+![blogz](https://github.com/user-attachments/assets/3b6ae4ad-da1d-41c0-a502-d22cb2cf7093)
+
+Event Cards & Booking Modals:
+Cards display event title, venue, price, and open modals for tickets or artist registration.
+Fulfills: User Story 1 (see upcoming events and locations); User Story 2 (see ticket prices); Admin Story 10 (easy artist and attendee registration).
+![pricecard](https://github.com/user-attachments/assets/37f916f0-8130-48a3-997f-b3ec7c788eca)
+
+Contact Form:
+Multi-purpose form with file upload for submissions and integrated Google Map.
+Fulfills: User Story 6 (users can submit feedback/collaborations or songs); User Story 7 (users can get directions via the map).
+![commetr box](https://github.com/user-attachments/assets/af6d1122-8d84-4df8-a1dd-dffb19e354db)
+
+Custom Styling & Theming:
+Cohesive brand visuals with CSS variables, dark/retro palette, and fully responsive design.
+Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin Story 11 (keeps the community branding strong and consistent). veiwed on both -iphone 5s and Ipad pro -
+![iphone 5s](https://github.com/user-attachments/assets/0ca80203-314f-4319-95c5-7dba69ff3056)
+![ipad pro](https://github.com/user-attachments/assets/406572b8-db11-4826-8fc7-d1aa81a59550)
 
 ---
 
@@ -309,63 +296,53 @@ Cards linking to four sub-sections:
   - No errors found (custom code only; some 3rd-party libs may generate benign warnings)
   - 
 <details><summary>Home</summary>
-<img src="docs/validation/index.jpg">
+<img src="docs/validation/index.png">
 </details>
 <details><summary>About</summary>
-<img src="docs/validation/about.jpg>
+<img src="docs/validation/about.png>
 </details>
 <details><summary>Media</summary>
-<img src="docs/validation/media.jpg">
+<img src="docs/validation/media.png">
 </details>
 <details><summary>Events</summary>
-<img src="docs/validation/events.jpg">
+<img src="docs/validation/events.png">
 </details>
 <details><summary>Contact</summary>
-<img src="docs/validation/contact.jpg">
+<img src="docs/validation/contact.png">
 </details>
 <details><summary>Music</summary>
-<img src="docs/.jpg">
+<img src="docs/music.png">
 </details>
 <details><summary>Video</summary>
-<img src="docs/validation/video.jpg">
+<img src="docs/validation/video.png">
 </details>
 <details><summary>Gallery</summary>
-<img src="docs/validation/gallery.jpg">
+<img src="docs/validation/gallery.png">
 </details>
 <details><summary>Blogz</summary>
-<img src="docs/validation/blogz.jpg">
+<img src="docs/validation/blogz.png">
 </details>
 ### CSS Validation
 
-- Custom CSS validated via [W3C Jigsaw]![about](https://github.com/user-attachments/assets/ab7479e8-304e-4fd0-9061-b19a672cbec0)
-
+- Custom CSS validated via 
+<details><summary>CSS</summary>
+<img src="docs/validation/css.png">
+</details>
   - No errors, minor warnings for variables
   -
 
 ### Accessibility Validation
 
 ### Accessibility
+-The WAVE WebAIM web accessibility evaluation tool was used to ensure the website met high accessibility standards. All pages pass with 0 errors.
 
-- High contrast for text over backgrounds
-- All images and controls have descriptive `alt` text and `aria` labels
-- Keyboard navigation for navbars, carousels, and modals
-- Responsive design adapts from iPhone SE to 4K desktop
-- Forms provide validation messages and use semantic labels
-
-
-- WAVE and Lighthouse run on all main pages
-  - 0 critical accessibility errors reported
-  - High color contrast, focusable nav, ARIA labels
   -<details><summary>Home</summary>
 <img src="docs/accessibility/index.jpg">
 </details>
 <details><summary>About</summary>
-<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)
->
-
-<details><summary>Media</summary>
+<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)>
+    <details><summary>Media</summary>
 <img src="docs/accessibility/media.jpg">![media](https://github.com/user-attachments/assets/bd4e4bb5-be2a-4654-a77e-c1a001f0e1f7)
-
 </details>
 <details><summary>Events</summary>
 <img src="docs/accessibility/events.jpg">
