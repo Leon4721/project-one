@@ -227,3 +227,59 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(3000, () => console.log('Running on http://localhost:3000'));
 
 
+// When you open the modal
+function openModal(modal) {
+  modal.style.display = "block";
+  modal.setAttribute("aria-modal", "true");
+  modal.setAttribute("role", "dialog");
+  document.body.style.overflow = "hidden"; // Prevent background scroll
+
+  // Save previously focused element to restore later
+  modal._previouslyFocused = document.activeElement;
+
+  // Focus the first focusable element in the modal
+  const focusableElements = modal.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  if (focusableElements.length) focusableElements[0].focus();
+
+  // Listen for ESC and Tab
+  modal.addEventListener('keydown', trapFocus);
+}
+
+// When you close the modal
+function closeModal(modal) {
+  modal.style.display = "none";
+  modal.removeAttribute("aria-modal");
+  modal.removeAttribute("role");
+  document.body.style.overflow = "";
+
+  // Restore focus
+  if (modal._previouslyFocused) modal._previouslyFocused.focus();
+
+  modal.removeEventListener('keydown', trapFocus);
+}
+
+// Trap focus and handle ESC
+function trapFocus(e) {
+  const modal = e.currentTarget;
+  const focusableElements = modal.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  const first = focusableElements[0];
+  const last = focusableElements[focusableElements.length - 1];
+
+  if (e.key === 'Escape') {
+    closeModal(modal);
+  }
+  if (e.key === 'Tab') {
+    if (focusableElements.length === 0) return;
+    if (e.shiftKey) { // Shift + Tab
+      if (document.activeElement === first) {
+        last.focus();
+        e.preventDefault();
+      }
+    } else { // Tab
+      if (document.activeElement === last) {
+        first.focus();
+        e.preventDefault();
+      }
+    }
+  }
+}
