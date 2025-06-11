@@ -203,14 +203,19 @@ function hidePopup() {
   document.body.style.overflow = ''; // Re-enable scrolling
 }
 
-// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#popup .close-btn').addEventListener('click', hidePopup);
-  document.getElementById('popup-overlay').addEventListener('click', hidePopup);
-  document.getElementById('popup').addEventListener('click', function(e) {
+  const closeBtn = document.querySelector('#popup .close-btn');
+  if (closeBtn) closeBtn.addEventListener('click', hidePopup);
+
+  const popupOverlay = document.getElementById('popup-overlay');
+  if (popupOverlay) popupOverlay.addEventListener('click', hidePopup);
+
+  const popup = document.getElementById('popup');
+  if (popup) popup.addEventListener('click', function(e) {
     e.stopPropagation();
   });
 });
+
 
 
 function applyScrollLimit() {
