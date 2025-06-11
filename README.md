@@ -1,4 +1,4 @@
-﻿# Da Big Homie | Community Sounds & Events
+# Da Big Homie | Community Sounds & Events
 (Developer: Leon Freeman)
 
 ![ami](https://github.com/user-attachments/assets/be8b5355-62ea-45ae-9542-30fac679fd8d)
@@ -339,14 +339,11 @@ Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin
   -<details><summary>Home</summary>
 <img src="docs/accessibility/index.jpg">
 </details>
-
--<details><summary>About</summary>
-<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)></details>
-    
-    <details><summary>Media</summary>     
+<details><summary>About</summary>
+<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)>
+    <details><summary>Media</summary>
 <img src="docs/accessibility/media.jpg">![media](https://github.com/user-attachments/assets/bd4e4bb5-be2a-4654-a77e-c1a001f0e1f7)
 </details>
-
 <details><summary>Events</summary>
 <img src="docs/accessibility/events.jpg">
 </details>
@@ -436,6 +433,5 @@ Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin
 
 ## Acknowledgements
 
-- Inspiration: Local artist community and the African diaspora
+- Inspiration: Local artist community
 - Special thanks: Family, friends, and Code Institute Slack reviewers
-
