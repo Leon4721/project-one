@@ -227,129 +227,149 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 ## Features
 The website consists of nine HTML pages, with five main pages featured in the navigation bar.
  
-###Logo and Navigation Bar:
--The  logo and nav bar appear at the top of every page.
--The navigation bar is fully responsive—on, it changes to a hamburger menu for mobile usability.
--The navbar includes direct links to the five core pages: Home, About, Events, Media, and Contact.
--This structure allows users to easily find and explore different sections of the site easily.
--The link for the currently active main page is highlighted in the navigation bar, helping users keep track of where they are.
--The logo itself is clickable and always links back to the Home page, making it simple for users to return to the main section from anywhere on the site.
--User stories covered: this Fulfills all navigation-related user stories for easy access on all devices.
+### Logo and Navigation Bar
+
+- The logo and nav bar appear at the top of every page.
+- The navigation bar is fully responsive—on smaller screens, it changes to a hamburger menu for mobile usability.
+- The navbar includes direct links to the five core pages: Home, About, Events, Media, and Contact.
+- This structure allows users to easily find and explore different sections of the site.
+- The link for the currently active main page is highlighted in the navigation bar, helping users keep track of where they are.
+- The logo itself is clickable and always links back to the Home page, making it simple for users to return to the main section from anywhere on the site.
+- User stories covered: This fulfills all navigation-related user stories for easy access on all devices.
 
 ![hamburger](https://github.com/user-attachments/assets/7169862b-57a2-420f-af15-591b4f765fab)
-:![nav-bar](https://github.com/user-attachments/assets/bd170238-2e5c-4603-8b52-2d9a08b59967)
+![nav-bar](https://github.com/user-attachments/assets/bd170238-2e5c-4603-8b52-2d9a08b59967)
 
-###Hero Banner & Mascot Slider (Home):
--Animated hero section with a 3D mascot slider greets users on the home page.
--Fulfills: User Story 4 — gives first-time users a clear sense of mission, vibe, and the site's community focus.
+### Hero Banner & Mascot Slider (Home)
+
+- Animated hero section with a 3D mascot slider greets users on the home page.
+- Fulfills: User Story 4 — gives first-time users a clear sense of mission, vibe, and the site's community focus.
 
 ![homepage](https://github.com/user-attachments/assets/fd263bd1-4017-4c32-b61c-586f0808970b)
 
+### About Page Story
 
-###About Page Story:
--coloum layout with community roots, platform mission, and a call-to-action.
--Fulfills: User Story 4 — helps users and returning visitors understand the site's values and story.
+- Column layout with community roots, platform mission, and a call-to-action.
+- Fulfills: User Story 4 — helps users and returning visitors understand the site's values and story.
 
 ![about](https://github.com/user-attachments/assets/8d043de9-bbd9-4a49-993d-5821bed955b0)
 
+### Media Hub Grid
 
-###Media Hub Grid:
--Central page with four interactive tiles for music, gallery, video, and blogs.
--Fulfills: User Story 5 — lets returning users instantly access media and blog content.
+- Central page with four interactive tiles for music, gallery, video, and blogs.
+- Fulfills: User Story 5 — lets returning users instantly access media and blog content.
 
 ![media](https://github.com/user-attachments/assets/d3f7a786-3801-4212-ab84-14f65dda3b50)
 
-###Music Player Cards:
--Vinyl-inspired cards with built-in audio players and track/artist info.
--Fulfills: User Story 3 (first-timers can sample music); User Story 5 (returning users can replay tracks).
+### Music Player Cards
+
+- Vinyl-inspired cards with built-in audio players and track/artist info.
+- Fulfills: User Story 3 (first-timers can sample music); User Story 5 (returning users can replay tracks).
 
 ![music](https://github.com/user-attachments/assets/67ecf31d-6a51-4d05-8a23-8dbb6100f544)
 
-###Gallery Carousel:
--Responsive Bootstrap carousel displays full images with no cropping.
--Fulfills: User Story 3 — lets users view community photos to get the site’s vibe.
+### Gallery Carousel
+
+- Responsive Bootstrap carousel displays full images with no cropping.
+- Fulfills: User Story 3 — lets users view community photos to get the site’s vibe.
 
 ![gallery](https://github.com/user-attachments/assets/bf1ba32f-eb59-48f1-9271-c8ed42e96815)
 
-###Video Cards:
+### Video Cards
 
--Embedded, responsive video players with titles, upload dates, and descriptions.
--Fulfills: User Story 3 — lets users watch videos of performances, battles, and tutorials.
+- Embedded, responsive video players with titles, upload dates, and descriptions.
+- Fulfills: User Story 3 — lets users watch videos of performances, battles, and tutorials.
 
 ![video](https://github.com/user-attachments/assets/90787808-78f9-4d0a-9ec5-f3e8b7ff4680)
 
-###Blog Previews & Modals:
--Preview cards open full articles in accessible modals.
--Fulfills: User Story 5 (easy access to blog content for returning users); Admin Story 9 (site owner can easily update content).
+### Blog Previews & Modals
 
-p![blogz](https://github.com/user-attachments/assets/3b6ae4ad-da1d-41c0-a502-d22cb2cf7093)
+- Preview cards open full articles in accessible modals.
+- Fulfills: User Story 5 (easy access to blog content for returning users); Admin Story 9 (site owner can easily update content).
 
-###Event Cards & Booking Modals:
--Cards display event title, venue, price, and open modals for tickets or artist registration.
--Fulfills: User Story 1 (see upcoming events and locations); User Story 2 (see ticket prices); Admin Story 10 (easy artist and attendee registration).
+![blogz](https://github.com/user-attachments/assets/3b6ae4ad-da1d-41c0-a502-d22cb2cf7093)
+
+### Event Cards & Booking Modals
+
+- Cards display event title, venue, price, and open modals for tickets or artist registration.
+- Fulfills: User Story 1 (see upcoming events and locations); User Story 2 (see ticket prices); Admin Story 10 (easy artist and attendee registration).
 
 ![pricecard](https://github.com/user-attachments/assets/37f916f0-8130-48a3-997f-b3ec7c788eca)
 
-###Contact Form:
--Multi-purpose form with file upload for submissions and integrated Google Map.
--Fulfills: User Story 6 (users can submit feedback/collaborations or songs); User Story 7 (users can get directions via the map).
+### Contact Form
 
-![commetr box](https://github.com/user-attachments/assets/af6d1122-8d84-4df8-a1dd-dffb19e354db)
+- Multi-purpose form with file upload for submissions and integrated Google Map.
+- Fulfills: User Story 6 (users can submit feedback/collaborations or songs); User Story 7 (users can get directions via the map).
 
-###Custom Styling & Theming:
--Cohesive brand visuals with CSS variables, dark/retro palette, and fully responsive design.
--Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin Story 11 (keeps the community branding strong and consistent). veiwed on both -iphone 5s and Ipad pro -
+![commetr box](https://github.com/user-attachments/assets/af6d1122-8d84-4df8-a1dd-dffb19e
 
-![iphone 5s](https://github.com/user-attachments/assets/0ca80203-314f-4319-95c5-7dba69ff3056)
-![ipad pro](https://github.com/user-attachments/assets/406572b8-db11-4826-8fc7-d1aa81a59550)
+### Custom Styling & Theming
+
+- The site features cohesive brand visuals using CSS variables, a dark retro-inspired color palette, and fully responsive layouts.
+- Fulfills: User Story 8 (provides a responsive, mobile-friendly experience) and Admin Story 11 (maintains strong, consistent community branding).
+- The site’s design and functionality have been successfully tested on both iPhone 5s and iPad Pro.
+
+![iPhone 5s](https://github.com/user-attachments/assets/0ca80203-314f-4319-95c5-7dba69ff3056)
+![iPad Pro](https://github.com/user-attachments/assets/406572b8-db11-4826-8fc7-d1aa81a59550)
 
 ---
 
 ## Testing & Validation
 
-### HTML Validation
+### HTML Validation- All pages validated with [W3C HTML Validator](https://validator.w3.org/)
+  - No errors found (custom code only; some 3rd-party libraries may generate benign warnings).
 
-- All pages validated with [W3C HTML Validator](https://validator.w3.org/)  
-  - No errors found (custom code only; some 3rd-party libs may generate benign warnings)
-  - <details><summary>Home</summary>
-<img src="docs/validation/home.png">
-</details>
-<details><summary>Home</summary>
-<img src="docs/validation/index.png">
+<details>
+  <summary>Home</summary>
+  <img src="docs/validation/home.png">
 </details>
 
+<details>
+  <summary>Index</summary>
+  <img src="docs/validation/index.png">
+</details>
 
-<details><summary>About</summary>
-<img src="docs/validation/about.png>
+<details>
+  <summary>About</summary>
+  <img src="docs/validation/about.png">
 </details>
     
-<details><summary>Media</summary>
-<img src="docs/validation/media.png">
+<details>
+  <summary>Media</summary>
+  <img src="docs/validation/media.png">
 </details>
 
-<details><summary>Events</summary>
-<img src="docs/validation/events.png">
+<details>
+  <summary>Events</summary>
+  <img src="docs/validation/events.png">
 </details>
 
-<details><summary>Contact</summary>
-<img src="docs/validation/contact.png">
+<details>
+  <summary>Contact</summary>
+  <img src="docs/validation/contact.png">
 </details>
 
-<details><summary>Music</summary>
-<img src="docs/music.png">
+<details>
+  <summary>Music</summary>
+  <img src="docs/validation/music.png">
 </details>
 
-<details><summary>Video</summary>
-<img src="docs/validation/video.png">
+<details>
+  <summary>Video</summary>
+  <img src="docs/validation/video.png">
 </details>
 
-<details><summary>Gallery</summary>
-<img src="docs/validation/gallery.png">
+<details>
+  <summary>Gallery</summary>
+  <img src="docs/validation/gallery.png">
 </details>
 
-<details><summary>Blogz</summary>
-<img src="docs/validation/blogz.png">
+<details>
+  <summary>Blogz</summary>
+  <img src="docs/validation/blogz.png">
 </details>
+
+
 
 ### CSS Validation
 -<details><summary>CSS</summary>
@@ -557,23 +577,29 @@ Custom Styling	Browse any page	Colors, fonts, and layout reflect hip-hop/urban t
    - Clone repo, open `index.html` in browser
    - All assets are relative; no server needed
 
----
 
-## Credits
 
-- **Bootstrap 5** (CDN) for grid/layout
-- **FontAwesome** for icons
-- **Images/Artwork:**  
-  - `cover 1.png`, `afri 1.png`, etc: [Unsplash artist], [Pixabay], or original  
-  - All other images and video by Leon Freeman unless otherwise stated
-- **Code references:**  
-  - Modal/event handler patterns adapted from Bootstrap docs  
-  - Carousel logic inspired by [Bootstrap examples]
-- **Audio:** Tracks by Leon Freeman and collaborators
+## Credits & Attribution
 
----
+### Images & Media
+- All images and artwork are originals Created by Sora AI (leonfreemans creations) unless credited below.
 
-## Acknowledgements
 
-- Inspiration: Local artist community
-- Special thanks: Family, friends, and Code Institute Slack reviewers
+### Code
+- Bootstrap components adapted from official documentation.
+- Banner slider implementation adapted from Lun Dev’s CSS-only tutorial: "Create Crazy 3D Image Slider Effects Using CSS Only" (YouTube).
+
+
+### Music & Audio
+- All music tracks are original compositions by Leon Freeman and perosnal friends e.g aka keyz, Tev and Chev
+- Any embedded media (YouTube) is used with permission or as allowed by platform.
+
+### JavaScript
+- All scripts written by Leon Freeman. Any snippets adapted from forums/tutorials are credited in code comments.
+
+### Fonts
+- Google Fonts: Press Start 2P
+
+### Acknowledgements
+- Thanks to testers, friends,
+- 
