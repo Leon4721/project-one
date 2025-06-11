@@ -1,10 +1,10 @@
 {
   "name": "Da Big Homie",
-  "short_name": "Big Homie",
+  "short_name": "BigHomie",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fb621c",
-  "theme_color": "#fb621c",
+  "description": "Community Sounds & Events",
   "icons": [
     {
       "src": "assets/favicon/android-chrome-192x192.png",
