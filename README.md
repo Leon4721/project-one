@@ -336,10 +336,11 @@ Cards linking to four sub-sections:
 <img src="docs/validation/blogz.jpg">
 </details>
 ### CSS Validation
+![css](https://github.com/user-attachments/assets/008bad3b-26f5-44c6-99b9-42c15efaaa82)![Uploading css.png…]()
 
-- Custom CSS validated via [W3C Jigsaw](https://jigsaw.w3.org/css-validator/)
+- Custom CSS validated via [W3C Jigsaw]
   - No errors, minor warnings for variables
-  - ![CSS Validator Screenshot](assets/testing/css.png)
+  -
 
 ### Accessibility Validation
 
@@ -359,8 +360,9 @@ Cards linking to four sub-sections:
 <img src="docs/accessibility/index.jpg">
 </details>
 <details><summary>About</summary>
-<img src="docs/accessibility/about.jpg>
-</details>
+<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)
+>
+
 <details><summary>Media</summary>
 <img src="docs/accessibility/media.jpg">
 </details>
