@@ -381,6 +381,21 @@ footer {
   margin: auto; /* If it ever needs to scroll */
   position: relative;
 }
+/* Make cards and their images fully rounded and seamless */
+.track-card {
+  border-radius: 1.5rem;   /* adjust as needed for your look */
+  overflow: hidden;        /* ensures child images are clipped to card */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10); /* Optional, for soft shadow */
+}
+
+.track-card img {
+  border-radius: 0;        /* Remove if you want sharp corners INSIDE */
+  display: block;          /* No gaps under images */
+  width: 100%;             /* Responsive images */
+  height: auto;
+}
+
+
 
 @keyframes fadeInUp {
   from {
@@ -407,12 +422,6 @@ footer {
   margin-bottom: 0.6rem;
 }
 
-/* -------------------------------- */
-/* -------------------------------- */
-/* File: components/_video-bg.css   */
-/* -------------------------------- */
-
-/* Center the audio player both horizontally & vertically */
 
 /* -------------------------------- */
 /* File: components/_tables.css     */
