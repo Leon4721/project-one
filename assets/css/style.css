@@ -24,6 +24,7 @@ html, body {
 body {
   /* correct path from assets/css/ to assets/image/ */
   background-image: url('../image/city.png');
+  
 
   /* center it, don’t tile it */
   background-position: center center;
