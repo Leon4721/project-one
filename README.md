@@ -80,6 +80,26 @@
 
 ### User Stories
 
+#### First-time User 
+1. As a first time user, I want see upcoming event venues so that I know where or when Big Homie shows are located.
+2. As a first time user, I want to know ticket price ranges on each event card so that I can decide which shows fit my budget.
+3. As a first-time user, I want to sample audio, images, and video so that I get a feel for what to expect at the scene.
+4. As a first time user, I want to get a feel of what to expect in term the "mission" so that I can learn about the Big Homie’s ideology through community story and context.
+
+#### Returning User
+5. As a returning user,I want to control playback (play/pause/skip) inline while browsing so that my listening isn’t interrupted.
+6. As a returnign user, I want to use the Contact form so that I can quickly send feedback or collab requests
+7. As a returning user, I want to use the Contact section with a map integration so that I can quickly see our where the venue is location.
+8. As a returning user, I want to replay tracks I enjoyed on demand aswell as download the Music so that I can listen to it when ever wherver (offline)
+
+
+#### Site Owner 
+13. As the site owner, I want to update hero slider images, captions, and links so that I can keep the homepage spotlight fresh.
+14. As the site owner, I want users to get to know the ideology of what we stand for
+15. as the site owner, I want to create natural engagem,ent either online or local through grass roots engaments and comopetiton 
+16. As the site owner, I want the users to be able to submit content to be curated and accesed before competaions or artist spots 
+
+
 | As a…            | I want to…                                             | So that I can…                                   |
 |------------------|--------------------------------------------------------|--------------------------------------------------|
 | New Visitor      | See upcoming events and RSVP or buy tickets            | Attend local shows and connect with the scene    |
@@ -95,7 +115,7 @@
 ### Design Choices
 
 - the website ws desgine with a 90s hip-hop vibe with a gritty, urban palette: burnt orange (#FB621C),
- and moody purple (#410547). VHS glitches, pixel fonts, and graffiti-inspired layouts create a raw, nostalgic feel. 
+ and moody purple (#410547).smokey backgorunds , pixel fonts, and graffiti-inspired layouts create a raw, nostalgic feel. 
 - Built for edge and nostalgia—like a mixtape in website form
 - Each main page features a distinct hero section (carousel, video, banner)
 - Modal and carousel interactions reinforce modern, dynamic feel
@@ -105,19 +125,37 @@
 ![AdobeColor-Big homie](https://github.com/user-attachments/assets/09c4afbf-7a97-416e-8ebc-a64ceb820bc7)
 
 - Rich dark backgrounds (#000, #111) for immersive vibe
-- Accent colors drawn from cover art and afro-futurist palettes
+- Accent colors drawn from cover art and background
 - High contrast for all buttons/text over video
 
 ### Fonts
-
-- Bebas Neue (headers)
-- Inter (body text)
-- Oswald and Macondo (stylish accents)
-- Google Fonts CDN for all
+Press Start 2P with cursive as a fallback is used everywhere ( headings, body text) to reinforce Big Homie’s retro, underground mixtape vibe.
+Its blocky, pixelated forms echo classic arcade type and street-art stencil lettering while remaining legible at all sizes.
 
 ### Structure
 
-- **index.html**: Home/landing, hero slider, and about modal
+The site follows a familiar, easy-to-learn layout: a left-aligned logo in the navbar, right-aligned links that collapse into a hamburger menu on mobile, and five main pages:
+
+# Home (index.html)
+with a Hero banner/slider spotlighting featured art peices.
+Quick links to the events section.
+# About (about.html, modal)
+In-page overlay with Big Homie’s mission, community history, and ethos.
+# Media Hub (media.html)
+Cards linking to four sub-sections:
+-Music (music.html): Track cards with cover art and inline players
+-Gallery (gallery.html): Full-screen, swipeable image carousel
+-Video (video.html): Responsive video cards with embeds
+-Blogz (blogz.html): Teaser cards that open full articles in a modal
+# events (events.html)
+ -Event cards with “Register” or “Buy Tickets” buttons
+ -Pop-up modal forms for attendee and artist registration
+# contact (contact.html)
+-Multi-type inquiry form (general, collab, submission)
+-Embedded Google Map showing the venue location
+ 
+
+- **index.html**: Home/landing, hero slider, 
 - **about.html**: Community story, mission, and call to action
 - **media.html**: Grid links to music, gallery, video, and blogz
 - **music.html**: Track cards with player and cover art
@@ -187,7 +225,8 @@
 
 - HTML5
 - CSS3
-  
+- JavaScript (ES6+)
+- 
 ### Frameworks & Tools
 
 - Bootstrap 5.3 (CDN)
@@ -197,7 +236,11 @@
 - Git & GitHub for version control
 - GitHub Pages for deployment
 - WAVE, Lighthouse, W3C Validator for accessibility/validation
-
+-Tinypng
+- Balsamiq
+- Adobe Color
+- Font Awsome
+- Favicon<span>.</span>io
 ---
 
 ## Features
