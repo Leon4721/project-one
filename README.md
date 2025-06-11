@@ -294,42 +294,55 @@ Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin
 
 - All pages validated with [W3C HTML Validator](https://validator.w3.org/)  
   - No errors found (custom code only; some 3rd-party libs may generate benign warnings)
-  - 
+  - <details><summary>Home</summary>
+<img src="docs/validation/home.png">
+</details>
 <details><summary>Home</summary>
 <img src="docs/validation/index.png">
 </details>
+
+
 <details><summary>About</summary>
 <img src="docs/validation/about.png>
 </details>
+    
 <details><summary>Media</summary>
 <img src="docs/validation/media.png">
 </details>
+
 <details><summary>Events</summary>
 <img src="docs/validation/events.png">
 </details>
+
 <details><summary>Contact</summary>
 <img src="docs/validation/contact.png">
 </details>
+
 <details><summary>Music</summary>
 <img src="docs/music.png">
 </details>
+
 <details><summary>Video</summary>
 <img src="docs/validation/video.png">
 </details>
+
 <details><summary>Gallery</summary>
 <img src="docs/validation/gallery.png">
 </details>
+
 <details><summary>Blogz</summary>
 <img src="docs/validation/blogz.png">
 </details>
+
 ### CSS Validation
 
 - Custom CSS validated via 
 <details><summary>CSS</summary>
 <img src="docs/validation/css.png">
 </details>
+
   - No errors, minor warnings for variables
-  -
+  
 
 ### Accessibility Validation
 
@@ -339,8 +352,10 @@ Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin
   -<details><summary>Home</summary>
 <img src="docs/accessibility/index.jpg">
 </details>
+
 <details><summary>About</summary>
-<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)>
+<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)></details>    
+   
     <details><summary>Media</summary>
 <img src="docs/accessibility/media.jpg">![media](https://github.com/user-attachments/assets/bd4e4bb5-be2a-4654-a77e-c1a001f0e1f7)
 </details>
