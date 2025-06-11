@@ -242,7 +242,8 @@ Fulfills: User Story 4 — gives first-time users a clear sense of mission, vibe
 About Page Story:
 coloum layout with community roots, platform mission, and a call-to-action.
 Fulfills: User Story 4 — helps users and returning visitors understand the site's values and story.
-![Screenshot 2025-06-10 143941](https://github.com/user-attachments/assets/d07de714-6d71-438a-bd21-b837544ec6df)
+![about](https://github.com/user-attachments/assets/8d043de9-bbd9-4a49-993d-5821bed955b0)
+
 
 Media Hub Grid:
 Central page with four interactive tiles for music, gallery, video, and blogs.
@@ -281,7 +282,9 @@ Fulfills: User Story 6 (users can submit feedback/collaborations or songs); User
 
 Custom Styling & Theming:
 Cohesive brand visuals with CSS variables, dark/retro palette, and fully responsive design.
-Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin Story 11 (keeps the community branding strong and consistent).
+Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin Story 11 (keeps the community branding strong and consistent). veiwed on both -iphone 5s and Ipad pro -
+![iphone 5s](https://github.com/user-attachments/assets/0ca80203-314f-4319-95c5-7dba69ff3056)
+![ipad pro](https://github.com/user-attachments/assets/406572b8-db11-4826-8fc7-d1aa81a59550)
 
 ---
 
@@ -331,27 +334,15 @@ Fulfills: User Story 8 (ensures a responsive, mobile-friendly experience); Admin
 ### Accessibility Validation
 
 ### Accessibility
+-The WAVE WebAIM web accessibility evaluation tool was used to ensure the website met high accessibility standards. All pages pass with 0 errors.
 
-- High contrast for text over backgrounds
-- All images and controls have descriptive `alt` text and `aria` labels
-- Keyboard navigation for navbars, carousels, and modals
-- Responsive design adapts from iPhone SE to 4K desktop
-- Forms provide validation messages and use semantic labels
-
-
-- WAVE and Lighthouse run on all main pages
-  - 0 critical accessibility errors reported
-  - High color contrast, focusable nav, ARIA labels
   -<details><summary>Home</summary>
 <img src="docs/accessibility/index.jpg">
 </details>
 <details><summary>About</summary>
-<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)
->
-
-<details><summary>Media</summary>
+<img src=</details>![about](https://github.com/user-attachments/assets/2fa99384-2fc5-4536-a097-b7fa5cefb237)>
+    <details><summary>Media</summary>
 <img src="docs/accessibility/media.jpg">![media](https://github.com/user-attachments/assets/bd4e4bb5-be2a-4654-a77e-c1a001f0e1f7)
-
 </details>
 <details><summary>Events</summary>
 <img src="docs/accessibility/events.jpg">
