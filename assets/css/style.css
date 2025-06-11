@@ -10,6 +10,7 @@
   --light-color: #f8f9fa;
   --dark-color: #343a40;
   --primary-font: "Press Start 2P", cursive;
+  --glow-color: #FB621C;
 }
 /* 1. Make sure the page really is 100% high, no gaps */
 html,
@@ -104,27 +105,15 @@ header,
   justify-self: end; /* Aligns nav to the end of its grid cell */
 }
 
-.nav-list {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
+.glow-hover:hover,
+.nav-link.glow-hover:hover {
+  color: #fff; /* Or your preferred text color */
+  text-shadow:
+    0 0 8px var(--glow-color),
+    0 0 15px var(--glow-color);
+  transition: text-shadow 0.3s, color 0.3s;
 }
 
-.nav-list li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.nav-list li a:hover {
-  color: #ff0;
-}
 
 /* -------------------------------- */
 /* File: base/_core-layout.css      */
