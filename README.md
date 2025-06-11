@@ -81,12 +81,12 @@
 ### User Stories
 
 #### First-time User 
-1. As a first time user, I want see upcoming event venues so that I know where or when Big Homie shows are located.
+1. As a first time user, I want see upcoming event venues so that I know where or when "Big Homie" shows are located.
 2. As a first time user, I want to know ticket price ranges on each event card so that I can decide which shows fit my budget.
 3. As a first-time user, I want to sample audio, images, and video so that I get a feel for what to expect at the scene.
 4. As a first time user, I want to get a feel of what to expect in term the "mission" so that I can learn about the Big Homie’s ideology through community story and context.
 
-#### Returning User
+####Returning User
 5. As a returning user,I want to control playback (play/pause/skip) inline while browsing so that my listening isn’t interrupted.
 6. As a returnign user, I want to use the Contact form so that I can quickly send feedback or collab requests
 7. As a returning user, I want to use the Contact section with a map integration so that I can quickly see our where the venue is location.
