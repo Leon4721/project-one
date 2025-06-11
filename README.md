@@ -226,48 +226,58 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 ## Features
 
 ## Features
-Responsive Navigation Bar:![nav-bar](https://github.com/user-attachments/assets/bd170238-2e5c-4603-8b52-2d9a08b59967)
-
+Responsive Navigation Bar
 Present on all pages and collapses to a hamburger menu on mobile.
-Fulfills: All navigation-related user stories for easy access on all devices.![hamburger](https://github.com/user-attachments/assets/7169862b-57a2-420f-af15-591b4f765fab)
+Fulfills: All navigation-related user stories for easy access on all devices.
+:![nav-bar](https://github.com/user-attachments/assets/bd170238-2e5c-4603-8b52-2d9a08b59967)
+![hamburger](https://github.com/user-attachments/assets/7169862b-57a2-420f-af15-591b4f765fab)
 
 
 Hero Banner & Mascot Slider (Home):
 Animated hero section with a 3D mascot slider greets users on the home page.
-Fulfills: User Story 4 — gives first-time users a clear sense of mission, vibe, and the site's community focus.![homepage](https://github.com/user-attachments/assets/fd263bd1-4017-4c32-b61c-586f0808970b)
+Fulfills: User Story 4 — gives first-time users a clear sense of mission, vibe, and the site's community focus.
+![homepage](https://github.com/user-attachments/assets/fd263bd1-4017-4c32-b61c-586f0808970b)
 
 
 About Page Story:
-Two-column layout with community roots, platform mission, and a call-to-action.
+coloum layout with community roots, platform mission, and a call-to-action.
 Fulfills: User Story 4 — helps users and returning visitors understand the site's values and story.
+![Screenshot 2025-06-10 143941](https://github.com/user-attachments/assets/d07de714-6d71-438a-bd21-b837544ec6df)
 
 Media Hub Grid:
 Central page with four interactive tiles for music, gallery, video, and blogs.
 Fulfills: User Story 5 — lets returning users instantly access media and blog content.
+![media](https://github.com/user-attachments/assets/d3f7a786-3801-4212-ab84-14f65dda3b50)
 
 Music Player Cards:
 Vinyl-inspired cards with built-in audio players and track/artist info.
 Fulfills: User Story 3 (first-timers can sample music); User Story 5 (returning users can replay tracks).
+![music](https://github.com/user-attachments/assets/67ecf31d-6a51-4d05-8a23-8dbb6100f544)
 
 Gallery Carousel:
 Responsive Bootstrap carousel displays full images with no cropping.
 Fulfills: User Story 3 — lets users view community photos to get the site’s vibe.
+![gallery](https://github.com/user-attachments/assets/bf1ba32f-eb59-48f1-9271-c8ed42e96815)
 
 Video Cards:
 Embedded, responsive video players with titles, upload dates, and descriptions.
 Fulfills: User Story 3 — lets users watch videos of performances, battles, and tutorials.
+![video](https://github.com/user-attachments/assets/90787808-78f9-4d0a-9ec5-f3e8b7ff4680)
 
 Blog Previews & Modals:
 Preview cards open full articles in accessible modals.
 Fulfills: User Story 5 (easy access to blog content for returning users); Admin Story 9 (site owner can easily update content).
+![blogz](https://github.com/user-attachments/assets/3b6ae4ad-da1d-41c0-a502-d22cb2cf7093)
 
 Event Cards & Booking Modals:
 Cards display event title, venue, price, and open modals for tickets or artist registration.
 Fulfills: User Story 1 (see upcoming events and locations); User Story 2 (see ticket prices); Admin Story 10 (easy artist and attendee registration).
+![pricecard](https://github.com/user-attachments/assets/37f916f0-8130-48a3-997f-b3ec7c788eca)
 
 Contact Form:
 Multi-purpose form with file upload for submissions and integrated Google Map.
 Fulfills: User Story 6 (users can submit feedback/collaborations or songs); User Story 7 (users can get directions via the map).
+![commetr box](https://github.com/user-attachments/assets/af6d1122-8d84-4df8-a1dd-dffb19e354db)
 
 Custom Styling & Theming:
 Cohesive brand visuals with CSS variables, dark/retro palette, and fully responsive design.
