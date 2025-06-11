@@ -43,15 +43,18 @@
 ### User Goals
 
 - Discover local urban artists and their work  
-- Listen to music, browse images, and watch videos from featured artists  
+- Listen to music, browse images, and watch educational videos from featured or seleteced artists. 
 - Easily contact the team to collaborate or submit work  
-- Quickly navigate all content on any device  
+- read well cureted literartue regaring  specififc or relatign topics 
+- find online or local event to showcase my work
+- book or purchse tickets  for shows with minimal steps
 
 ### Site Owner Goals
 
 - Increase visibility and engagement for local artists  
-- Promote events and multimedia content  
-- Make it easy for users to connect, submit content, and get involved  
+- Promote local or online events and multimedia content
+- Streamline event registration and attendee data collection
+- Make it easy for users such as artists to connect, submit content, and get involved  
 - Maintain clear branding and an inviting, community-driven aesthetic  
 
 
