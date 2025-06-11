@@ -205,19 +205,11 @@ function hidePopup() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Close button event
   document.querySelector('#popup .close-btn').addEventListener('click', hidePopup);
-  
-  // Close when clicking overlay
   document.getElementById('popup-overlay').addEventListener('click', hidePopup);
-  
-  // Prevent closing when clicking inside popup
   document.getElementById('popup').addEventListener('click', function(e) {
     e.stopPropagation();
   });
-  
-  // Add this to any button that should trigger the popup:
-  // document.getElementById('trigger-button').addEventListener('click', showPopup);
 });
 
 

@@ -350,34 +350,38 @@ footer {
   padding: 10px;
 }
 
-/ .modal-custom {
+.modal-custom {
   display: none;
   position: fixed;
-  z-index: 1200;
-  left: 0;
-  top: 0;
+  z-index: 2000;
+  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.65);
-  align-items: center;
+  background: rgba(17, 16, 17, 0.7);
   justify-content: center;
-  transition: opacity 0.25s;
+  align-items: center;
+  /* Optional: for mobile scrolling, but remove if not needed */
+  overflow-y: auto;
 }
+
+/* Show modal when 'show' class is added */
 .modal-custom.show {
-  display: flex;
+  display: flex !important;
 }
+
+/* Modal content stays centered */
 .modal-content-custom {
-  background: #573144;
-  color: #f7f1f1;
-  border-radius: 12px;
-  max-width: 95vw;
-  width: 100%;
-  max-width: 410px;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
-  padding: 2rem 1.5rem 1.25rem 1.5rem;
+  background: #300c27;
+  border-radius: 1rem;
+  max-width: 430px;
+  width: 94vw;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 36px rgba(0,0,0,0.35);
+  color: #fff;
+  margin: auto; /* If it ever needs to scroll */
   position: relative;
-  animation: fadeInUp 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
