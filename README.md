@@ -178,10 +178,10 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 <img src="docs/wireframes/events.png">
 </details>
 
-### Video Page
+### Gallery Page
 
-<details><summary>Video</summary>
-<img src="docs/wireframes/video.png">
+<details><summary>Gallery</summary>
+<img src="docs/wireframes/images.png">
 </details>
 
 ### Media Hub Page
