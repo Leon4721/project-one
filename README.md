@@ -324,10 +324,6 @@ The website consists of nine HTML pages, with five main pages featured in the na
   <img src="docs/validation/home.png">
 </details>
 
-<details>
-  <summary>Index</summary>
-  <img src="docs/validation/index.png">
-</details>
 
 <details>
   <summary>About</summary>
