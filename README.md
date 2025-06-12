@@ -172,7 +172,7 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 
 ### Media Hub Page
 <details><summary>Media</summary>
-<img src="docs/wireframes/medi.png">
+<img src="docs/wireframes/medi.png.png">
 </details>
 
 ### Music Page
@@ -327,7 +327,7 @@ The website consists of nine HTML pages, with five main pages featured in the na
 
 <details>
   <summary>Contact</summary>
-  <img src="docs/validation/contact.png">
+  <img src="docs/validation/contact.pngg">
 </details>
 
 <details>
@@ -384,7 +384,7 @@ The website consists of nine HTML pages, with five main pages featured in the na
 </details>
 
 <details><summary>Music</summary>
-<img src="docs/accessibility.png">
+<img src="docs/accessibility/music.png">
 </details>
 
 <details><summary>Video</summary>
@@ -392,7 +392,7 @@ The website consists of nine HTML pages, with five main pages featured in the na
 </details>
 
 <details><summary>Gallery</summary>
-<img src="docs/accessibility/gallery.png">
+<img src="docs/accessibility/image.png>
 </details>
 
 <details><summary>Blogz</summary>
@@ -452,13 +452,6 @@ In addition, the website was tested using Google Chrome Developer Tools Device T
 
 ### Testing User Stories
 
-| User Story             | Feature/Page          | Action                       | Expected Result                | Actual Result | Screenshot                           
-|------------------------|----------------------|------------------------------|-------------------------------|----------------|-----------------------------------------------|
-| See upcoming events    | events.html          | View event cards             | Events displayed               | Pass          | !{events](docs/features/ticketbooking.png)   |
-| RSVP/buy tickets       | events.html          | Use event modal form         | Success modal/confirmation     | Pass          | !{events](docs/features/booked.png)                                             |
-| Submit music/art       | contact.html         | Upload via form              | Confirmation, reset form       | Pass          | !{events](docs/features/songsub.png)                                             |
-| Browse images/videos   | gallery.html, video.html | Carousel/YouTube embeds    | Content displays/plays       | Pass          | !{events](docs/features/gallery.png)                                            |
-| Contact the team       | contact.html         | Submit contact form          | Success alert, email sent*     | Pass          | !{events](docs/features/confirm.png)                                            |
 
 
 
