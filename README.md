@@ -86,7 +86,7 @@
 3. As a first-time user, I want to sample audio, images, and video so that I get a feel for what to expect at the scene.
 4. As a first time user, I want to get a feel of what to expect in term the "mission" so that I can learn about the Big Homie’s ideology through community story and context.
 
-####Returning User
+#### Returning User
 5. As a returning user,I want to control playback (play/pause/skip) inline while browsing so that my listening isn’t interrupted.
 6. As a returnign user, I want to use the Contact form so that I can quickly send feedback or collab requests
 7. As a returning user, I want to use the Contact section with a map integration so that I can quickly see our where the venue is location.
@@ -194,9 +194,6 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 <details><summary>Video</summary>
 <img src="docs/wireframes/video.png">
 </details>
-
-
-
 
 
 ## Technologies Used
@@ -336,7 +333,7 @@ The website consists of nine HTML pages, with five main pages featured in the na
 </details>
 
 <details>
-  <summary>Contact</summary>
+  <summary>Events</summary>
   <img src="docs/validation/event.png">
 </details>
 
@@ -428,7 +425,7 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 </details>
 
 <details><summary>Home</summary>
-<img src="docs/accessibility/home.png">
+<img src="docs/performance/home.png">
 </details>
 
 -<details><summary>about</summary>
@@ -482,7 +479,7 @@ In addition, the website was tested using Google Chrome Developer Tools Device T
 
 | User Story             | Feature/Page          | Action                       | Expected Result                | Actual Result | Screenshot |
 |------------------------|----------------------|------------------------------|-------------------------------|---------------|------------|
-| See upcoming events    | events.html          | View event cards             | Events displayed               | Pass          | [img]      |
+| See upcoming events    | events.html          | View event cards             | Events displayed               | Pass          | [img ]      |
 | RSVP/buy tickets       | events.html          | Use event modal form         | Success modal/confirmation     | Pass          | [img]      |
 | Submit music/art       | contact.html         | Upload via form              | Confirmation, reset form       | Pass          | [img]      |
 | Browse images/videos   | gallery.html, video.html | Carousel/YouTube embeds    | Content displays/plays         | Pass          | [img]      |
