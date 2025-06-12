@@ -476,61 +476,22 @@ The website was tested on the following devices:
 In addition, the website was tested using Google Chrome Developer Tools Device Toggling option for all available device options.
 
 ### Testing User Stories
+| User Story | Feature | Action | Expected Result | Actual Result | Screenshots |
+|------------|---------|--------|----------------|---------------|-------------|
+| As a first-time user, I want to know where the event or venue is located | Google Map | Navigate to the Contact page and find the embedded map | View a map showing the venue location | Works as expected | <details><summary>Here</summary><img src="docs/user-story-testing/1.png.png"></details> |
+| As a first-time user, I want to know the price for events | Event Cards | Go to the Events page and browse event listings | See ticket prices displayed on each event card | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/2.png"></details> |
+| As a first-time user, I want to know more about Da Big Homie | About Section | Navigate to the About page | Read about Da Big Homie’s story and mission | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-3-about.jpg"></details> |
+| ^ | Mission & Roots | On the About page, view the "Our Roots" or mission section | See background and platform values | Works as expected |  |
+| As a first-time user, I want to get a feel for what to expect at an event | Video Showcase | Go to the Video page and play a performance or battle | Watch highlight clips or artist interviews | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-4-video.jpg"></details> |
+| ^ | Gallery | Navigate to the Gallery page | View photos from past events and community moments | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-4-gallery.jpg"></details> |
+| As a returning user, I want to replay music or see new blog posts | Music Cards | Go to the Music page and play a track | Listen to music from featured artists | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-5-music.jpg"></details> |
+| ^ | Blogz | Go to the Blogz page and read new articles | Find recent posts and urban stories | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-5-blogz.jpg"></details> |
+| As a returning user, I want to contact the team or submit my music | Contact Form | On the Contact page, fill out and submit the form (including file upload for music) | Send a message or song submission | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-6-contact.jpg"></details> |
+| As a returning user, I want to get directions to the next event | Google Map | Go to the Contact page and use the map | Get directions to the venue via Google Maps | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-7-map.jpg"></details> |
+| As a returning user, I want the site to work smoothly on my phone | Responsive Layout | Visit any page on a mobile device | Navigation, forms, and media adapt to screen size | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-8-mobile.jpg"></details> |
+| As a site owner, I want users to RSVP or register as artists | Event Modal Forms | On the Events page, use the "Book Now" or "Artist Register" buttons | Open a modal form for tickets or artist sign-up | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-9-eventmodal.jpg"></details> |
+| As a site owner, I want the site branding to stay consistent | Custom Styling | Browse any page | Colors, fonts, and layout reflect hip-hop/urban theme | Works as expected | <details><summary>Screenshots</summary><img src="docs/user-story-testing/user-story-10-brand.jpg"></details> |
 
--As a first-time user, I want to know where the event or venue is located
-Feature	Action	Expected Result	Actual Result
-Google Map	Navigate to the Contact page and find the embedded map	View a map showing the venue location	Works as expected
-<details><summary>Here</summary>
-<img src="docs/.png">
-</details>
-
-As a first-time user, I want to know the price for events
-Feature	Action	Expected Result	Actual Result
-Event Cards	Go to the Events page and browse event listings	See ticket prices displayed on each event card	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-3-about.jpg"> </details>
-
-As a first-time user, I want to know more about Da Big Homie
-Feature	Action	Expected Result	Actual Result
-About Section	Navigate to the About page	Read about Da Big Homie’s story and mission	Works as expected
-Mission & Roots	On the About page, view the "Our Roots" or mission section	See background and platform values	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-3-about.jpg"> </details>
-
-As a first-time user, I want to get a feel for what to expect at an event
-Feature	Action	Expected Result	Actual Result
-Gallery	Navigate to the Gallery page	View photos from past events and community moments	Works as expected
-Video Showcase	Go to the Video page and play a performance or battle	Watch highlight clips or artist interviews	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-4-gallery.jpg"> <img src="docs/user-story-testing/user-story-4-video.jpg"> </details>
-
-As a returning user, I want to replay music or see new blog posts
-Feature	Action	Expected Result	Actual Result
-Music Cards	Go to the Music page and play a track	Listen to music from featured artists	Works as expected
-Blogz	Go to the Blogz page and read new articles	Find recent posts and urban stories	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-5-music.jpg"> <img src="docs/user-story-testing/user-story-5-blogz.jpg"> </details>
-
-As a returning user, I want to contact the team or submit my music
-Feature	Action	Expected Result	Actual Result
-Contact Form	On the Contact page, fill out and submit the form (including file upload for music)	Send a message or song submission	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-6-contact.jpg"> </details>
-
-As a returning user, I want to get directions to the next event
-Feature	Action	Expected Result	Actual Result
-Google Map	Go to the Contact page and use the map	Get directions to the venue via Google Maps	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-7-map.jpg"> </details>
-
-As a returning user, I want the site to work smoothly on my phone
-Feature	Action	Expected Result	Actual Result
-Responsive Layout	Visit any page on a mobile device	Navigation, forms, and media adapt to screen size	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-8-mobile.jpg"> </details>
-
-As a site owner, I want users to RSVP or register as artists
-Feature	Action	Expected Result	Actual Result
-Event Modal Forms	On the Events page, use the "Book Now" or "Artist Register" buttons	Open a modal form for tickets or artist sign-up	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-9-eventmodal.jpg"> </details>
-
-As a site owner, I want the site branding to stay consistent
-Feature	Action	Expected Result	Actual Result
-Custom Styling	Browse any page	Colors, fonts, and layout reflect hip-hop/urban theme	Works as expected
-<details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-10-brand.jpg"></details
 
 ## Bugs & Issues
 
