@@ -392,7 +392,7 @@ The website consists of nine HTML pages, with five main pages featured in the na
 
    
 <details><summary>Events</summary>
-<img src="docs/accessibility/events.png">
+<img src="docs/accessibility/event.png">
 </details>
 
 
@@ -418,49 +418,47 @@ The website consists of nine HTML pages, with five main pages featured in the na
 
 ### Performance
 Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website.
- 
 
-     -<details><summary>Home</summary>
+- <details><summary>Home</summary>
 <img src="docs/performance/home.png">
 </details>
 
-<details><summary>Home</summary>
-<img src="docs/performance/home.png">
-</details>
-
--<details><summary>about</summary>
+<details><summary>about</summary>
 <img src="docs/performance/about.png">
 </details>
 
-- <details><summary>Media</summary>
+ <details><summary>Media</summary>
 <img src="docs/performance/media.png">
 </details>
 
    
--<details><summary>Events</summary>
-<img src="docs/performance/events.png">
+<details><summary>Events</summary>
+<img src="docs/performance/event.png">
 </details>
 
 
--<details><summary>Contact</summary>
+<details><summary>Contact</summary>
 <img src="docs/performance/contact.png">
 </details>
 
--<details><summary>Music</summary>
-<img src="docs/performance/.png">
+<details><summary>Music</summary>
+<img src="docs/performance/music.png">
 </details>
 
--<details><summary>Video</summary>
+<details><summary>Video</summary>
 <img src="docs/performance/video.png">
 </details>
 
--<details><summary>Gallery</summary>
+<details><summary>Gallery</summary>
 <img src="docs/performance/gallery.png">
 </details>
 
--<details><summary>Blogz</summary>
+<details><summary>Blogz</summary>
 <img src="docs/performance/blogz.png">
 </details>
+
+    
+
 
 ### Device & Browser Compatibility
 
@@ -552,6 +550,7 @@ Custom Styling	Browse any page	Colors, fonts, and layout reflect hip-hop/urban t
 
 <details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-10-brand.jpg"> </details
 ---
+
 
 ## Bugs & Issues
 
