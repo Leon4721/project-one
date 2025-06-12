@@ -187,7 +187,7 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 ### Media Hub Page
 
 <details><summary>Media</summary>
-<img src="docs/wireframes/medi.png.png">
+<img src="docs/wireframes/medi.png">
 </details>
 
 ### Music Page
@@ -415,7 +415,7 @@ The website consists of nine HTML pages, with five main pages featured in the na
 </details>
 
 <details><summary>Gallery</summary>
-<img src="docs/accessibility/image.png>
+<img src="docs/accessibility/image.png">
 </details>
 
 <details><summary>Blogz</summary>
