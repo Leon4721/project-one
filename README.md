@@ -602,6 +602,13 @@ To clone Da Big Homie to your local machine:
 ### Images & Media
 
 - All images and artwork are originals created by Sora AI (leonfreemans creations) unless credited below.
+- The following media assets were sourced from Pngtree and used under their free license:
+
+# blogz.png (used in the Media Hub section)
+
+# dvd.png (used in the Media Hub section)
+
+# vinyl.png (used in the Media Hub section)
 
 ### Code
 
