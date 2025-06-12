@@ -3,8 +3,6 @@
 
 ![ami](https://github.com/user-attachments/assets/be8b5355-62ea-45ae-9542-30fac679fd8d)
 
-
-
 [Live webpage](https://leon4721.github.io/project-one/)
 
 ## Table of Content
@@ -14,7 +12,7 @@
     2. [Site Owner Goals](#site-owner-goals)
 2. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
-    2. [User Requrements and Expectations](#user-requrements-and-expectations)
+    2. [User Requirements and Expectations](#user-requirements-and-expectations)
     3. [User Stories](#user-stories)
 3. [Design](#design)
     1. [Design Choices](#design-choices)
@@ -32,7 +30,7 @@
     3. [Accessibility](#accessibility)
     4. [Performance](#performance)
     5. [Device testing](#performing-tests-on-various-devices)
-    6. [Browser compatibility](#browser-compatability)
+    6. [Browser compatibility](#browser-compatibility)
     7. [Testing user stories](#testing-user-stories)
 7. [Bugs](#Bugs)
 8. [Deployment](#deployment)
@@ -43,11 +41,11 @@
 ### User Goals
 
 - Discover local urban artists and their work  
-- Listen to music, browse images, and watch educational videos from featured or seleteced artists. 
+- Listen to music, browse images, and watch educational videos from featured or selected artists. 
 - Easily contact the team to collaborate or submit work  
-- read well cureted literartue regaring  specififc or relatign topics 
-- find online or local event to showcase my work
-- book or purchse tickets  for shows with minimal steps
+- Read well curated literature regarding specific or relating topics 
+- Find online or local events to showcase my work
+- Book or purchase tickets for shows with minimal steps
 
 ### Site Owner Goals
 
@@ -56,7 +54,6 @@
 - Streamline event registration and attendee data collection
 - Make it easy for users such as artists to connect, submit content, and get involved  
 - Maintain clear branding and an inviting, community-driven aesthetic  
-
 
 ---
 
@@ -71,34 +68,31 @@
 
 ### User Requirements & Expectations
 
-- simple Intuitive navigation 
+- Simple intuitive navigation 
 - Fast access to music, videos, galleries, and blog content
 - Clear event calendar and RSVP/ticket features
 - Simple, mobile-friendly contact forms
 - Responsive layout with visually engaging design on all devices
 
-
 ### User Stories
 
 #### First-time User 
-1. As a first time user, I want see upcoming event venues so that I know where or when "Big Homie" shows are located.
+1. As a first time user, I want to see upcoming event venues so that I know where or when "Big Homie" shows are located.
 2. As a first time user, I want to know ticket price ranges on each event card so that I can decide which shows fit my budget.
 3. As a first-time user, I want to sample audio, images, and video so that I get a feel for what to expect at the scene.
-4. As a first time user, I want to get a feel of what to expect in term the "mission" so that I can learn about the Big Homie’s ideology through community story and context.
+4. As a first time user, I want to get a feel of what to expect in terms of the "mission" so that I can learn about the Big Homie’s ideology through community story and context.
 
 #### Returning User
-5. As a returning user,I want to control playback (play/pause/skip) inline while browsing so that my listening isn’t interrupted.
-6. As a returnign user, I want to use the Contact form so that I can quickly send feedback or collab requests
-7. As a returning user, I want to use the Contact section with a map integration so that I can quickly see our where the venue is location.
-8. As a returning user, I want to replay tracks I enjoyed on demand aswell as download the Music so that I can listen to it when ever wherver (offline)
-
+5. As a returning user, I want to control playback (play/pause/skip) inline while browsing so that my listening isn’t interrupted.
+6. As a returning user, I want to use the Contact form so that I can quickly send feedback or collab requests
+7. As a returning user, I want to use the Contact section with a map integration so that I can quickly see where the venue is located.
+8. As a returning user, I want to replay tracks I enjoyed on demand as well as download the music so that I can listen to it whenever wherever (offline)
 
 #### Site Owner 
 13. As the site owner, I want to update hero slider images, captions, and links so that I can keep the homepage spotlight fresh.
 14. As the site owner, I want users to get to know the ideology of what we stand for
-15. as the site owner, I want to create natural engagem,ent either online or local through grass roots engaments and comopetiton 
-16. As the site owner, I want the users to be able to submit content to be curated and accesed before competaions or artist spots 
-
+15. As the site owner, I want to create natural engagement either online or local through grassroots engagements and competition 
+16. As the site owner, I want the users to be able to submit content to be curated and accessed before competitions or artist spots 
 
 | As a…            | I want to…                                             | So that I can…                                   |
 |------------------|--------------------------------------------------------|--------------------------------------------------|
@@ -114,12 +108,11 @@
 
 ### Design Choices
 
-- the website ws desgine with a 90s hip-hop vibe with a gritty, urban palette: burnt orange (#FB621C),
- and moody purple (#410547).smokey backgorunds , pixel fonts, and graffiti-inspired layouts create a raw, nostalgic feel. 
+- The website was designed with a 90s hip-hop vibe with a gritty, urban palette: burnt orange (#FB621C),
+ and moody purple (#410547). Smoky backgrounds, pixel fonts, and graffiti-inspired layouts create a raw, nostalgic feel. 
 - Built for edge and nostalgia—like a mixtape in website form
 - Each main page features a distinct hero section (carousel, video, banner)
 - Modal and carousel interactions reinforce modern, dynamic feel
-
 
 ### Colour Scheme
 ![AdobeColor-My Color Theme (1)](https://github.com/user-attachments/assets/65cee7e3-7e49-419b-9ccd-049ec4f320c7)
@@ -129,7 +122,7 @@
 - High contrast for all buttons/text over video
 
 ### Fonts
-Press Start 2P with cursive as a fallback is used everywhere ( headings, body text) to reinforce Big Homie’s retro, underground mixtape vibe.
+Press Start 2P with cursive as a fallback is used everywhere (headings, body text) to reinforce Big Homie’s retro, underground mixtape vibe.
 Its blocky, pixelated forms echo classic arcade type and street-art stencil lettering while remaining legible at all sizes.
 
 ### Structure
@@ -147,31 +140,28 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 
 ## Wireframes
 
-
-### home Page
+### Home Page
 <details><summary>Home</summary>
 <img src="docs/wireframes/home.png">
 </details>
 
 ### About Page
-<details><summary>Home</summary>
+<details><summary>About</summary>
 <img src="docs/wireframes/about.png">
 </details>
 
-
 ### Blogz Page
-<details><summary>Home</summary>
+<details><summary>Blogz</summary>
 <img src="docs/wireframes/blogz.png">
 </details>
 
-
 ### Contact Page
-<details><summary>contact</summary>
+<details><summary>Contact</summary>
 <img src="docs/wireframes/contact.png">
 </details>
 
 ### Events Page
-<details><summary>IEvents</summary>
+<details><summary>Events</summary>
 <img src="docs/wireframes/events.png">
 </details>
 
@@ -186,7 +176,7 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 </details>
 
 ### Music Page
-<details><summary> Music</summary>
+<details><summary>Music</summary>
 <img src="docs/wireframes/music.png">
 </details>
 
@@ -195,7 +185,6 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 <img src="docs/wireframes/video.png">
 </details>
 
-
 ## Technologies Used
 
 ### Languages
@@ -203,7 +192,7 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 - HTML5
 - CSS3
 - JavaScript (ES6+)
-- 
+
 ### Frameworks & Tools
 
 - Bootstrap 5.3 (CDN)
@@ -213,17 +202,17 @@ The site follows a familiar, easy-to-learn layout: a left-aligned logo in the na
 - Git & GitHub for version control
 - GitHub Pages for deployment
 - WAVE, Lighthouse, W3C Validator for accessibility/validation
--Tinypng
+- Tinypng
 - Balsamiq
 - Adobe Color
-- Font Awsome
-- Favicon<span>.</span>io
----
+- Font Awesome
+- Favicon.io
 
+---
 
 ## Features
 The website consists of nine HTML pages, with five main pages featured in the navigation bar.
- 
+
 ### Logo and Navigation Bar
 
 - The logo and nav bar appear at the top of every page.
@@ -298,7 +287,7 @@ The website consists of nine HTML pages, with five main pages featured in the na
 - Multi-purpose form with file upload for submissions and integrated Google Map.
 - Fulfills: User Story 6 (users can submit feedback/collaborations or songs); User Story 7 (users can get directions via the map).
 
-![commetr box](https://github.com/user-attachments/assets/af6d1122-8d84-4df8-a1dd-dffb19e
+![commetr box](https://github.com/user-attachments/assets/af6d1122-8d84-4df8-a1dd-dffb19e)
 
 ### Custom Styling & Theming
 
@@ -320,7 +309,6 @@ The website consists of nine HTML pages, with five main pages featured in the na
   <summary>Home</summary>
   <img src="docs/validation/home.png">
 </details>
-
 
 <details>
   <summary>About</summary>
@@ -362,8 +350,6 @@ The website consists of nine HTML pages, with five main pages featured in the na
   <img src="docs/validation/blogz.png">
 </details>
 
-
-
 ### CSS Validation
 -<details><summary>CSS</summary>
 <img src="docs/validation/css.png">
@@ -371,7 +357,6 @@ The website consists of nine HTML pages, with five main pages featured in the na
 
 - Custom CSS validated via 
 - No errors, minor warnings for variables
-  
 
 ### Accessibility Validation
 
@@ -382,19 +367,17 @@ The website consists of nine HTML pages, with five main pages featured in the na
 <img src="docs/accessibility/home.png">
 </details>
 
-<details><summary>about</summary>
+<details><summary>About</summary>
 <img src="docs/accessibility/about.png">
 </details>
 
- <details><summary>Media</summary>
+<details><summary>Media</summary>
 <img src="docs/accessibility/media.png">
 </details>
 
-   
 <details><summary>Events</summary>
 <img src="docs/accessibility/event.png">
 </details>
-
 
 <details><summary>Contact</summary>
 <img src="docs/accessibility/contact.png">
@@ -423,19 +406,17 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 <img src="docs/performance/home.png">
 </details>
 
-<details><summary>about</summary>
+<details><summary>About</summary>
 <img src="docs/performance/about.png">
 </details>
 
- <details><summary>Media</summary>
+<details><summary>Media</summary>
 <img src="docs/performance/media.png">
 </details>
 
-   
 <details><summary>Events</summary>
 <img src="docs/performance/events.png">
 </details>
-
 
 <details><summary>Contact</summary>
 <img src="docs/performance/contact.png">
@@ -457,39 +438,36 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 <img src="docs/performance/blogz.png">
 </details>
 
-    
-
-
 ### Device & Browser Compatibility
 
 Performing tests on various devices
 The website was tested on the following devices:
--iphone; 5s, 15, 15 pro max and 16
--samsung S25Ultra
--MetaQuest 3s
--Windows 10 
--Ipad Pro
+- iPhone: 5s, 15, 15 Pro Max and 16
+- Samsung S25 Ultra
+- MetaQuest 3s
+- Windows 10 
+- iPad Pro
 
-In addition, the website was tested using Google Chrome Developer Tools Device Toggeling option for all available device options.
-
+In addition, the website was tested using Google Chrome Developer Tools Device Toggling option for all available device options.
 
 ### Testing User Stories
 
-| User Story             | Feature/Page          | Action                       | Expected Result                | Actual Result | Screenshot |
-|------------------------|----------------------|------------------------------|-------------------------------|---------------|------------|
-| See upcoming events    | events.html          | View event cards             | Events displayed               | Pass          | [img ]      |
-| RSVP/buy tickets       | events.html          | Use event modal form         | Success modal/confirmation     | Pass          | [img]      |
-| Submit music/art       | contact.html         | Upload via form              | Confirmation, reset form       | Pass          | [img]      |
-| Browse images/videos   | gallery.html, video.html | Carousel/YouTube embeds    | Content displays/plays         | Pass          | [img]      |
-| Contact the team       | contact.html         | Submit contact form          | Success alert, email sent*     | Pass          | [img]      |
+| User Story             | Feature/Page          | Action                       | Expected Result                | Actual Result | Screenshot                           
+|------------------------|----------------------|------------------------------|-------------------------------|----------------|-----------------------------------------------|
+| See upcoming events    | events.html          | View event cards             | Events displayed               | Pass          | !{events](docs/features/ticketbooking.png)   |
+| RSVP/buy tickets       | events.html          | Use event modal form         | Success modal/confirmation     | Pass          | !{events](docs/features/booked.png)                                             |
+| Submit music/art       | contact.html         | Upload via form              | Confirmation, reset form       | Pass          | !{events](docs/features/songsub.png)                                             |
+| Browse images/videos   | gallery.html, video.html | Carousel/YouTube embeds    | Content displays/plays       | Pass          | !{events](docs/features/gallery.png)                                            |
+| Contact the team       | contact.html         | Submit contact form          | Success alert, email sent*     | Pass          | !{events](docs/features/confirm.png)                                            |
 
 
 
 -As a first-time user, I want to know where the event or venue is located
-
 Feature	Action	Expected Result	Actual Result
 Google Map	Navigate to the Contact page and find the embedded map	View a map showing the venue location	Works as expected
-Contact Information	On the Contact page, check the contact info box	See the event or venue address listed	Works as expected
+<details><summary>Here</summary>
+<img src="docs/.png">
+</details>
 
 <details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-1-map.jpg"> <img src="docs/user-story-testing/user-story-1-address.jpg"> </details>
 As a first-time user, I want to know the price for events
@@ -551,7 +529,6 @@ Custom Styling	Browse any page	Colors, fonts, and layout reflect hip-hop/urban t
 <details><summary>Screenshots</summary> <img src="docs/user-story-testing/user-story-10-brand.jpg"> </details
 ---
 
-
 ## Bugs & Issues
 
 | Bug                               | Fix / Status                |
@@ -573,21 +550,17 @@ Custom Styling	Browse any page	Colors, fonts, and layout reflect hip-hop/urban t
    - Clone repo, open `index.html` in browser
    - All assets are relative; no server needed
 
-
-
 ## Credits & Attribution
 
 ### Images & Media
-- All images and artwork are originals Created by Sora AI (leonfreemans creations) unless credited below.
-
+- All images and artwork are originals created by Sora AI (leonfreemans creations) unless credited below.
 
 ### Code
 - Bootstrap components adapted from official documentation.
 - Banner slider implementation adapted from Lun Dev’s CSS-only tutorial: "Create Crazy 3D Image Slider Effects Using CSS Only" (YouTube).
 
-
 ### Music & Audio
-- All music tracks are original compositions by Leon Freeman and perosnal friends e.g aka keyz, Tev and Chev
+- All music tracks are original compositions by Leon Freeman and personal friends e.g. aka keyz, Tev and Chev
 - Any embedded media (YouTube) is used with permission or as allowed by platform.
 
 ### JavaScript
@@ -598,4 +571,3 @@ Custom Styling	Browse any page	Colors, fonts, and layout reflect hip-hop/urban t
 
 ### Acknowledgements
 - Thanks to testers, friends,
-- 
