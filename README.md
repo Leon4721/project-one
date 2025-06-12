@@ -548,17 +548,7 @@ Custom Styling Browse any page Colors, fonts, and layout reflect hip-hop/urban t
 
 ## Bugs & Solutions Log
 
-| **Bug/Issue**                                                                                     | **Solution/Fix**                                                                                                                                                                                             |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| The homepage banner slider did not animate in 3D after first deployment.                          | Reviewed the YouTube tutorial and corrected the slider’s HTML structure. Made sure every `.item` element had a unique `--position` variable, and verified the CSS `@keyframes` were included in `style.css`. |
-| On the Events page, clicking the "Get Tickets" or "Register as Artist" buttons did nothing.       | Fixed a typo in the `data-form-type` attribute and updated the button event listeners in `main.js` to target the correct modal IDs. Confirmed the modals now open as expected.                               |
-| Gallery images appeared stretched and were not displaying at the correct aspect ratio on desktop. | Updated the gallery CSS to use `object-fit: contain; width: 100%; height: auto;` for all carousel/gallery images. Checked that Bootstrap’s carousel settings did not override these styles.                  |
-| The contact form’s file upload was visible for all inquiry types.                                 | Refined the JavaScript so the file upload section is shown only when "Song Submission" is selected, and it remains hidden for other inquiry types. Also updated `aria-expanded` for accessibility.           |.
-git commit
-| Browser console showed a 404 error for `site.webmanifest` after deploying to GitHub Pages.        | Added the missing `site.webmanifest` file to the project root. Updated all `<link rel="manifest">` tags in each HTML file to use the correct path (`href="site.webmanifest"`).                               |
-| The hamburger navigation icon appeared too low on mobile devices.                                 | Adjusted the navbar CSS to vertically center the hamburger menu icon by modifying padding and alignment rules. Tested on multiple devices to ensure proper placement.                                        |
-
----
+| **Bug/Issue**                                                                                     | **Solution/
 
 ## Deployment
 
