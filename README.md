@@ -433,7 +433,7 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 
    
 <details><summary>Events</summary>
-<img src="docs/performance/event.png">
+<img src="docs/performance/events.png">
 </details>
 
 
@@ -446,7 +446,7 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 </details>
 
 <details><summary>Video</summary>
-<img src="docs/performance/video.png">
+<img src="docs/performance/videos.png">
 </details>
 
 <details><summary>Gallery</summary>
