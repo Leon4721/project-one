@@ -304,8 +304,8 @@ The website consists of nine HTML pages, with five main pages featured in the na
 
 - Multi-purpose form with file upload for submissions and integrated Google Map.
 - Fulfills: User Story 6 (users can submit feedback/collaborations or songs); User Story 7 (users can get directions via the map).
+<img src="docs/user-story-testing/7-submit.png">
 
-![commetr box](https://github.com/user-attachments/assets/af6d1122-8d84-4df8-a1dd-dffb19e)
 
 ### Custom Styling & Theming
 
