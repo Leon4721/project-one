@@ -346,7 +346,7 @@ The website consists of nine HTML pages, with five main pages featured in the na
 
 <details>
   <summary>Contact</summary>
-  <img src="docs/validation/contact.pngg">
+  <img src="docs/validation/contact.png">
 </details>
 
 <details>
