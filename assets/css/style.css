@@ -10,9 +10,9 @@
   --light-color: #f8f9fa;
   --dark-color: #343a40;
   --primary-font: "Press Start 2P", cursive;
-  --glow-color: #FB621C;
+  --glow-color: #fb621c;
 }
-/* 1. Make sure the page really is 100% high, no gaps */
+
 html,
 body {
   margin: 0;
@@ -20,26 +20,19 @@ body {
   height: 100%;
 }
 
-/* 2. Full‐screen background on the <body> itself */
 body {
-  /* correct path from assets/css/ to assets/image/ */
   background-image: url("../image/city.png");
 
-  /* center it, don’t tile it */
   background-position: center center;
   background-repeat: no-repeat;
 
-  /* scale to cover the entire viewport, cropping if needed */
   background-size: cover;
 
-  /* “lock” it in place so content scrolls over it (optional) */
   background-attachment: fixed;
 
-  /* fall-back background color in case image fails */
   background-color: #000;
 }
 
-/* 3. Ensure your content sits above the background */
 nav,
 main,
 footer,
@@ -47,9 +40,7 @@ footer,
   position: relative;
   z-index: 1;
 }
-
 /* File: base/_reset.css           */
-
 *,
 *::before,
 *::after {
@@ -108,16 +99,12 @@ header,
 .glow-hover:hover,
 .nav-link.glow-hover:hover {
   color: #fff; /* Or your preferred text color */
-  text-shadow:
-    0 0 8px var(--glow-color),
-    0 0 15px var(--glow-color);
+  text-shadow: 0 0 8px var(--glow-color), 0 0 15px var(--glow-color);
   transition: text-shadow 0.3s, color 0.3s;
 }
 
-
-/* -------------------------------- */
 /* File: base/_core-layout.css      */
-/* -------------------------------- */
+
 body {
   display: flex;
   flex-direction: column;
@@ -139,9 +126,8 @@ body {
   z-index: 1;
 }
 
-/* -------------------------------- */
 /* File: layout/_header.css         */
-/* -------------------------------- */
+
 .site-header {
   position: relative;
   display: flex;
@@ -187,11 +173,8 @@ body {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
 }
-
-/* -------------------------------- */
 /* File: layout/_sidebar.css        */
-/* -------------------------------- */
-.sidebar {
+/ .sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -246,7 +229,6 @@ footer {
 }
 
 /* -------------------------------- */
-/* -------------------------------- */
 /* File: layout/_popups.css         */
 /* -------------------------------- */
 #popup,
@@ -260,21 +242,7 @@ footer {
   z-index: 900;
   background: rgba(0, 0, 0, 0.4);
 }
-#popup {
-  display: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  max-width: 600px;
-  max-height: 90vh;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
-  overflow: hidden;
-}
+
 #popup-inner {
   max-height: calc(90vh - 2rem);
   overflow-y: auto;
@@ -303,25 +271,24 @@ footer {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+/* Popup Content */
 
-/* Popup Window Styles */
 #popup {
-  position: fixed;
+  display: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #222;
-  border-radius: 10px;
-  padding: 30px;
-  z-index: 1051;
-  width: 90%;
+  width: 90vw;
   max-width: 600px;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  max-height: 90vh;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-/* Active States */
 #popup-overlay.active,
 #popup.active {
   display: block;
@@ -343,7 +310,6 @@ footer {
   color: #ff0;
 }
 
-/* Popup Content */
 #popup-inner {
   max-height: 80vh;
   overflow-y: auto;
@@ -354,49 +320,42 @@ footer {
   display: none;
   position: fixed;
   z-index: 2000;
-  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+  inset: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(17, 16, 17, 0.7);
   justify-content: center;
   align-items: center;
-  /* Optional: for mobile scrolling, but remove if not needed */
   overflow-y: auto;
 }
-
-/* Show modal when 'show' class is added */
 .modal-custom.show {
   display: flex !important;
 }
 
-/* Modal content stays centered */
 .modal-content-custom {
   background: #300c27;
   border-radius: 1rem;
   max-width: 430px;
   width: 94vw;
   padding: 2rem 1.5rem;
-  box-shadow: 0 2px 36px rgba(0,0,0,0.35);
+  box-shadow: 0 2px 36px rgba(0, 0, 0, 0.35);
   color: #fff;
-  margin: auto; /* If it ever needs to scroll */
+  margin: auto;
   position: relative;
 }
-/* Make cards and their images fully rounded and seamless */
+
 .track-card {
-  border-radius: 1.5rem;   /* adjust as needed for your look */
-  overflow: hidden;        /* ensures child images are clipped to card */
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10); /* Optional, for soft shadow */
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .track-card img {
-  border-radius: 0;        /* Remove if you want sharp corners INSIDE */
-  display: block;          /* No gaps under images */
-  width: 100%;             /* Responsive images */
+  border-radius: 0;
+  display: block;
+  width: 100%;
   height: auto;
 }
-
-
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -421,11 +380,7 @@ footer {
   color: #28a745;
   margin-bottom: 0.6rem;
 }
-
-
-/* -------------------------------- */
 /* File: components/_tables.css     */
-/* -------------------------------- */
 .table-wrapper,
 .table-expand-wrapper {
   display: flex;
@@ -470,9 +425,8 @@ footer {
   transition: max-height 0.5s cubic-bezier(0.4, 2, 0.6, 1), opacity 0.4s;
 }
 
-/* -------------------------------- */
 /* File: components/_buttons.css    */
-/* -------------------------------- */
+
 .btn {
   padding: 0.8rem 1.5rem;
   background: var(--primary-color);
@@ -500,16 +454,12 @@ footer {
   cursor: pointer;
   margin-top: 0.5rem;
 }
-/* ————————————————————————————————————————————————
-   Universal back-button styling
-   ———————————————————————————————————————————————— */
+
 .back-button {
-  /* Use your site’s orange; you can also swap in “orange” or any hex */
   color: var(--primary-color);
   text-decoration: none;
   font-weight: bold;
 }
-
 /* Optional: darker on hover/focus for affordance */
 .back-button:hover,
 .back-button:focus {
@@ -517,10 +467,7 @@ footer {
   outline: none;
   text-decoration: underline;
 }
-
-/* -------------------------------- */
 /* File: components/_cards.css      */
-/* -------------------------------- */
 .card,
 .track-card,
 .card-body {
@@ -535,21 +482,11 @@ footer {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(-4px);
 }
-/* ————————————————————————————————————————————————
-   Event‐card images: show full image, no cropping
-   ———————————————————————————————————————————————— */
 .card.track-card img.card-img-top {
-  /* 1. Full width of card, but height auto so image scales proportionally */
   width: 100%;
   height: auto;
-
-  /* 2. Show the entire image—letterbox if needed, but never crop */
   object-fit: contain;
-
-  /* 3. Remove any forced aspect‐ratio so box height matches the image */
   aspect-ratio: auto !important;
-
-  /* 4. Preserve your existing styling */
   background: #151515;
   border: 3px solid var(--primary-color);
   border-radius: 18px;
@@ -592,9 +529,8 @@ footer {
   object-fit: contain;
 }
 
-/* -------------------------------- */
 /* File: pages/_hero.css            */
-/* -------------------------------- */
+
 header {
   height: 35vh;
 }
@@ -615,9 +551,8 @@ header {
   font-size: 1.5em;
 }
 
-/* -------------------------------- */
 /* File: pages/_media-tiles.css     */
-/* -------------------------------- */
+
 .category-box,
 .categories,
 .categories-wrapper {
@@ -628,7 +563,6 @@ header {
   gap: 2.5rem 4rem;
   color: #fff;
 }
-
 .category-box img {
   width: 12vw;
   max-height: fit-content;
@@ -657,9 +591,9 @@ header {
   width: 100%;
   max-width: 960px;
 }
-/* ---------------------------------------------- */
 /*15) Image Slider                                */
-/* ---------------------------------------------- */
+/* Banner slider styles adapted from Lun Dev tutorial (YouTube: yqaLSlPOUxM) */
+
 .slider {
   animation: autoRun 20s linear infinite;
 }
@@ -754,10 +688,8 @@ header {
   background-position: top center;
   z-index: 1;
 }
-
-/* ---------------------------------------------- */
 /*16) iFrame Footer Section                       */
-/* ---------------------------------------------- */
+
 .iframe-container {
   position: fixed;
   bottom: 0;
@@ -775,9 +707,8 @@ header {
   border: none;
 }
 
-/* ---------------------------------------------- */
 /*17) Logo and Navbar                              */
-/* ---------------------------------------------- */
+
 .logo,
 .header-logo {
   max-width: 100%;
@@ -791,11 +722,10 @@ header {
 }
 
 .navbar-brand img {
-  transform-origin: left center; /* or center center, adjust as needed */
+  transform-origin: left center;
   transition: transform 0.2s ease;
 }
 
-/* wrap your “Our Roots” and “Story” divs in .content-section */
 .content-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -808,20 +738,18 @@ header {
   background: rgba(0, 0, 0, 0.5);
   padding: 1.5rem;
   border-radius: 8px;
-  position: static; /* undo any absolute positioning */
+  position: static;
 }
 
-/* ---------------------------------------------- */
 /* File: pages/_gallery.css                       */
-/* ---------------------------------------------- */
-/* Make every gallery image fully responsive */
+
 .images-gallery img,
 #galleryCarousel .carousel-item img,
 .gallery img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* if you want cropping to fill the box */
-  display: block; /* remove bottom whitespace */
+  object-fit: cover;
+  display: block;
 }
 .gallery {
   display: flex;
@@ -834,7 +762,6 @@ header {
   min-height: 100vh;
   margin: 0;
 }
-
 .categories {
   display: flex;
   flex-wrap: wrap;
@@ -889,34 +816,31 @@ header {
     transform: rotate(360deg);
   }
 }
-
-/* ---------------------------------------------- */
 /* File: pages/_about-hero.css                    */
-/* ---------------------------------------------- */
+
 .about-hero {
   display: flex;
-  align-items: center; /* Vertical centering */
-  justify-content: center; /* Horizontal centering */
-  height: 60vh; /* Already present, ensures vertical space */
-  min-height: 350px; /* Optional: keeps it from getting too small */
-  width: 100vw; /* Ensures full width */
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  min-height: 350px;
+  width: 100vw;
   color: #fff;
-  text-align: center; /* Center all text inside */
-  position: relative; /* Retain positioning for overlays etc */
-  margin: 0 auto; /* Horizontal centering if not 100vw */
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* Ensure the overlay also takes full space and centers content */
 .about-hero .hero-overlay {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   text-align: center;
-  background: rgba(248, 248, 248, 0.05); /* subtle, was 0.5 before */
+  background: rgba(248, 248, 248, 0.05);
 }
 
 .hero-title {
@@ -929,7 +853,7 @@ header {
   font-size: 1.25rem;
   color: #ddd;
 }
-/* ----- Two-column content section ----- */
+
 .content-section {
   max-width: 1200px;
   margin: 4rem auto;
@@ -943,7 +867,7 @@ header {
   background: rgba(0, 0, 0, 0.6);
   padding: 1.5rem;
   border-radius: 8px;
-  position: static; /* ensure nothing overlaps */
+  position: static;
   color: #fff;
   font-family: var(--primary-font);
   line-height: 1.5;
@@ -986,11 +910,7 @@ header {
   height: 100%;
   border: 0;
 }
-
-/* ---------------------------------------------- */
 /* File: utilities/_responsive.css                */
-/* ---------------------------------------------- */
-/* super-small phones */
 @media (max-width: 350px) {
   main.container {
     padding-left: 0.5rem;
@@ -1075,33 +995,28 @@ header {
 }
 
 @media (min-width: 800px) {
-  /* 1) Give the inner wrapper a fixed height (viewport minus header) */
   #galleryCarousel .carousel-inner {
-    height: calc(100vh - 100px); /* adjust 100px for your header height */
+    height: calc(100vh - 100px);
   }
 
-  /* 2) Make each slide fill that height (keeping its default display: block) */
   #galleryCarousel .carousel-item {
     height: 100%;
   }
 
-  /* 3) Resize the image itself—full height, auto width, centered */
   #galleryCarousel .carousel-item img {
     max-height: 100%;
     width: auto;
     display: block;
     margin: 0 auto;
-    object-fit: contain; /* ensures the whole image shows, no distortion */
+    object-fit: contain;
   }
 
-  /* 4) (Optional) Center the entire carousel on very wide screens */
   #galleryCarousel {
     max-width: 90vw;
     margin: 0 auto;
   }
 }
 
-/* ≤ 420px */
 @media (max-width: 420px) {
   #gallery {
     position: static;
@@ -1117,7 +1032,6 @@ header {
   }
 }
 
-/* ≤ 480px */
 @media (max-width: 480px) {
   .header-logo,
   .logo {
@@ -1128,7 +1042,6 @@ header {
   }
 }
 
-/* ≤ 576px */
 @media (max-width: 576px) {
   .top-row {
     margin-top: 15vh;
@@ -1152,7 +1065,6 @@ header {
   }
 }
 
-/* ≤ 600px */
 @media (max-width: 600px) {
   .contact-table {
     width: 90vw;
@@ -1198,7 +1110,6 @@ header {
   }
 }
 
-/* ≤ 650px */
 @media (max-width: 650px) {
   .sidebar {
     flex-direction: row;
@@ -1207,7 +1118,6 @@ header {
   }
 }
 
-/* ≤ 700px */
 @media (max-width: 700px) {
   .video-container,
   .back-video {
@@ -1227,7 +1137,7 @@ header {
 
 @media (max-width: 700px) {
   .about-hero {
-    padding-top: 100px; /* Pushes hero below nav/logo */
+    padding-top: 100px;
   }
 
   .about-hero .hero-title {
@@ -1240,16 +1150,15 @@ header {
   }
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .header-container {
-    grid-template-columns: 1fr; /* Stacks title and nav vertically */
+    grid-template-columns: 1fr;
     text-align: center;
     gap: 1rem;
   }
 
   .site-title {
-    grid-column: 1; /* Full width in mobile */
+    grid-column: 1;
   }
 
   .main-nav {
@@ -1262,14 +1171,11 @@ header {
   }
 }
 
-/* Desktop ≥1600px */
 @media (min-width: 1600px) {
   .navbar-brand img {
     transform: scale(1);
   }
 }
-
-/* Laptop ≥1280px and <1600px */
 
 @media (min-width: 1280px) and (max-width: 1599px) {
   .navbar-brand img {
@@ -1277,14 +1183,12 @@ header {
   }
 }
 
-/* Tablet ≥768px and <1280px */
 @media (min-width: 768px) and (max-width: 1279px) {
   .navbar-brand img {
     transform: scale(0.65);
   }
 }
 
-/* Mobile <768px */
 @media (max-width: 320px) {
   .navbar-brand img {
     max-width: 200px;
@@ -1350,28 +1254,24 @@ header {
   .navbar-brand img {
     height: 27px;
     width: auto;
-  
   }
 }
 
 @media (max-width: 500px) {
-  /* ensure the nav container is a positioned parent */
   nav.navbar .container {
     position: relative;
   }
 
-  /* shrink and position the brand logo */
   .navbar-brand {
     position: absolute;
     top: 0rem;
     right: 0.15rem;
   }
   .navbar-brand img {
-    max-height: 30px; /* adjust as needed */
+    max-height: 30px;
     width: auto;
   }
 
-  /* move the hamburger icon to the top-left */
   .navbar-toggler {
     position: relative;
     top: 0rem;
@@ -1389,7 +1289,6 @@ header {
   }
 }
 
-/* Correction for .my-5, .py-5, .pt-5, .pb-5 block */
 @media (max-width: 767px) {
   .my-5,
   .py-5,
