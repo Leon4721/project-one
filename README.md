@@ -336,8 +336,8 @@ The website consists of nine HTML pages, with five main pages featured in the na
 </details>
 
 <details>
-  <summary>Events</summary>
-  <img src="docs/validation/events.png">
+  <summary>Contact</summary>
+  <img src="docs/validation/event.png">
 </details>
 
 <details>
@@ -425,6 +425,10 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 
      -<details><summary>Home</summary>
 <img src="docs/performance/home.png">
+</details>
+
+<details><summary>Home</summary>
+<img src="docs/accessibility/home.png">
 </details>
 
 -<details><summary>about</summary>
