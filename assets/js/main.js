@@ -190,34 +190,6 @@ function closeModal(id) {
 }
 
 
-// Popup Functions
-function showPopup() {
-  document.getElementById('popup-overlay').classList.add('active');
-  document.getElementById('popup').classList.add('active');
-  document.body.style.overflow = 'hidden'; // Prevent scrolling
-}
-
-function hidePopup() {
-  document.getElementById('popup-overlay').classList.remove('active');
-  document.getElementById('popup').classList.remove('active');
-  document.body.style.overflow = ''; // Re-enable scrolling
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  const closeBtn = document.querySelector('#popup .close-btn');
-  if (closeBtn) closeBtn.addEventListener('click', hidePopup);
-
-  const popupOverlay = document.getElementById('popup-overlay');
-  if (popupOverlay) popupOverlay.addEventListener('click', hidePopup);
-
-  const popup = document.getElementById('popup');
-  if (popup) popup.addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
-});
-
-
-
 function applyScrollLimit() {
   const banner = document.getElementById('banner');
 
