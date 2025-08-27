@@ -634,3 +634,4 @@ To clone Da Big Homie to your local machine:
 - A special thanks to my mentor, Mo Shami, for his advice and constant support.
 - I’d also like to acknowledge Jess and the rest of the team from the college for their ongoing encouragement.
 - Lastly, thank you to my friends for contributing their time to help test the site.
+
